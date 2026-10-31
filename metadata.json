@@ -1,0 +1,6 @@
+{
+  "name": "Ghana Pulse & Creators Hub",
+  "description": "Live news channels and top Ghanaian content creators streaming platform with AI news briefs.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
