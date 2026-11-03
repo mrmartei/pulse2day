@@ -66,7 +66,7 @@ export default function App() {
   const creatorId = isCreatorRoute ? currentPath.replace('#/creator/', '') : null;
 
   const selectedArticle = NEWS_ARTICLES.find(a => a.id === articleId) || null;
-  const selectedCreator = CONTENT_CREATORS.find(c => c.id === creatorId) || null;
+  const selectedCreator = CONTENT_CREATORS.find(c => c.id === creatorId || (creatorId === 'tech-in-twi' && c.id === 'selorm-tech')) || null;
 
   const handleSelectArticle = (article: NewsArticle) => {
     window.location.hash = `#/article/${article.id}`;
@@ -149,7 +149,7 @@ export default function App() {
                   </div>
                   <div className="bg-slate-50 border border-slate-200 p-4 rounded-lg text-xs space-y-2 w-full md:w-72">
                     <div className="font-bold text-slate-800 uppercase tracking-wide">Today's Briefing</div>
-                    <p className="text-slate-600 leading-normal">Markets steady in Accra as BoG maintains policy rate at 29%. Tech summit opens in Airport Residential Area.</p>
+                    <p className="text-slate-600 leading-normal">Markets steady in Accra as BoG maintains policy rate at 14.0%. Tech summit opens in Airport Residential Area.</p>
                   </div>
                 </div>
 
@@ -177,6 +177,7 @@ export default function App() {
             {currentPath === '#/creators' && (
               <CreatorsHub
                 creators={CONTENT_CREATORS}
+                searchQuery={searchQuery}
                 onSelectCreator={handleSelectCreator}
               />
             )}

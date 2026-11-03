@@ -11,6 +11,8 @@ export interface NewsArticle {
   author: string;
   publishedAt: string;
   imageUrl: string;
+  articleBodyImage?: string;
+  articleBodyCaption?: string;
   readTime: string;
   views: number;
   likes: number;
@@ -21,13 +23,16 @@ export interface NewsArticle {
 export interface ContentCreator {
   id: string;
   name: string;
+  realName: string;
   handle: string;
   platform: 'TikTok' | 'Instagram' | 'YouTube' | 'Multi-Platform';
   category: 'Tech & Culture' | 'Pop Culture & Critique' | 'Celebrity & Entertainment' | 'Travel & Heritage' | 'Music & Radio' | 'Comedy & Lifestyle' | 'Dance & Viral';
   status: 'Established' | 'Breakthrough';
   subscribers: string;
   avatar: string;
-  coverImage: string;
+  bannerImage: string;
+  coverImage?: string;
+  articleBodyImage: string;
   bio: string;
   award: {
     title: string;
@@ -41,6 +46,9 @@ export interface ContentCreator {
     youtubeSubscribers?: string;
     twitterFollowers?: string;
     linkedinFollowers?: string;
+    facebookFollowers?: string;
+    threadsFollowers?: string;
+    pinterestFollowers?: string;
     engagementRate: string;
   };
   socialLinks: {
@@ -48,6 +56,8 @@ export interface ContentCreator {
     twitter?: string;
     instagram?: string;
     tiktok?: string;
+    website?: string;
+    threads?: string;
   };
 }
 

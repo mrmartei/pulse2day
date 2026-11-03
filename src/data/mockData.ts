@@ -1,35 +1,38 @@
 import { NewsArticle, ContentCreator, PollQuestion } from '../types';
 
 export const BREAKING_NEWS = [
-  "Plexlink officially launches in Ghana: Founder Mr Martei debuts smart NFC networking & link-in-bio platform for professionals.",
-  "Bank of Ghana maintains Monetary Policy Rate at 29% citing stabilization in core inflation.",
-  "Black Stars commence rigorous training in Kumasi ahead of crucial AFCON qualifiers.",
-  "Accra Tech Summit 2026 brings together over 150 West African founders and creator-economy leaders."
+  "Plexlink officially launches in Ghana: Founder Mr Martei debuts smart NFC networking & link-in-bio platform with GHS 300 standard cards.",
+  "Next-Gen Infraco (NGIC) consortium advances 5G wholesale deployment partnering with Telecel Ghana & Ascend Digital.",
+  "Hubtel processes over $2 Billion (GH¢30B+) in merchant transaction volume across Kokomlemle HQ operations.",
+  "Zipline Ghana marks 6 autonomous medical drone distribution centers serving rural healthcare with Ghana Health Service."
 ];
 
 export const NEWS_ARTICLES: NewsArticle[] = [
   {
     id: 'art-plexlink',
     title: 'Plexlink Launches in Ghana: Founder Mr Martei Unveils Smart NFC Networking & Link-in-Bio Platform',
-    summary: 'Built and founded by Ghanaian tech creator and software engineer Mr Martei, Plexlink introduces a next-generation link-in-bio and digital contact card sharing platform with custom NFC products for instant, frictionless networking.',
-    content: `ACCRA, GHANA — In an era where traditional paper business cards are rapidly becoming obsolete, Ghanaian tech creator and software engineer [Mr Martei](#/creator/mr-martei) has officially launched Plexlink, an all-in-one link-in-bio tool and smart contact sharing networking platform tailored for the modern African creator, entrepreneur, and business professional.
+    summary: 'Built and founded by Ghanaian tech creator and developer Mr Martei (Justice Martei Mamah), Plexlink introduces a next-generation link-in-bio and digital contact card sharing platform with custom NFC products for instant, frictionless networking.',
+    content: `ACCRA, GHANA — In an era where traditional paper business cards are rapidly becoming obsolete, Ghanaian tech creator and software engineer [Mr Martei](#/creator/mr-martei) (Justice Martei Mamah) has officially launched Plexlink (https://www.plexlink.site/), an all-in-one link-in-bio tool and smart contact sharing networking platform tailored for modern African creators, entrepreneurs, and business professionals.
 
-Unlike traditional internet service providers or fiber utilities, Plexlink operates at the cutting edge of personal branding and professional networking. The platform combines a customizable, high-speed digital link-in-bio profile with sleek physical NFC (Near Field Communication) smart cards, tags, and wristbands. With a single tap of a Plexlink NFC product against any modern smartphone, users can instantly share their contact card (vCard), social media links, portfolio showcases, WhatsApp messaging channel, and mobile money payment details—without requiring the recipient to download any external app.
+Unlike traditional internet service providers or fiber utilities, Plexlink operates at the cutting edge of personal branding, smart contact card sharing, and professional networking. The platform combines a customizable, high-speed digital link-in-bio profile with sleek physical NFC (Near Field Communication) smart cards, tags, and stickers. With a single tap of a Plexlink NFC product against any modern smartphone, users can instantly share their contact card (vCard), social media links, portfolio showcases, WhatsApp messaging channel, and mobile money payment details—without requiring the recipient to download any external app.
 
-"Networking in Ghana and across Africa has historically relied on paper cards that get lost, thrown away, or quickly outdated," explained founder and lead architect [Mr Martei](#/creator/mr-martei) during the launch in Accra. "We built Plexlink from the ground up to empower African creatives, corporate executives, and startup founders with an intelligent digital identity. Whenever your phone number, social handle, or portfolio changes, your Plexlink NFC card automatically serves the updated details in real-time."
+"Networking in Ghana and across Africa has historically relied on paper cards that get lost, thrown away, or quickly outdated," explained founder and lead developer [Mr Martei](#/creator/mr-martei) during the launch in Accra. "We built Plexlink from the ground up to empower African creatives, corporate executives, and startup founders with an intelligent digital identity. Whenever your phone number, social handle, or portfolio changes, your Plexlink profile automatically updates in real-time."
 
-Key features of the newly debuted Plexlink platform include:
-• Smart Link-in-Bio: A lightning-fast, mobile-optimized microsite that aggregates all digital touchpoints into one cohesive brand destination.
-• Direct Contact Sharing (vCard): One-tap contact saving that directly downloads full contact info into the recipient's phone address book.
-• Custom NFC Hardware: Premium matte black, bamboo, and metal NFC smart cards embedded with secure contactless chips.
-• Live Analytics & Lead Capture: Comprehensive analytics on profile views, click-through rates, and lead capture forms that connect directly with CRM systems.
+Verified Product & Pricing Details:
+• Standard Plexlink NFC/QR Card: GHS 300 (one-time fee, no monthly subscription required).
+• Custom Branded Plexlink Card: GHS 450 (custom corporate logo, branded design, and personalized finish).
+• Universal Compatibility: Tap-to-share via NFC or scan via custom QR code, functioning seamlessly on both iOS and Android without an app installation.
+• Real-Time Cloud Management: Instantly edit contact information, social links, and custom themes via the Plexlink web dashboard.
+• Verified Digital Badges: Integrated credibility indicators and direct analytics tracking for profile impressions and lead captures.
 
 Early beta testers among Ghanaian tech creators, real estate agencies in Airport Residential Area, and fintech founders have praised Plexlink for dramatically simplifying networking at conferences and casual meetings alike. With its formal launch in Ghana, Plexlink is poised to set a new standard for digital identity and contactless professional networking across West Africa.`,
     category: 'Tech',
-    channel: 'Citi TV',
+    channel: 'Channel One TV',
     author: 'Efua Mensah',
     publishedAt: '30 mins ago',
-    imageUrl: 'https://images.unsplash.com/photo-1556742049-0a67c5574f73?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: 'https://i.ibb.co/Z6Dsp6y5/Taplink-mockup.png',
+    articleBodyImage: 'https://i.ytimg.com/vi/QZYg94MzPQA/hqdefault.jpg',
+    articleBodyCaption: 'Product Demo: Founder Mr Martei demonstrating Plexlink contactless NFC networking & mobile dashboard in action',
     readTime: '4 min read',
     views: 18500,
     likes: 1640,
@@ -37,66 +40,102 @@ Early beta testers among Ghanaian tech creators, real estate agencies in Airport
     featuredCreatorId: 'mr-martei'
   },
   {
-    id: 'art-1',
-    title: 'Bank of Ghana Keeps Policy Rate Steady at 29% as Cedi Stabilizes Against Major Currencies',
-    summary: 'The Monetary Policy Committee has opted to hold the rate steady, highlighting improving foreign exchange reserves and moderating food inflation across regional markets.',
-    content: `The Bank of Ghana (BoG) has announced the decision of its Monetary Policy Committee (MPC) to maintain the policy rate at 29 percent. Governor Dr. Ernest Addison noted during the press briefing in Accra that recent fiscal consolidation measures and robust cocoa export receipts have provided strong cushioning for the Ghana Cedi.
+    id: 'art-tech-creators',
+    title: 'Top Ghanaian Tech Creators Reshaping the Ecosystem: From Coding Tutorials to NFC Innovation',
+    summary: 'Ghanaian tech influencers including Delppy, Rick Aqua, Dessy Ocean, Wazz, Clifford Scott, and Mr Martei are driving mass digital literacy and gadget literacy across West Africa.',
+    content: `ACCRA — Ghana's technology ecosystem is experiencing an unprecedented surge in digital content creation, propelled by a dynamic cohort of tech reviewers, hardware testers, and product creators who demystify technology for millions across the continent.
 
-Financial analysts across the country have reacted positively to the decision, noting that borrowing costs remain supportive of local manufacturing while curbing speculative forex demand. Commercial banks are expected to adjust lending rates progressively over the upcoming quarter.
+Leading the movement is [Delppy](#/creator/delppy) (Emmanuel Obuobi Fianko, @delppy1_), whose 293.6K TikTok and 231K Instagram followers turn to him for cybersecurity education, real-world smartphone benchmarks, and AI tools. Alongside Delppy is [Wazz](#/creator/wazz) (@onetruewazz, 480K on Instagram and 85.6K on TikTok), with whom he co-hosts the acclaimed YouTube tech show Bytes Unlocked (@BYTESUNLOCKED, 18.3K subscribers).
 
-Furthermore, foreign direct investment into Ghana's non-traditional export sector rose by 14% year-on-year, signaling renewed investor confidence in the macroeconomic stability program currently underway.`,
-    category: 'Business',
-    channel: 'JoyNews',
-    author: 'Kwame Agyeman',
+Visual aesthetics and cinematic production are championed by [Rick Aqua](#/creator/rick-aqua) (Patrick Acquah, @rick_aqua), whose crisp smartphone shootouts reach 162K Instagram followers, 47.2K YouTube subscribers (with over 11.16 million total views), and 23.2K on TikTok. Meanwhile, [Dessy Ocean](#/creator/dessy-ocean) (Desmond Ofori Appiah, @dessy_ocean) commands 293.2K TikTok followers and 156K on Instagram, having been selected by Meta in May 2024 to promote Meta's AI technologies in Ghana.
+
+Younger creators are also making monumental strides: [Clifford Scott](#/creator/clifford-scott) (@cliffordscott_), known as CoolTechie, has built a following of 150K on TikTok and 46.4K on YouTube with student-friendly software guides and desk setup inspiration. Bridging local language gaps, [Kwabena Boateng](#/creator/selorm-tech) of Tech In Twi (@TechInTwi) educates 190,000 YouTube subscribers and 146,000+ Facebook followers in the Twi language.
+
+And proving that creators can also build tangible hardware products, [Mr Martei](#/creator/mr-martei) (Justice Martei Mamah, @mr.martei with 16.2K on Instagram and 8.9K on TikTok) has built and launched Plexlink, Ghana's premier smart NFC business card and link-in-bio platform. Together, these creators are cementing Ghana as West Africa's most vibrant digital storytelling sandbox.`,
+    category: 'Tech',
+    channel: 'Channel One TV',
+    author: 'Efua Mensah',
     publishedAt: '2 hours ago',
-    imageUrl: 'https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80',
+    articleBodyImage: 'https://delppy.com/wp-content/uploads/2026/09/WhatsApp-Image-2026-09-04-at-09.50.07-2-390x220.jpeg',
+    articleBodyCaption: 'Ghana Tech Media: Leading creators and educators gathering to discuss digital transformation and consumer technology in West Africa',
+    readTime: '5 min read',
+    views: 14200,
+    likes: 1250
+  },
+  {
+    id: 'art-1',
+    title: 'Telecel Ghana & NGIC Consortium Accelerate Nationwide 5G Shared Wholesale Infrastructure',
+    summary: 'Ghana rolls out high-speed 5G via Next-Gen Infraco (NGIC), a shared infrastructure consortium partnering with Ascend Digital, Nokia, Radisys, Tech Mahindra, and Telecel Ghana.',
+    content: `ACCRA — Ghana's telecommunications landscape has entered a transformative era as Telecel Ghana, alongside mobile network operators and technology partners, advances commercial deployment on the nation's shared 5G network.
+
+Unlike traditional single-operator spectrum auctions where telecom operators deploy duplicative cell towers, Ghana's national 5G wholesale infrastructure is operated by Next-Gen Infraco (NGIC). The strategic consortium brings together the Government of Ghana, Ascend Digital, K-NET, Radisys, Nokia, Tech Mahindra, AT Ghana, and Telecel Ghana.
+
+By utilizing a shared wholesale model, NGIC enables rapid capital expenditure sharing, ensuring that high-throughput 5G connectivity reaches not only commercial hubs in Accra, Tema, and Kumasi, but also underserved regional districts across Takoradi, Tamale, and Sunyani.
+
+Engineering trials conducted in Ridge and Cantonments demonstrated sustained mobile data speeds exceeding 1 Gbps, providing the digital backbone needed for smart logistics, industrial IoT, telemedicine, and fintech innovation across Ghana.`,
+    category: 'Tech',
+    channel: 'JoyNews',
+    author: 'Kwabena Osei',
+    publishedAt: '3 hours ago',
+    imageUrl: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80',
+    readTime: '4 min read',
+    views: 16300,
+    likes: 1420
+  },
+  {
+    id: 'art-2',
+    title: 'Hubtel Crosses $2B in Processed Transaction Volume, Expanding Merchant Operating Ecosystem Across Ghana',
+    summary: 'Accra-based fintech pioneer Hubtel records over $2 Billion (GH¢30 Billion+) in annual processed volume, empowering tens of thousands of merchants across food, grocery, and utilities.',
+    content: `KOKOMLEMLE, ACCRA — Ghanaian fintech powerhouse Hubtel, founded by Alex Bram and headquartered in Kokomlemle, Accra, has officially surpassed $2 Billion USD (equivalent to over GH¢30 Billion) in processed annual transaction volume across its digital payment and retail operating system.
+
+Licensed as an Enhanced Payment Service Provider by the Bank of Ghana, Hubtel has transformed from an early SMS gateway provider into an essential merchant operating ecosystem. Today, the platform connects thousands of neighborhood retail stores, supermarkets, pharmacies, and food vendors with seamless point-of-sale checkout, mobile money aggregation, and instant on-demand courier delivery.
+
+"Our mission has always been to help Ghanaian businesses find and care for customers," stated CEO Alex Bram. "Reaching the $2 Billion volume threshold demonstrates the resilience of Ghana's digital economy and the trust local merchants place in locally built fintech infrastructure."
+
+Hubtel's proprietary routing technology has reduced transaction failure rates to under 0.5%, making it one of the most reliable payment rails in West Africa.`,
+    category: 'Business',
+    channel: 'Channel One TV',
+    author: 'Samuel Baidoo',
+    publishedAt: '4 hours ago',
+    imageUrl: 'https://images.unsplash.com/photo-1556742049-0a67c5574f73?auto=format&fit=crop&w=1200&q=80',
     readTime: '4 min read',
     views: 12450,
     likes: 890
   },
   {
-    id: 'art-2',
-    title: 'Silicon Accra: How Ghanaian Developers & Creators are Leading the AI Revolution in West Africa',
-    summary: 'From agritech drones in Kumasi to fintech hubs in Airport Residential Area, young Ghanaian developers and creators are building world-class AI models tailored for local languages.',
-    content: `Ghana’s tech ecosystem is undergoing an unprecedented boom. Venture capital inflows into Ghanaian tech startups hit a new high in Q3 2026, driven by breakthroughs in AI-powered financial inclusion, localized digital tooling, and agricultural logistics.
+    id: 'art-3',
+    title: 'Ashesi University AI & Robotics Lab Pioneers Local Language NLP and Agricultural Drone Systems',
+    summary: 'Located in Berekuso, Ashesi University under Patrick Awuah expands its robotics and ethical AI laboratory, training models in Twi, Ewe, and Ga while optimizing crop yields.',
+    content: `BEREKUSO, EASTERN REGION — Nestled on the scenic hills of Berekuso, Ashesi University has unveiled major research breakthroughs from its Artificial Intelligence and Robotics Laboratory, founded under the leadership of university president Patrick Awuah.
 
-At the forefront are engineering graduates from KNUST and Ashesi University who are training large language models in Twi, Ga, and Ewe to bridge the digital divide for rural traders and farmers. Industry leaders predict Ghana is well on its way to becoming the premier tech sandbox of West Africa.`,
+The research center is pioneering ethical AI systems tailored to West African developmental priorities. Key initiatives include training Natural Language Processing (NLP) models capable of understanding and synthesizing local languages—including Twi, Ewe, and Ga—to allow illiterate rural citizens to access banking and healthcare advisories through simple voice interfaces.
+
+Simultaneously, the university's robotics engineering team has deployed autonomous agricultural drone prototypes equipped with multispectral sensors. These drones survey smallholder farms across the Eastern and Central regions, detecting cocoa swollen shoot virus and maize armyworm infestations weeks before visible symptoms appear.
+
+"African universities must build technology that answers African problems," noted Patrick Awuah. "Our students are combining computer vision, ethical machine learning, and embedded hardware to generate tangible economic value for local communities."`,
     category: 'Tech',
-    channel: 'Citi TV',
-    author: 'Efua Mensah',
-    publishedAt: '3 hours ago',
-    imageUrl: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80',
-    readTime: '6 min read',
+    channel: 'GHOne TV',
+    author: 'Dr. Selassie Mensah',
+    publishedAt: '5 hours ago',
+    imageUrl: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80',
+    readTime: '5 min read',
     views: 9800,
     likes: 1120
   },
   {
-    id: 'art-3',
-    title: 'AFCON Qualifiers: Otto Addo Unveils 26-Man Squad for Double-Header Clash',
-    summary: 'Captain Thomas Partey returns to lead the Black Stars squad alongside in-form strikers Mohammed Kudus and Antoine Semenyo for next week\'s decisive encounter.',
-    content: `Head Coach Otto Addo has released the much-anticipated 26-man Black Stars squad for the upcoming Africa Cup of Nations qualifiers. The squad blends experienced campaigners with exciting young talents from the Ghana Premier League.
-
-Fans in Accra and Kumasi have flooded social media with reactions, expressing optimism about the team's attacking depth. Training sessions open to the public at the Baba Yara Sports Stadium are scheduled to begin on Wednesday morning.`,
-    category: 'Sports',
-    channel: 'TV3 Ghana',
-    author: 'Yaw Ampofo',
-    publishedAt: '5 hours ago',
-    imageUrl: 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=1200&q=80',
-    readTime: '3 min read',
-    views: 18900,
-    likes: 2450
-  },
-  {
     id: 'art-4',
-    title: 'Inside the Creative Surge: Why Ghanaian Fashion & Music are Dominating Global Runways',
-    summary: 'From Paris Fashion Week showcases featuring Kente fusions to Billboard Hot 100 charting Afrobeats artists, Ghana\'s cultural capital has never been higher.',
-    content: `Ghanaian creativity is having a profound global moment. Designers working out of Jamestown and Osu are redefining luxury fashion with sustainable local textiles, while producers in East Legon are crafting the freshest sounds in modern music.
+    title: 'AfroFuture Fest at El Wak Stadium Generates Massive Cultural & Economic Windfall for Accra',
+    summary: 'Culture Management Group (CMG) co-founder Abdul Abdullah celebrates AfroFuture festival at El Wak Stadium, driving tens of millions of dollars in hospitality and tourism revenue.',
+    content: `ACCRA — The transformative cultural and economic impact of AfroFuture (formerly Afrochella) was on full display as tens of thousands of diaspora travelers and local patrons converged on El Wak Stadium in Accra for the premier African music, fashion, and art festival.
 
-International collaborators are flocking to Accra for recording camps and fashion exhibitions, cementing the city as Africa's creative capital. Local artisans report a 40% surge in export orders over the past year.`,
+Organized by Culture Management Group (CMG) and co-founded by Abdul Abdullah, the multi-day festival has cemented Ghana as the December epicenter of the global African renaissance. In addition to star-studded performances by leading African musical acts, the festival featured food trucks by local culinary creators, runway showcases of artisanal Kente fusions, and an entrepreneurship expo connecting African diaspora angel investors with Ghanaian tech and retail startups.
+
+According to preliminary data from the Ghana Tourism Authority, the festival week generated over $100 million in direct and indirect tourism receipts across hotels, ride-hailing services, restaurants, and local artisan markets in Osu, Jamestown, and Labadi.`,
     category: 'Entertainment',
     channel: 'UTV Ghana',
     author: 'Abena Osei-Bonsu',
-    publishedAt: '7 hours ago',
+    publishedAt: '6 hours ago',
     imageUrl: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1200&q=80',
     readTime: '5 min read',
     views: 15600,
@@ -104,565 +143,638 @@ International collaborators are flocking to Accra for recording camps and fashio
   },
   {
     id: 'art-5',
-    title: 'National Electoral Commission Announces Readiness for Biometric Verification Upgrades',
-    summary: 'EC Chairperson Jean Mensa assures political parties that state-of-the-art verification terminals will ensure transparent and seamless polling across all 275 constituencies.',
-    content: `The Electoral Commission of Ghana has briefed stakeholders on its comprehensive roadmap for upcoming electoral exercises. The briefing highlighted rigorous stress testing of biometric verification devices and enhanced cybersecurity protocols designed in collaboration with local tech experts.
+    title: 'Solar Mini-Grids Power Northern Ghana Agro-Processing Hubs Under National Renewable Master Plan',
+    summary: 'Supported by the World Bank, AfDB, and Ghana Renewable Energy Master Plan, solar mini-grids in Northern and Savannah regions boost groundnut, shea butter, and grain processing.',
+    content: `TAMALE & SAVANNAH REGION — A sustainable energy revolution is sweeping through northern Ghana. Under the framework of Ghana's Renewable Energy Master Plan (REMP), newly commissioned off-grid solar mini-grids backed by the African Development Bank (AfDB) and the World Bank are powering rural agro-processing cooperatives across the Northern, Savannah, and Upper East regions.
 
-Representatives from major political parties attended the demonstration at the EC headquarters, praising the transparency of the preparation process.`,
+Prior to the rollout, women-led cooperatives in rural enclaves relied on costly diesel generators or manual crushing to produce shea butter and groundnut oil. The new high-capacity solar installations provide dependable 24-hour green electricity to operate mechanized mills, vacuum-packaging units, and cold-storage facilities.
+
+Local cooperative leaders in Bole and Sawla report that reliable solar power has doubled their daily production capacity while cutting processing energy overheads by over 45%, enabling local producers to meet international export certifications for organic shea butter destined for European markets.`,
+    category: 'Business',
+    channel: 'TV3 Ghana',
+    author: 'Kofi Mensah',
+    publishedAt: '7 hours ago',
+    imageUrl: 'https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=1200&q=80',
+    readTime: '4 min read',
+    views: 11400,
+    likes: 940
+  },
+  {
+    id: 'art-6',
+    title: 'Accra Startup Ecosystem Expands with MEST Africa, Impact Hub Accra and Stanbic Incubator Leading Growth',
+    summary: 'East Legon, Osu, and Airport City solidify their standing as tech epicenters as coworking spaces and venture hubs mentor the next generation of African founders.',
+    content: `ACCRA — Ghana's capital city continues to attract international venture capital and entrepreneurial talent, anchored by a cluster of world-class incubator hubs and collaborative workspaces.
+
+In East Legon, MEST Africa (Meltwater Entrepreneurial School of Technology) continues its decade-long legacy of providing full software engineering and business development fellowships to pan-African founders, backing high-growth startups with seed funding and global investor access.
+
+Meanwhile in Osu, Impact Hub Accra fosters grassroots climate and creative innovation, serving as a dynamic convening center for creative entrepreneurs and digital nomads. At Silver Star Tower in Airport City, the Stanbic Incubator, alongside collaborative hubs like Basecamp Initiative and Koko King tech spaces, provides fintech and corporate innovation programs.
+
+Venture analysts highlight that the density of tech talent, stable broadband infrastructure, and investor networking hubs makes Accra one of the top four tech investment destinations in Sub-Saharan Africa.`,
+    category: 'Tech',
+    channel: 'Channel One TV',
+    author: 'Efua Mensah',
+    publishedAt: '8 hours ago',
+    imageUrl: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1200&q=80',
+    readTime: '4 min read',
+    views: 13200,
+    likes: 1150
+  },
+  {
+    id: 'art-7',
+    title: 'Bank of Ghana Tests Offline CBDC: Giesecke+Devrient Partnered eCedi Successfully Piloted in Sefwi Asafo',
+    summary: 'The Bank of Ghana and G+D conclude historic retail eCedi offline tests, enabling smartcard and wearable payments in remote Western North communities without internet.',
+    content: `SEFWI ASAFO & ACCRA — The Bank of Ghana (BoG) has achieved a global milestone in central bank digital currency (CBDC) innovation through its retail eCedi pilot conducted in partnership with German technology firm Giesecke+Devrient (G+D).
+
+While urban testing in Accra evaluated digital banking wallet interoperability and QR-code merchant checkouts, the landmark phase took place in Sefwi Asafo, a cocoa-farming community in the Western North Region characterized by limited cellular coverage.
+
+Using specialized near-field contactless smartcards and wearable NFC wristbands loaded with cryptographic offline tokens, local market traders, taxi drivers, and farmers conducted consecutive transactions entirely without internet or cellular connectivity. The offline eCedi successfully settled balances upon later synchronization, proving that digital currencies can foster true financial inclusion for unbanked and off-grid populations.`,
+    category: 'Business',
+    channel: 'JoyNews',
+    author: 'Kwame Agyeman',
+    publishedAt: '9 hours ago',
+    imageUrl: 'https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&w=1200&q=80',
+    readTime: '4 min read',
+    views: 12450,
+    likes: 890
+  },
+  {
+    id: 'art-8',
+    title: 'Suame Magazine Artisans & KNUST Brew-Hammond Energy Centre Pioneer Electric Vehicle Conversions',
+    summary: 'Engineers from KNUST collaborate with informal mechanics in Kumasi\'s Suame Magazine, retrofitting combustion minibuses into clean electric battery-swapping fleets.',
+    content: `KUMASI, ASHANTI REGION — In an extraordinary convergence of academic engineering and informal industrial brilliance, researchers from The Brew-Hammond Energy Centre at KNUST (Kwame Nkrumah University of Science and Technology) have teamed up with veteran automotive artisans at Kumasi's famous Suame Magazine.
+
+Suame Magazine, one of West Africa's largest informal engineering clusters with over 200,000 mechanics and metalworkers, has begun converting retired internal combustion minibuses (trotros) and light trucks into fully electric drivetrains.
+
+Supported by Ghanaian EV pioneers like SolarTaxi and battery-swapping network Kofa, the collaborative initiative designs modular lithium-iron-phosphate (LFP) battery packs suited for Ghanaian terrain. Fleet operators participating in the pilot between Adum and Kejetia report cutting daily fuel and maintenance expenses by nearly 60%, establishing a viable template for homegrown electric vehicle manufacturing.`,
+    category: 'Tech',
+    channel: 'JoyNews',
+    author: 'Kwabena Osei',
+    publishedAt: '10 hours ago',
+    imageUrl: 'https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=1200&q=80',
+    readTime: '5 min read',
+    views: 14800,
+    likes: 1320
+  },
+  {
+    id: 'art-9',
+    title: 'Ghana Card Unified Digital Identity: NIA Integration with GRA, SSNIT, and Mobile Banking Surpasses 18 Million Citizens',
+    summary: 'The National Identification Authority (NIA) integrates biometric Ghana Cards across the Ghana Revenue Authority (GRA), SSNIT, NHIS, and telecom SIM registers.',
+    content: `ACCRA — Ghana's national digital identity transformation has achieved an unprecedented milestone as the National Identification Authority (NIA) announced that more than 18 million verified citizens and permanent residents have been issued the biometric Ghana Card.
+
+Under the government's digital harmonization policy, the Ghana Card's unique personal identification number now acts as the unified Tax Identification Number (TIN) for the Ghana Revenue Authority (GRA), the primary Social Security and National Insurance Trust (SSNIT) identification, and the mandatory verification key for National Health Insurance Scheme (NHIS) linkages.
+
+Commercial banks, fintech operators, and telecommunications companies report that mandatory biometric verification has reduced identity theft, loan application fraud, and SIM-swap scams by more than 75%, providing a solid, fraud-resistant foundation for digital commerce across the nation.`,
     category: 'Politics',
     channel: 'GHOne TV',
     author: 'Kofi Boateng',
-    publishedAt: '9 hours ago',
+    publishedAt: '11 hours ago',
     imageUrl: 'https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?auto=format&fit=crop&w=1200&q=80',
     readTime: '4 min read',
     views: 11200,
     likes: 740
   },
   {
-    id: 'art-cybersecurity',
-    title: 'National Cyber Security Authority Inaugurates AI Threat Monitoring Center to Shield Ghana\'s Mobile Money & Fintech Hubs',
-    summary: 'Ghana\'s CSA has deployed a 24/7 automated threat intelligence hub leveraging machine learning to proactively protect over 20 million active mobile money wallets and financial APIs.',
-    content: `ACCRA — In response to escalating global cyber threats targeting digital banking corridors, the Cyber Security Authority (CSA) of Ghana has officially commissioned its National Automated Threat Intelligence & Defense Center in Ridge, Accra.
+    id: 'art-10',
+    title: 'Autonomous Medical Drone Delivery: Zipline Ghana\'s 6 Centers Partner with GHS Across Rural Enclaves',
+    summary: 'Zipline Ghana\'s distribution hubs in Omenako, Mpanya, Vobsi, Sefwi Wiawso, Anum, and Kete Krachi deliver over 1 million emergency vaccines and blood units to remote health clinics.',
+    content: `OMENAKO, EASTERN REGION — Medical logistics in Ghana has set a global standard through the collaborative partnership between Zipline Ghana and the Ghana Health Service (GHS). Operating from six strategically located distribution centers across the country—Omenako (Eastern), Mpanya (Ashanti), Vobsi (North East), Sefwi Wiawso (Western North), Anum (Volta/Eastern), and Kete Krachi (Oti)—autonomous delivery drones provide rapid access to emergency medical supplies.
 
-The state-of-the-art facility integrates advanced AI detection algorithms trained on local transaction patterns to intercept phishing networks, unauthorized SIM swap attempts, and coordinated DDoS attacks aimed at commercial banks and telecom operators.
+The fleet of electric fixed-wing drones delivers blood products, anti-snake venom, anti-rabies vaccines, and essential pediatric medications to hundreds of remote Community-based Health Planning and Services (CHPS) compounds and island communities along Lake Volta within 30 to 45 minutes of a request.
 
-Speaking at the inauguration ceremony, the Director-General of the CSA emphasized that with Ghana processing over GH¢2 trillion in annual digital transactions, robust cyber defenses are essential for safeguarding economic stability. "Our financial sector is one of Africa\'s most advanced mobile money ecosystems. This AI-powered center guarantees real-time telemetry sharing across all licensed fintechs and commercial banks," he noted.
-
-Local tech security researchers and digital rights groups have lauded the initiative, highlighting that early incident reporting protocols will bolster user confidence in cross-border digital commerce.`,
+Working alongside digital telemedicine platforms such as mPharma and Bisa Health, Zipline's round-the-clock aerial supply chain has virtually eliminated stock-outs of critical vaccines in rural health centers, saving thousands of lives and demonstrating the real-world humanitarian power of autonomous aerospace robotics.`,
     category: 'Tech',
-    channel: 'JoyNews',
-    author: 'Kojo Antwi',
-    publishedAt: '45 mins ago',
-    imageUrl: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80',
-    readTime: '4 min read',
-    views: 11400,
-    likes: 940
-  },
-  {
-    id: 'art-ev-ghana',
-    title: 'Electric Vehicles on the Rise in Accra as Clean-Tech Fleets and Solar Corridors Expand Rapidly',
-    summary: 'Commercial ride-hailing operators and delivery networks across Greater Accra are rapidly deploying electric two-wheelers and solar-powered charging corridors, cutting fuel costs by up to 60%.',
-    content: `A quiet green transportation revolution is transforming the streets of Accra. Driven by volatile global fuel prices and falling battery costs, Ghanaian clean-tech startups and transport cooperatives have deployed over 1,500 electric motorbikes and light commercial vans across the capital over the past six months.
-
-Along the busy Spintex Road and Airport Residential Area, solar-backed battery swapping stations allow delivery couriers and commuters to swap depleted batteries for fully charged units in under 90 seconds.
-
-Operators report dramatic operational savings, with fuel and maintenance costs dropping by nearly 60% compared to internal combustion engines. The Ministry of Transport confirmed that draft legislation offering tax incentives and duty exemptions for knocked-down EV assembly kits has been forwarded to Parliament, setting Ghana on course to become a regional manufacturing hub for electric two-wheelers.`,
-    category: 'Tech',
-    channel: 'Citi TV',
-    author: 'Efua Mensah',
-    publishedAt: '4 hours ago',
-    imageUrl: 'https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=1200&q=80',
-    readTime: '5 min read',
-    views: 13200,
-    likes: 1150
-  },
-  {
-    id: 'art-ai-institute',
-    title: 'University of Ghana Launches Pan-African AI Research Facility in Partnership with Global Tech Giants',
-    summary: 'The Legon campus unveils a modern artificial intelligence laboratory equipped with high-performance computing clusters to train 10,000 African data scientists over the next three years.',
-    content: `LEGON, ACCRA — The University of Ghana has inaugurated the West African Center for Advanced Machine Learning and Artificial Intelligence Research at its main campus in Legon.
-
-Funded through a public-private partnership with global technology corporations and African philanthropic institutions, the center houses dedicated GPU compute clusters designed to train foundational AI models on African languages, health diagnostics, and climatological predictive mapping.
-
-Vice-Chancellor Prof. Nana Aba Appiah Amfo noted during the ribbon-cutting ceremony that the facility will democratize access to world-class machine learning resources for students, researchers, and local developers. "Our goal is not merely to consume artificial intelligence built elsewhere, but to engineer homegrown intelligent systems that solve malaria eradication, crop yield optimization, and financial inclusion for our continent," she remarked.
-
-The institute will offer fully funded master's and doctoral fellowships, alongside industry hackathons and accelerator programs for local software engineers.`,
-    category: 'Tech',
-    channel: 'GHOne TV',
-    author: 'Dr. Selassie Mensah',
-    publishedAt: '6 hours ago',
-    imageUrl: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80',
-    readTime: '5 min read',
-    views: 9450,
-    likes: 870
-  },
-  {
-    id: 'art-5g-trials',
-    title: 'Telecel Ghana & MTN Conclude Dual-Network 5G Field Trials in Accra with 1.2 Gbps Speeds',
-    summary: 'The National Communications Authority oversees landmark field tests achieving low latency and multi-gigabit throughput across ridge, Cantonments, and Tema Industrial Area.',
-    content: `ACCRA — The rollout of fifth-generation (5G) telecommunications infrastructure in Ghana has taken a decisive step forward following the successful completion of dual-network field trials conducted jointly by MTN Ghana and Telecel Ghana under the supervision of the National Communications Authority (NCA).
-
-Engineers conducting drive tests across Cantonments, Osu, and Tema reported sustained downlink speeds exceeding 1.2 Gigabits per second with latency below 9 milliseconds. The high bandwidth and ultra-low latency are slated to enable smart port automation at Tema Harbor, remote medical surgeries, and high-fidelity video broadcasts across the country.
-
-The NCA confirmed that commercial spectrum allocations are finalized, with consumer 5G data packages expected to launch in key urban metropolitan centers before the end of the year.`,
-    category: 'Tech',
-    channel: 'JoyNews',
-    author: 'Kwame Agyeman',
-    publishedAt: '8 hours ago',
-    imageUrl: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80',
-    readTime: '4 min read',
-    views: 16300,
-    likes: 1420
-  },
-  {
-    id: 'art-cocoa-processing',
-    title: 'Ghana Commissions $60M State-of-the-Art Cocoa Processing Plant in Tema to Double Value-Added Exports',
-    summary: 'The new facility in the Tema Free Zones enclave will convert 50,000 metric tonnes of raw cocoa beans annually into high-grade confectionery butter, liquor, and gourmet chocolates.',
-    content: `TEMA — In a decisive push toward industrial value addition, the Government of Ghana and consortium partners have officially commissioned a $60 million cocoa processing complex in the Tema Free Zones enclave.
-
-Historically, Ghana has exported the bulk of its cocoa crop in raw bean form, capturing only a fraction of the global $130 billion chocolate confectionery market. The newly unveiled plant will process over 50,000 metric tonnes of cocoa beans annually into premium cocoa butter, baking powder, and artisanal confectionery for export to European and Asian markets.
-
-Speaking to stakeholders, trade officials emphasized that local processing will generate over 1,200 direct manufacturing jobs and shield cocoa farmers from global commodity price swings. Several domestic chocolate brands are already partnering with the plant to scale up retail distribution across West Africa.`,
-    category: 'Business',
     channel: 'TV3 Ghana',
     author: 'Samuel Baidoo',
-    publishedAt: '5 hours ago',
+    publishedAt: '12 hours ago',
+    imageUrl: 'https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&w=1200&q=80',
+    readTime: '4 min read',
+    views: 16800,
+    likes: 1540
+  },
+  {
+    id: 'art-11',
+    title: 'Ghanaian Afrobeats, Highlife & Asakaa Surge Across Global Streaming: Black Sherif & King Promise Lead Billions of Streams',
+    summary: 'Music from Accra and Kumasi dominates global playlists on Spotify, Apple Music, Audiomack, and Boomplay as Ghanaian sounds captivate international audiences.',
+    content: `ACCRA & KUMASI — Contemporary Ghanaian music is enjoying an unprecedented golden era on international streaming platforms. Industry reports from Spotify, Apple Music, Audiomack, and Boomplay reveal that streams of Ghanaian music catalog surged by over 68% year-on-year across North America, the UK, and continental Europe.
+
+Leading the charge is BET Award winner Black Sherif, whose genre-bending Highlife-infused drill anthems have crossed hundreds of millions of streams, alongside King Promise, whose global chart-topper "Terminator" ignited viral dance challenges from Lagos to Tokyo.
+
+Meanwhile, artists like Stonebwoy continue to dominate global reggae-dancehall categories, while vocal powerhouses Amaarae and Gyakie push alternative pop and R&B boundaries. In Kumasi, the Asakaa drill movement spearheaded by Life Living Records continues to influence UK and European grime culture, proving the unstoppable creative and commercial vitality of modern Ghanaian youth culture.`,
+    category: 'Entertainment',
+    channel: 'UTV Ghana',
+    author: 'Abena Osei-Bonsu',
+    publishedAt: '13 hours ago',
+    imageUrl: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1200&q=80',
+    readTime: '4 min read',
+    views: 18900,
+    likes: 2150
+  },
+  {
+    id: 'art-12',
+    title: 'COCOBOD Deploys Cocoa Management System as Agritech Startups Enable EUDR Supply-Chain Traceability',
+    summary: 'Ghana Cocoa Board\'s digital CMS mapping platform unites with agritech startups like Farmerline and AgroCenta to guarantee deforestation-free cocoa exports to Europe.',
+    content: `TAKORADI & SEFWI WIAWSO — As the European Union Deforestation Regulation (EUDR) takes full effect, the Ghana Cocoa Board (COCOBOD) has completed the nationwide rollout of its Cocoa Management System (CMS), an end-to-end digital database mapping every cocoa farm, farmer identity, and purchasing station in Ghana.
+
+The high-tech system assigns digital IDs to over 800,000 cocoa farmers and utilizes GPS polygon mapping to verify that harvested cocoa is grown strictly on established farmland without encroachment into forest reserves.
+
+Working alongside COCOBOD are innovative Ghanaian agritech pioneers including Farmerline, AgroCenta, Trotro Tractor, and Complete Farmer. These startups deploy mobile apps and satellite imaging that provide farmers with weather advisories, subsidized fertilizer, digital payments, and verifiable chain-of-custody documentation, ensuring Ghanaian cocoa retains its premier position in global chocolate manufacturing.`,
+    category: 'Business',
+    channel: 'Channel One TV',
+    author: 'Kojo Asante',
+    publishedAt: '14 hours ago',
     imageUrl: 'https://images.unsplash.com/photo-1548848221-0c2e497ed557?auto=format&fit=crop&w=1200&q=80',
     readTime: '4 min read',
-    views: 14800,
-    likes: 1320
-  },
-  {
-    id: 'art-afcfta-digital',
-    title: 'AfCFTA Secretariat in Accra Reports 35% Surge in Cross-Border Digital Services and Payments',
-    summary: 'The Pan-African Payment and Settlement System (PAPSS) sees exponential uptake as Ghanaian businesses trade frictionlessly with counterparts in Nigeria, Kenya, and Rwanda.',
-    content: `ACCRA — The African Continental Free Trade Area (AfCFTA) Secretariat, headquartered in central Accra, has reported a record 35% year-on-year surge in cross-border digital service transactions processed through the Pan-African Payment and Settlement System (PAPSS).
-
-The breakthrough system eliminates the need for African traders to convert local currencies into US dollars or euros when conducting cross-border commerce. Ghanaian software developers, textile designers, and agricultural aggregators are now settling invoices with commercial partners across East and Southern Africa in Ghanaian Cedis instantly.
-
-Trade economists at the University of Ghana praise the platform for cutting exchange conversion fees by an estimated $5 billion annually across the continent, unlocking immense growth for small-and-medium enterprises.`,
-    category: 'Business',
-    channel: 'Citi TV',
-    author: 'Abena Osei-Bonsu',
-    publishedAt: '10 hours ago',
-    imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80',
-    readTime: '4 min read',
-    views: 8900,
+    views: 10800,
     likes: 780
-  },
-  {
-    id: 'art-motorway',
-    title: 'Accra-Tema Motorway Redevelopment Project Hits 70% Completion with 10-Lane Modern Expressway',
-    summary: 'Major engineering progress on the country’s busiest commercial transit corridor promises to eliminate chronic commuter gridlock and link maritime cargo seamlessly to northern trade corridors.',
-    content: `GREATER ACCRA — The Ministry of Roads and Highways has announced that the comprehensive redevelopment and expansion of the 19.5-kilometer Accra-Tema Motorway has achieved 70% structural completion.
-
-The project transforms the historic two-lane dual carriage concrete roadway built in the 1960s into a modern 10-lane expressway featuring reinforced concrete pavements, grade-separated flyovers at Ashaiman and Klagon, and automated intelligent toll collection plazas.
-
-Project engineers confirmed that all major bridge structures spanning the railway crossings are now fully erected, with final asphalt wearing courses scheduled to commence next month. Commuters and freight haulage operators who have endured prolonged delays praised the pace of construction, which is tracking two months ahead of schedule.`,
-    category: 'Politics',
-    channel: 'JoyNews',
-    author: 'Kojo Asante',
-    publishedAt: '7 hours ago',
-    imageUrl: 'https://images.unsplash.com/photo-1545459720-aac8509eb02c?auto=format&fit=crop&w=1200&q=80',
-    readTime: '3 min read',
-    views: 21500,
-    likes: 2100
-  },
-  {
-    id: 'art-premier-league',
-    title: 'Ghana Premier League: Medeama SC Clinches Thrilling 2-1 Win to Regain Top Spot on Standings',
-    summary: 'A dramatic 92nd-minute header at Akoon Park sends Tarkwa supporters into delirium as the reigning champions secure three vital points in the heated title chase.',
-    content: `TARKWA — Medeama Sporting Club reclaimed pole position in the Ghana Premier League on Sunday afternoon following a pulsating 2-1 victory over title rivals Samartex FC before a raucous capacity crowd at Akoon Park.
-
-After an evenly contested first half that ended scoreless, Medeama broke the deadlock in the 58th minute through a sublime 25-yard curling free kick by midfield maestro Kwasi Donsu. Samartex struck back with a headed equalizer ten minutes later, setting up an intense final period.
-
-In the second minute of stoppage time, substitute forward Derrick Fordjour outjumped two defenders to nod home a pin-point cross from the left wing, sending the home bench into wild celebrations. The result moves Medeama two points clear at the summit with six rounds remaining in the 2026 campaign.`,
-    category: 'Sports',
-    channel: 'TV3 Ghana',
-    author: 'Yaw Ampofo',
-    publishedAt: '11 hours ago',
-    imageUrl: 'https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=1200&q=80',
-    readTime: '3 min read',
-    views: 17200,
-    likes: 1850
   }
 ];
 
 export const CONTENT_CREATORS: ContentCreator[] = [
   {
     id: 'mr-martei',
-    name: 'Mr Martei (Justice Martei)',
-    handle: '@mrmartei',
+    name: 'Mr Martei (Justice Martei Mamah)',
+    realName: 'Justice Martei Mamah',
+    handle: '@mr.martei',
     platform: 'Multi-Platform',
     category: 'Tech & Culture',
     status: 'Established',
-    subscribers: '125K+ Network Followers',
-    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80',
-    coverImage: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80',
-    bio: 'Founder of Plexlink, software engineer, and prominent Ghanaian tech creator known for building innovative digital identity products, link-in-bio systems, and tech breakdown content.',
+    subscribers: '25.3K+ Combined Reach',
+    avatar: 'https://yt3.googleusercontent.com/iPDGhDeG-UIGsF8WZlGQBBLWcax4l7UKMdpvFYyome9gABUSAe2F4owxEhxD47GkEW1A_cEq=s900-c-k-c0x00ffffff-no-rj',
+    bannerImage: 'https://i.ytimg.com/vi/ta_-_bIYqQc/hqdefault.jpg',
+    coverImage: 'https://i.ytimg.com/vi/ta_-_bIYqQc/hqdefault.jpg',
+    articleBodyImage: 'https://i.ytimg.com/vi/Tq2eQiG1It0/hqdefault.jpg',
+    bio: 'Justice Martei Mamah, known online as Mr Martei, is a Ghanaian software engineer, tech creator, and the founder of Plexlink (https://www.plexlink.site/), an NFC/QR smart business card and link-in-bio platform in Ghana, creator of the "Paste Here" Figma plugin, and developer at mrmartei.site (~25.3K combined reach across Instagram and TikTok).',
     award: {
       title: 'Digital Product Founder & Tech Innovator of the Year',
-      year: '2025',
+      year: '2026',
       description: 'Awarded by Ghana Digital Innovation Awards for pioneering Plexlink, bringing smart NFC contactless networking and link-in-bio solutions to African professionals.'
     },
-    profileArticle: `Justice Martei, widely recognized online as Mr Martei, is a standout Ghanaian software engineer, tech creator, and entrepreneur. He is the visionary founder of Plexlink—a breakthrough link-in-bio tool and contactless digital business card platform powered by custom NFC hardware.
+    profileArticle: `Justice Martei Mamah, known online as Mr Martei, is a Ghanaian software engineer, web developer, tech creator, and founder of Plexlink (https://www.plexlink.site/). With an engaged audience of over 25.3K combined followers across Instagram (@mr.marteii with 16.2K followers), TikTok (@mr.martei with 8.9K followers), and YouTube (146 subscribers, 78 videos), Mr Martei is redefining personal branding and digital utility in West Africa.
 
-Frustrated by the environmental waste and high friction of traditional paper business cards at African conferences and networking gatherings, Mr Martei designed and engineered Plexlink to let professionals share comprehensive contact cards, portfolios, and social profiles with a single tap of an NFC card on any smartphone.
+Frustrated by the environmental waste and inefficiency of traditional paper business cards at African conferences and networking gatherings, Mr Martei designed and engineered Plexlink to let professionals share comprehensive contact cards, portfolios, and social profiles with a single tap of an NFC card on any smartphone—without requiring an app download.
 
-Beyond product engineering, Mr Martei is an influential digital voice in the Ghanaian technology landscape, publishing practical breakdowns of modern web technologies, gadget architectures, and digital monetization strategies for emerging African creators and software developers.`,
+In addition to Plexlink, Mr Martei developed the widely praised "Paste Here" Figma plugin for designers worldwide and manages creative software projects through his portfolio platform at mrmartei.site. His regular breakdowns of web technologies, gadget architectures, and digital design tools make him one of Ghana's most promising software founders and digital creators.`,
     stats: {
-      youtubeSubscribers: '42K',
-      twitterFollowers: '38K',
-      instagramFollowers: '45K',
+      instagramFollowers: '16.2K',
+      tiktokFollowers: '8.9K',
+      youtubeSubscribers: '146',
       engagementRate: '12.8%'
     },
     socialLinks: {
-      youtube: 'https://youtube.com/@mrmartei',
-      twitter: 'https://twitter.com/mrmartei',
-      instagram: 'https://instagram.com/mrmartei'
+      tiktok: 'https://www.tiktok.com/@mr.martei',
+      instagram: 'https://www.instagram.com/mr.marteii/',
+      youtube: 'https://www.youtube.com/@mr.martei',
+      website: 'https://www.mrmartei.site/'
     }
   },
   {
     id: 'delppy',
-    name: 'Delppy (Bright Delali)',
-    handle: '@delppy_',
-    platform: 'YouTube',
+    name: 'Delppy (Emmanuel Obuobi Fianko)',
+    realName: 'Emmanuel Obuobi Fianko',
+    handle: '@delppy1_',
+    platform: 'TikTok',
     category: 'Tech & Culture',
     status: 'Established',
-    subscribers: '85K Subscribers',
-    avatar: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?auto=format&fit=crop&w=400&q=80',
-    coverImage: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1200&q=80',
-    bio: 'Respected Ghanaian tech YouTuber and gadget reviewer renowned for thorough smartphone reviews, audio gear testing, desk setups, and buying guides.',
+    subscribers: '570K+ Combined Reach',
+    avatar: 'https://panafricanaisummit.com/storage/media/eZ0r51k1RsCg4ir5jQ14jyN6yxL35sVTk5YRjTO4.jpg',
+    bannerImage: 'https://delppy.com/wp-content/uploads/2026/09/WhatsApp-Image-2026-09-04-at-09.50.07-2-390x220.jpeg',
+    coverImage: 'https://delppy.com/wp-content/uploads/2026/09/WhatsApp-Image-2026-09-04-at-09.50.07-2-390x220.jpeg',
+    articleBodyImage: 'https://diglancers.com/wp-content/uploads/2026/03/7wket4-compressed-300x300.jpg',
+    bio: 'Emmanuel Obuobi Fianko (Delppy) is a Ghanaian tech content creator, cybersecurity and AI educator, founder of Delppy.com, speaker at the Pan-African AI Summit, and co-creator of the Bytes Unlocked YouTube channel alongside Wazz.',
     award: {
       title: 'Consumer Tech Reviewer of the Year',
       year: '2025',
       description: 'Conferred at the Accra Digital Media Awards for honest, unbiased consumer electronics testing and smartphone buying guides in Ghana.'
     },
-    profileArticle: `Bright Delali, known across social media as Delppy, has built one of Ghana’s most reliable consumer electronics review channels. From flagships by Apple, Samsung, and Google to budget-friendly Android devices from Tecno and Infinix, Delppy delivers real-world performance tests tailored to Ghanaian connectivity and power realities.
+    profileArticle: `Emmanuel Obuobi Fianko, widely known across Africa as Delppy, is a leading Ghanaian technology content creator, cybersecurity educator, AI advocate, and digital strategist. He is the founder of the tech news portal Delppy.com and co-host of the popular Bytes Unlocked YouTube channel alongside Wazz.
 
-His calm, detail-oriented presentation style and transparent buying advice have made him the go-to resource for anyone in Accra or Kumasi looking to upgrade their smartphone, laptop, or desk setup.`,
+Delppy commands a combined reach of over 570K+ tech enthusiasts, including 293.6K followers on his primary TikTok account (@delppy1_) alongside 27.9K on his secondary account (@delppy_), 231K followers on Instagram, and 18.3K subscribers on Bytes Unlocked. A featured speaker at the Pan-African AI Summit, Delppy delivers real-world performance tests and cybersecurity advice tailored to African power and network environments.`,
     stats: {
-      youtubeSubscribers: '85K',
-      instagramFollowers: '52K',
-      tiktokFollowers: '68K',
+      tiktokFollowers: '293.6K',
+      instagramFollowers: '231K',
+      youtubeSubscribers: '18.3K',
       engagementRate: '9.6%'
     },
     socialLinks: {
-      youtube: 'https://youtube.com/@delppy_',
-      instagram: 'https://instagram.com/delppy_'
+      tiktok: 'https://www.tiktok.com/@delppy1_',
+      instagram: 'https://www.instagram.com/delppy1_/',
+      youtube: 'https://www.youtube.com/@BYTESUNLOCKED',
+      website: 'https://delppy.com/'
     }
   },
   {
     id: 'rick-aqua',
-    name: 'Rick Aqua (Patrick Aqua)',
-    handle: '@rickaqua',
-    platform: 'YouTube',
+    name: 'Rick Aqua (Patrick Acquah)',
+    realName: 'Patrick Acquah',
+    handle: '@rick_aqua',
+    platform: 'Instagram',
     category: 'Tech & Culture',
     status: 'Established',
-    subscribers: '195K Subscribers',
-    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80',
-    coverImage: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80',
-    bio: 'Celebrated Ghanaian tech reviewer and video creator known for cinematic B-roll, smartphone camera shootouts, Apple ecosystem deep dives, and wearable tech.',
+    subscribers: '232K+ Combined Reach',
+    avatar: 'https://yt3.googleusercontent.com/ytc/AIdro_meqDECKfl-7dl4Goxuegu3H5oD50VSYVxodINsTSj3SBI=s900-c-k-c0x00ffffff-no-rj',
+    bannerImage: 'https://i.ytimg.com/vi/Lx3Qx8j_hpw/maxresdefault.jpg',
+    coverImage: 'https://i.ytimg.com/vi/Lx3Qx8j_hpw/maxresdefault.jpg',
+    articleBodyImage: 'https://i.ytimg.com/vi/aTDdWtwd-s0/maxresdefault.jpg',
+    bio: 'Patrick Acquah (stylized as Rick Aqua) is a Ghanaian consumer tech reviewer and video creator known for cinematic smartphone comparisons, camera shootouts, and Apple/Android ecosystem deep dives.',
     award: {
       title: 'Cinematic Tech Storyteller of the Year',
       year: '2025',
       description: 'Awarded by Ghana Tech Content Summit for elevating video production values and visual storytelling in African technology media.'
     },
-    profileArticle: `Patrick Aqua, popularly known as Rick Aqua, has redefined technology review videography in West Africa. With ultra-crisp cinematography, creative lighting, and engaging sound design, Rick Aqua produces tech reviews that rival the best international creators.
+    profileArticle: `Patrick Acquah, professionally stylized as Rick Aqua, has redefined technology review videography in West Africa. With studio-grade cinematography, innovative lighting, and intricate sound design, Rick Aqua produces gadget reviews that set the visual benchmark for African creators.
 
-His channel covers comprehensive smartphone shootouts, real-world camera testing, daily-driver tech essentials, and smart home appliances, demonstrating how premium technology integrates into modern African lifestyle.`,
+His YouTube channel (@RickAqua) hosts over 606 meticulously crafted videos with more than 11.16 million total channel views and 47.2K subscribers. Across social media, he connects with 162K followers on Instagram (@rick_aqua) and 23.2K on TikTok, presenting in-depth camera shootouts, daily-driver durability tests, and smart home gadget reviews.`,
     stats: {
-      youtubeSubscribers: '195K',
-      instagramFollowers: '78K',
-      tiktokFollowers: '125K',
+      instagramFollowers: '162K',
+      youtubeSubscribers: '47.2K',
+      tiktokFollowers: '23.2K',
       engagementRate: '11.4%'
     },
     socialLinks: {
-      youtube: 'https://youtube.com/@rickaqua',
-      twitter: 'https://twitter.com/rickaqua',
-      instagram: 'https://instagram.com/rickaqua'
+      instagram: 'https://www.instagram.com/rick_aqua/',
+      youtube: 'https://www.youtube.com/@RickAqua',
+      tiktok: 'https://www.tiktok.com/@rick_aqua',
+      twitter: 'https://x.com/true_rick_aqua'
     }
   },
   {
     id: 'dessy-ocean',
-    name: 'Dessy Ocean (Desmond Ocean)',
-    handle: '@dessyocean',
+    name: 'Dessy Ocean (Desmond Ofori Appiah)',
+    realName: 'Desmond Ofori Appiah',
+    handle: '@dessy_ocean',
     platform: 'TikTok',
     category: 'Tech & Culture',
     status: 'Breakthrough',
-    subscribers: '310K Followers',
-    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80',
-    coverImage: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80',
-    bio: 'Dynamic Ghanaian tech content creator famous on TikTok and Instagram for fast-paced smartphone hidden features, iOS & Android tips, and AI productivity tricks.',
+    subscribers: '463K+ Combined Reach',
+    avatar: 'https://ghanamediatechexpo.org/wp-content/uploads/2025/11/Desmond-Ofori-Appiah-.jpg',
+    bannerImage: 'https://miro.medium.com/v2/resize:fit:2400/1*8eGgWHwoWgb0DbmNpGWxfA.png',
+    coverImage: 'https://miro.medium.com/v2/resize:fit:2400/1*8eGgWHwoWgb0DbmNpGWxfA.png',
+    articleBodyImage: 'https://techinghanaconference.com/wp-content/uploads/2023/11/Desmond-Dessy-Ocean-scaled.jpeg',
+    bio: 'Desmond Ofori Appiah, known professionally as Dessy Ocean, is a dynamic Ghanaian tech creator selected by Meta in May 2024 to promote Meta\'s AI technologies in Ghana.',
     award: {
-      title: 'Short-Form Tech Educator of the Year',
-      year: '2026',
-      description: 'Presented by West Africa Creator Guild for making smartphone productivity and software tricks universally accessible to youth.'
+      title: 'Tech Creator of the Year',
+      year: '2024',
+      description: 'Awarded at the Ghana Creators Festival / Creators Awards Ghana for outstanding digital literacy advocacy and short-form tech tutorials.'
     },
-    profileArticle: `Desmond Ocean, recognized as Dessy Ocean, has unlocked viral success through short-form educational tech content. By distilling complex software features, hidden smartphone settings, and artificial intelligence prompts into engaging 60-second reels, Dessy has amassed over 300,000 followers across TikTok and Instagram.
+    profileArticle: `Desmond Ofori Appiah, recognized professionally as Dessy Ocean, has unlocked viral success through short-form educational tech content. By distilling complex software features, hidden smartphone settings, and artificial intelligence prompts into engaging reels, Dessy has amassed over 293.2K followers on TikTok (@dessy_ocean, with 5.6M+ likes), 156K on Instagram, 9.29K on YouTube (852 videos), and 5K on X.
 
-His bite-sized tutorials frequently trend on Ghanaian social media, providing everyday smartphone users with immediate value and digital literacy.`,
+In recognition of his impactful digital presence, Meta selected Dessy Ocean in May 2024 to spearhead and promote Meta's AI technologies and tools across Ghana, cementing his role as a trusted digital literacy ambassador and speaker at the Ghana Media Tech Expo and Tech in Ghana Conference.`,
     stats: {
-      tiktokFollowers: '310K',
-      instagramFollowers: '110K',
+      tiktokFollowers: '293.2K',
+      instagramFollowers: '156K',
+      youtubeSubscribers: '9.29K',
+      twitterFollowers: '5K',
       engagementRate: '14.2%'
     },
     socialLinks: {
-      tiktok: 'https://tiktok.com/@dessyocean',
-      instagram: 'https://instagram.com/dessyocean'
+      tiktok: 'https://www.tiktok.com/@dessy_ocean',
+      instagram: 'https://www.instagram.com/dessy_ocean/',
+      youtube: 'https://www.youtube.com/@dessyocean',
+      twitter: 'https://x.com/dessy_ocean'
     }
   },
   {
     id: 'wazz',
-    name: 'Wazz (Kwabena Wazz)',
-    handle: '@wazz_tech',
-    platform: 'YouTube',
+    name: 'Wazz (Bytes Unlocked)',
+    realName: 'Wazz',
+    handle: '@onetruewazz',
+    platform: 'Instagram',
     category: 'Tech & Culture',
     status: 'Established',
-    subscribers: '95K Subscribers',
-    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80',
-    coverImage: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80',
-    bio: 'Ghana’s leading PC building and custom hardware creator, specializing in high-performance desktop rigs, thermal benchmarks, and gaming hardware.',
+    subscribers: '584K+ Combined Reach',
+    avatar: 'https://yt3.googleusercontent.com/ytc/AIdro_n0aB7_Cr0SG7z_sCbJm6Xl_K1NCgBxTU3UqIOS1S-6-n0=s900-c-k-c0x00ffffff-no-rj',
+    bannerImage: 'https://i.ytimg.com/vi/p7HfjFeo__4/maxresdefault.jpg',
+    coverImage: 'https://i.ytimg.com/vi/p7HfjFeo__4/maxresdefault.jpg',
+    articleBodyImage: 'https://i.ytimg.com/vi/COWaiCDcm5Y/hq720.jpg',
+    bio: 'Wazz is the co-host of Ghana\'s Bytes Unlocked tech channel alongside Delppy, specializing in short-form tech, smartphone durability, foldable devices, and audio gear content on Instagram (@onetruewazz) and TikTok (@wazzhimself).',
     award: {
-      title: 'Hardware Specialist & PC Modder Award',
+      title: 'Consumer Tech Guide & Video Host Award',
       year: '2025',
-      description: 'Awarded by Accra Gaming & Hardware Community for pioneering custom gaming PC build tutorials in Ghana.'
+      description: 'Awarded by Accra Tech Media Community for insightful consumer tech guides and collaborative hardware testing on Bytes Unlocked.'
     },
-    profileArticle: `Kwabena Wazz has carved out a unique and indispensable niche in Ghana’s digital landscape as a master PC builder and hardware diagnostic expert. Through detailed build logs, component compatibility guides, and troubleshooting videos, Wazz teaches African gamers, 3D artists, and software engineers how to assemble and optimize their own high-performance workstations.`,
+    profileArticle: `Wazz is the co-creator and dynamic co-host of Bytes Unlocked (@BYTESUNLOCKED), one of Ghana's most engaging collaborative tech YouTube channels, operated alongside fellow creator Delppy.
+
+With 571 published videos and over 3.04 million collective views on YouTube (18.3K subscribers), alongside 480,000 followers on Instagram (@onetruewazz) and 85,600 on TikTok (@wazzhimself), Wazz breaks down honest smartphone durability tests, foldable screens, audio earbuds, and day-to-day gadget reliability with unmatched authenticity.`,
     stats: {
-      youtubeSubscribers: '95K',
-      twitterFollowers: '62K',
+      instagramFollowers: '480K',
+      tiktokFollowers: '85.6K',
+      youtubeSubscribers: '18.3K',
       engagementRate: '10.3%'
     },
     socialLinks: {
-      youtube: 'https://youtube.com/@wazz_tech',
-      twitter: 'https://twitter.com/wazz_tech'
+      instagram: 'https://www.instagram.com/onetruewazz/',
+      tiktok: 'https://www.tiktok.com/@wazzhimself',
+      youtube: 'https://www.youtube.com/@BYTESUNLOCKED'
     }
   },
   {
     id: 'clifford-scott',
-    name: 'Clifford Scott',
-    handle: '@cliffordscott',
-    platform: 'YouTube',
+    name: 'Clifford Scott (CoolTechie)',
+    realName: 'Clifford Scott',
+    handle: '@cliffordscott_',
+    platform: 'TikTok',
     category: 'Tech & Culture',
     status: 'Established',
-    subscribers: '120K Subscribers',
-    avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80',
-    coverImage: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80',
-    bio: 'Tech educator and digital opportunities creator providing practical software guides, online monetization tutorials, and gadget insights.',
+    subscribers: '231K+ Combined Reach',
+    avatar: 'https://labarijournal.com/wp-content/uploads/2025/12/Screenshot-2025-12-17-at-1.26.36-PM-632x1024.png',
+    bannerImage: 'https://i.ytimg.com/vi/OJSwJ_RWIbA/hqdefault.jpg',
+    coverImage: 'https://i.ytimg.com/vi/OJSwJ_RWIbA/hqdefault.jpg',
+    articleBodyImage: 'https://i.ytimg.com/vi/ZUFAhmnDN0A/hqdefault.jpg',
+    bio: 'Clifford Scott (CoolTechie) began recording tech explainers in Junior High School with a borrowed phone, monetized his YouTube in under a year, and built over 150K TikTok followers.',
     award: {
       title: 'Tech Education Creator of the Year',
       year: '2025',
       description: 'Conferred by Ghana EdTech Network for accessible digital skills tutorials and software guidance.'
     },
-    profileArticle: `Clifford Scott has empowered tens of thousands of young Ghanaians to navigate digital tools and internet monetization opportunities. His approachable tutorials break down software applications, digital banking tools, web navigation, and gadget purchasing advice with precision and clarity.`,
+    profileArticle: `Clifford Scott, famously known as CoolTechie, embodies the inspiring resilience of Ghana's young digital creator economy. Starting his journey in Junior High School using a borrowed smartphone, Clifford taught himself video editing and tech communication, successfully monetizing his YouTube channel within twelve months.
+
+When an unexpected platform ban wiped out his initial account, he rebounded by building a brand-new TikTok presence (@cliffordscott_) to over 150,000 followers and growing his YouTube channel (@CliffordScott) to 46,400 subscribers (with 246 videos and 5.21M+ views), alongside 34,700 on Instagram. Today, his practical tutorials on software tools, PC setups, and creator workflows empower students across the continent.`,
     stats: {
-      youtubeSubscribers: '120K',
-      twitterFollowers: '58K',
+      tiktokFollowers: '150K',
+      youtubeSubscribers: '46.4K',
+      instagramFollowers: '34.7K',
       engagementRate: '9.8%'
     },
     socialLinks: {
-      youtube: 'https://youtube.com/@cliffordscott',
-      twitter: 'https://twitter.com/cliffordscott'
+      tiktok: 'https://www.tiktok.com/@cliffordscott_',
+      youtube: 'https://www.youtube.com/@CliffordScott',
+      instagram: 'https://www.instagram.com/cliffordscott_/'
     }
   },
   {
     id: 'selorm-tech',
-    name: 'Selorm Tech',
-    handle: '@selormtech',
+    name: 'Tech In Twi (Kwabena Boateng)',
+    realName: 'Kwabena Boateng',
+    handle: '@TechInTwi',
     platform: 'YouTube',
     category: 'Tech & Culture',
     status: 'Breakthrough',
-    subscribers: '58K Subscribers',
-    avatar: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=400&q=80',
-    coverImage: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80',
-    bio: 'Breakthrough tech reviewer who champions accessible tech analysis in both Twi and English, focusing on everyday mobile technology.',
+    subscribers: '190K YouTube Subscribers',
+    avatar: 'https://pbs.twimg.com/profile_images/2045979387347050497/CVhMsuOW.jpg',
+    bannerImage: 'https://i.ytimg.com/vi/RAgVWURsoIE/hq720.jpg',
+    coverImage: 'https://i.ytimg.com/vi/RAgVWURsoIE/hq720.jpg',
+    articleBodyImage: 'https://yt3.googleusercontent.com/qUM6YxXRkdO2WLSuwzdQjQB2pkcDjYiMyqR3UZWS6-9QjiQ4jtRBW3BfCGddFWb8FF4QQJGmKXo=s900-c-k-c0x00ffffff-no-rj',
+    bio: 'Tech In Twi (Kwabena Boateng) is Ghana\'s pioneering Twi-language tech educator, breaking down smartphones, computing tools, and digital literacy in authentic Ghanaian dialect.',
     award: {
       title: 'Indigenous Language Tech Advocate',
       year: '2026',
       description: 'Recognized at Ghana Silicon Summit for pioneering hardware reviews and digital safety tutorials in local Ghanaian dialects.'
     },
-    profileArticle: `Selorm Tech has created a refreshing wave in Ghana's tech creator community by delivering tech reviews that seamlessly incorporate local Ghanaian idioms and Twi language explanations. This inclusive approach ensures that digital product knowledge is not confined to English speakers, expanding tech literacy across Ghana.`,
+    profileArticle: `Kwabena Boateng, creator of the renowned Tech In Twi channel, has revolutionized technology education in Ghana. By creating comprehensive smartphone reviews, software tutorials, and digital safety guides entirely in the Twi language, Kwabena has made digital knowledge accessible to millions who prefer indigenous language content.
+
+With over 766 videos, 190,000 YouTube subscribers, 146,000+ Facebook followers, and 42,000+ TikTok followers, Tech In Twi bridges the digital divide and demonstrates that high-tech concepts thrive when communicated in Ghana's native tongues.`,
     stats: {
-      youtubeSubscribers: '58K',
-      tiktokFollowers: '85K',
+      youtubeSubscribers: '190K',
+      facebookFollowers: '146K+',
+      tiktokFollowers: '42K+',
       engagementRate: '13.7%'
     },
     socialLinks: {
-      youtube: 'https://youtube.com/@selormtech',
-      twitter: 'https://twitter.com/selormtech'
+      youtube: 'https://www.youtube.com/@TechInTwi'
     }
   },
   {
     id: 'kalyjay',
-    name: 'Kalyjay (Gyimah Emmanuel Koffie)',
-    handle: '@KalyJay',
+    name: 'Kalyjay (Joshua Buernortey Boye-Doe)',
+    realName: 'Joshua Buernortey Boye-Doe',
+    handle: '@gyaigyimii',
     platform: 'Multi-Platform',
     category: 'Pop Culture & Critique',
     status: 'Established',
-    subscribers: '1.2M Followers on X',
-    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80',
-    coverImage: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80',
-    bio: 'Ghana’s leading digital influencer and social media campaigner, initiator of the historic #FixTheCountry advocacy movement, and top culture voice on X (Twitter).',
+    subscribers: '2.5M+ Combined Reach',
+    avatar: 'https://upload.wikimedia.org/wikipedia/commons/7/7e/KalyJay_at_a_bar_in_osu.jpg',
+    bannerImage: 'https://cdn.yen.com.gh/images/360x203/c8dd8d2a75046518.jpeg?v=1',
+    coverImage: 'https://cdn.yen.com.gh/images/360x203/c8dd8d2a75046518.jpeg?v=1',
+    articleBodyImage: 'https://cdn.ghanaweb.com/imagelib/pics/851/85169391.jpg',
+    bio: 'Joshua Buernortey Boye-Doe, widely known as KalyJay (@gyaigyimii), is a leading digital influencer, GIJ alumnus, and initiator of the historic #FixTheCountry movement with over 2.1M followers on X.',
     award: {
-      title: 'Digital Campaigner & Cultural Voice of the Decade',
-      year: '2025',
-      description: 'Conferred by Ghana Social Media & Digital Honours for championing youth civic participation and digital advocacy.'
+      title: 'Twitter Influencer of the Year',
+      year: '2024',
+      description: 'Awarded at the Pulse Ghana Influencer Awards for shaping national discourse and leading youth civic mobilization.'
     },
-    profileArticle: `Gyimah Emmanuel Koffie, universally celebrated as Kalyjay, is a defining figure in modern Ghanaian digital culture. As the key initiator of the landmark #FixTheCountry social movement, Kalyjay mobilized millions of young Ghanaians to demand governance accountability, youth employment, and systemic reforms.
+    profileArticle: `Joshua Buernortey Boye-Doe, universally known across West Africa as KalyJay (@gyaigyimii), is a defining force in Ghanaian digital media and civic mobilization. Educated at the University of Media, Arts and Communication (Ghana Institute of Journalism), Kalyjay sparked the historic #FixTheCountry movement, mobilizing millions of young citizens online to demand governance transparency and youth opportunities.
 
-Beyond activism, his nightly Twitter Spaces and viral culture commentary serve as the town hall of Ghanaian youth discourse, connecting entertainment stars, politicians, and everyday citizens.`,
+With 2.1 million followers on X (@gyaigyimii), 74,200 on Instagram (@kalyjayy), 15,800 on TikTok (392.4K likes), and over 310K on Snapchat, his platform serves as a modern town square where breaking social commentary, celebrity spotlights, and youth initiatives converge daily.`,
     stats: {
-      twitterFollowers: '1.2M',
-      instagramFollowers: '480K',
+      twitterFollowers: '2.1M',
+      instagramFollowers: '74.2K',
+      tiktokFollowers: '15.8K',
       engagementRate: '15.4%'
     },
     socialLinks: {
-      twitter: 'https://twitter.com/KalyJay',
-      instagram: 'https://instagram.com/kalyjay'
+      twitter: 'https://x.com/gyaigyimii',
+      instagram: 'https://www.instagram.com/kalyjayy/',
+      tiktok: 'https://www.tiktok.com/@kalyjayy'
     }
   },
   {
     id: 'asantewaa',
     name: 'Asantewaa (Martina Dwamena)',
-    handle: '@iam_asantewaa_',
+    realName: 'Martina Dwamena',
+    handle: '@asantewaaaaa',
     platform: 'TikTok',
     category: 'Dance & Viral',
     status: 'Established',
-    subscribers: '3.4M Followers',
-    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80',
-    coverImage: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1200&q=80',
-    bio: 'Ghana’s premier TikTok superstar, certified nurse, actress, and brand ambassador famous for viral dance routines, comedy skits, and lifestyle elegance.',
+    subscribers: '5.2M+ Combined Reach',
+    avatar: 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Asantewaa_at_3_Music_Awards_22_26.jpg',
+    bannerImage: 'https://cdn.yen.com.gh/tags/600x600/4b956fe5c270b0fa.jpeg?v=1',
+    coverImage: 'https://cdn.yen.com.gh/tags/600x600/4b956fe5c270b0fa.jpeg?v=1',
+    articleBodyImage: 'https://cdn.ghanaweb.com/imagelib/pics/604/60458616.295.jpg',
+    bio: 'Martina Dwamena, known to millions as Asantewaa, is a certified nurse, actress, and premier TikTok superstar with over 4.1M followers and 130.9M+ likes.',
     award: {
       title: 'TikTok Influencer of the Year',
-      year: '2025',
-      description: 'Awarded by Ghana Entertainment Awards for unmatched engagement and brand collaborations.'
+      year: '2021',
+      description: 'Awarded at the Pulse Ghana Influencer Awards for viral dance routines and unmatched audience engagement.'
     },
-    profileArticle: `Martina Dwamena, known to millions as Asantewaa, transitioned from a professional career in nursing to become Ghana’s undisputed queen of TikTok. Her seamless blend of relatable Ghanaian family sketches, infectious dance challenges, and brand ambassadorships has set industry standards for female digital creators across West Africa.`,
+    profileArticle: `Martina Dwamena, celebrated as Asantewaa, transitioned from professional nursing to become Ghana's undisputed queen of TikTok. Amassing over 4.1 million followers on TikTok (@asantewaaaaa with 130.9M+ likes) and 1.1 million on Instagram (@_asantewaaaa_), her seamless blend of relatable family comedy, infectious dance trends, and commercial brand ambassadorships has set the benchmark for female creators in West Africa.
+
+In 2021, she was crowned TikTok Influencer of the Year at the Pulse Ghana Influencer Awards, cementing her reputation as an innovative entertainer and leading digital brand icon.`,
     stats: {
-      tiktokFollowers: '3.4M',
-      instagramFollowers: '1.9M',
+      tiktokFollowers: '4.1M',
+      instagramFollowers: '1.1M',
       engagementRate: '9.8%'
     },
     socialLinks: {
-      tiktok: 'https://tiktok.com/@iam_asantewaa_',
-      instagram: 'https://instagram.com/iam_asantewaa_'
+      tiktok: 'https://www.tiktok.com/@asantewaaaaa',
+      instagram: 'https://www.instagram.com/_asantewaaaa_/'
     }
   },
   {
     id: 'endurance-grand',
-    name: 'Endurance Grand (Endurance Dedzo)',
+    name: 'Endurance Grand (Endurance Nkechi Dzigbordi Dedzo)',
+    realName: 'Endurance Nkechi Dzigbordi Dedzo',
     handle: '@endurancegrand',
     platform: 'TikTok',
     category: 'Dance & Viral',
     status: 'Established',
-    subscribers: '4.1M Followers',
-    avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80',
-    coverImage: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80',
-    bio: 'Lead dancer with DWP Academy, international choreographer, and TikTok icon renowned for introducing Ghanaian street dance routines to the global stage.',
+    subscribers: '16.4M+ Combined Reach',
+    avatar: 'https://yt3.googleusercontent.com/xNYLT0yJgCqcgq0Fwcu4uh41asGSveCU6zAj3gpPu2xoDQdHlUnS5SHJQn8SxwJRQqJHQpEGBWo=s900-c-k-c0x00ffffff-no-rj',
+    bannerImage: 'https://i.ytimg.com/vi/SlaQjtKdS6U/maxresdefault.jpg',
+    coverImage: 'https://i.ytimg.com/vi/SlaQjtKdS6U/maxresdefault.jpg',
+    articleBodyImage: 'https://endurancegrand.co/wp-content/uploads/2023/03/228A6872-2-scaled.jpg',
+    bio: 'Endurance Nkechi Dzigbordi Dedzo is a lead dancer with DWP Academy, international choreographer, and TikTok icon with over 14M followers and 442.8M+ likes.',
     award: {
-      title: 'African Dancer & Choreographer of the Year',
-      year: '2025',
-      description: 'Conferred by Africa Dance Honours for championing African choreography on global concert stages and digital media.'
+      title: 'Creator of the Year',
+      year: '2024',
+      description: 'Awarded at the Ghana Creators Festival for phenomenal global dance choreography and crossing 10M+ followers on TikTok.'
     },
-    profileArticle: `Endurance Dzigbordi Dedzo, affectionately known as Endurance Grand, represents the vanguard of modern African choreography. Operating through DWP Academy in Accra, her viral TikTok routines set the dance trends for songs by global superstars including Davido, Burna Boy, and Stonebwoy.`,
+    profileArticle: `Endurance Nkechi Dzigbordi Dedzo, known worldwide as Endurance Grand, represents the pinnacle of modern African choreography. Operating from DWP Academy in Accra, Endurance has created viral dance anthems that propelled her beyond 14 million TikTok followers (@endurancegrand with 442.8M+ likes), 1.7 million on Instagram, and 723,000 on YouTube (852 videos and 219.97M+ views).
+
+Her routines for global superstars like Davido, Stonebwoy, and Burna Boy have captured audiences across continents, earning her the prestigious Creator of the Year honors at the Ghana Creators Festival.`,
     stats: {
-      tiktokFollowers: '4.1M',
+      tiktokFollowers: '14M',
       instagramFollowers: '1.7M',
+      youtubeSubscribers: '723K',
       engagementRate: '11.8%'
     },
     socialLinks: {
-      tiktok: 'https://tiktok.com/@endurancegrand',
-      instagram: 'https://instagram.com/endurancegrand'
+      tiktok: 'https://www.tiktok.com/@endurancegrand',
+      instagram: 'https://www.instagram.com/endurancegrand/',
+      youtube: 'https://www.youtube.com/@EnduranceGrand',
+      website: 'https://endurancegrand.co/'
     }
   },
   {
     id: 'official-starter',
-    name: 'Official Starter (Ernest Kemevor)',
+    name: 'Official Starter (Ernest Raja Nettey)',
+    realName: 'Ernest Raja Nettey',
     handle: '@officialstarter_',
     platform: 'TikTok',
     category: 'Comedy & Lifestyle',
     status: 'Established',
-    subscribers: '2.4M Followers',
-    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80',
-    coverImage: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=80',
-    bio: 'Beloved viral creator and dancer famous for dancing joyfully alongside market women at Makola Market, bringing Ghanaian street culture to global acclaim.',
+    subscribers: '5.1M+ Combined Reach',
+    avatar: 'https://yt3.googleusercontent.com/UPEE7P2vdvJHajKE8KaCuvJrwIeUmupVBo5tnUIKsq12_sMaApXYmJYZ6BONuK1xS6uBi0N5aw=s900-c-k-c0x00ffffff-no-rj',
+    bannerImage: 'https://i.ytimg.com/vi/eILqjIYpazY/maxresdefault.jpg',
+    coverImage: 'https://i.ytimg.com/vi/eILqjIYpazY/maxresdefault.jpg',
+    articleBodyImage: 'https://i.ytimg.com/vi/lKfVzzIJerg/maxresdefault.jpg',
+    bio: 'Ernest Raja Nettey (also known as Raja) is a viral creator and DWP Academy dancer famous for dancing joyfully alongside market women at Makola Market (~4.3M TikTok followers).',
     award: {
       title: 'Cultural Ambassador & Joy Creator Award',
       year: '2025',
       description: 'Presented by Ghana Tourism Authority for celebrating Ghanaian informal market culture and radiating authentic joy to global audiences.'
     },
-    profileArticle: `Ernest Kemevor, widely adored as Official Starter, touched the world with a singularly wholesome creative concept: dancing alongside everyday Ghanaian market mothers and traders at Makola Market and Kejetia. His viral videos have received praise from international artists, daytime talk shows, and cultural institutions worldwide.`,
+    profileArticle: `Ernest Raja Nettey, universally beloved as Official Starter (or Raja), touched global audiences with an uplifting and authentic concept: dancing joyfully alongside everyday market mothers and traders at Accra's Makola Market and Kumasi's Kejetia.
+
+Affiliated with DWP Academy, his viral videos celebrate the dignity, warmth, and resilience of Ghanaian informal traders. Amassing over 4.3 million TikTok followers (108.1M+ likes), 671,000 on Instagram, and 164,000 on YouTube (1,123 videos, 55.66M+ views), his infectious routines have earned accolades from international music icons, billboard campaigns in Accra, and acclaim from cultural bodies worldwide.`,
     stats: {
-      tiktokFollowers: '2.4M',
-      instagramFollowers: '1.1M',
+      tiktokFollowers: '4.3M',
+      instagramFollowers: '671K',
+      youtubeSubscribers: '164K',
       engagementRate: '12.5%'
     },
     socialLinks: {
-      tiktok: 'https://tiktok.com/@officialstarter_',
-      instagram: 'https://instagram.com/officialstarter_'
+      tiktok: 'https://www.tiktok.com/@officialstarter_',
+      instagram: 'https://www.instagram.com/officialstarter_/',
+      youtube: 'https://www.youtube.com/@officialstarter_'
     }
   },
   {
     id: 'wode-maya',
-    name: 'Wode Maya (Kobina Ackon)',
+    name: 'Wode Maya (Berthold Kobby Winkler Ackon)',
+    realName: 'Berthold Kobby Winkler Ackon',
     handle: '@wodemaya',
     platform: 'YouTube',
     category: 'Travel & Heritage',
     status: 'Established',
-    subscribers: '1.6M Subscribers',
-    avatar: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=400&q=80',
-    coverImage: 'https://images.unsplash.com/photo-1523821741446-edb2b68bb7a0?auto=format&fit=crop&w=1200&q=80',
-    bio: 'Pioneering Pan-African YouTuber highlighting positive development, real estate, culture, and entrepreneurial successes across the African continent.',
+    subscribers: '4.3M+ Combined Reach',
+    avatar: 'https://yt3.ggpht.com/LoEIb550gchEDJy8MQiNBtqm5UZRuywFA4kiSyYM1fiWFfFsbK4yH9VXEqMiFR_CSHIT86BJKQ=s800-c-k-c0x00ffffff-no-rj',
+    bannerImage: 'https://i.ytimg.com/vi/Ix9-1CpcOhQ/maxresdefault.jpg',
+    coverImage: 'https://i.ytimg.com/vi/Ix9-1CpcOhQ/maxresdefault.jpg',
+    articleBodyImage: 'https://upload.wikimedia.org/wikipedia/commons/b/ba/Wode_Maya_at_Ham%27s_Residence.jpg',
+    bio: 'Berthold Kobby Winkler Ackon, universally known as Wode Maya, is a pioneering Pan-African YouTuber with over 2.05M subscribers promoting African business, real estate, and tourism.',
     award: {
       title: 'Pan-African Tourism & Storyteller Award',
       year: '2024',
       description: 'Awarded by African Union Diaspora Directorate for shifting global perceptions and championing intra-African tourism.'
     },
-    profileArticle: `Kobina Ackon, universally known as Wode Maya, is one of the most transformative independent documentarians on the African continent. With a motto of "Africa to the World," his channel showcases thriving businesses, luxury real estate, and cultural heritage, dispelling negative stereotypes.`,
+    profileArticle: `Berthold Kobby Winkler Ackon, universally celebrated as Wode Maya, is one of the most transformative independent documentarians on the African continent. Under his signature banner "Africa to the World," his YouTube channel has surpassed 2.05 million subscribers (2,172 videos, 349.89M+ views), with 402,000 on Instagram (@mrghanababy), 328.9K on X, and 1.5M+ on Facebook.
+
+From modern real estate developments and agricultural innovations to conversations with diaspora returnees, Wode Maya's camera showcases African ingenuity, inspiring thousands to invest and travel across the continent.`,
     stats: {
-      youtubeSubscribers: '1.6M',
-      instagramFollowers: '680K',
+      youtubeSubscribers: '2.05M',
+      instagramFollowers: '402K',
+      twitterFollowers: '328.9K',
+      facebookFollowers: '1.5M+',
       engagementRate: '8.4%'
     },
     socialLinks: {
-      youtube: 'https://youtube.com/@wodemaya',
-      twitter: 'https://twitter.com/wodemaya'
+      youtube: 'https://www.youtube.com/@wodemaya',
+      instagram: 'https://www.instagram.com/mrghanababy/',
+      twitter: 'https://x.com/wode_maya',
+      website: 'https://wodemaya.me/'
     }
   },
   {
     id: 'kwadwo-sheldon',
     name: 'Kwadwo Sheldon (Bernard Kwadwo Amoafo)',
+    realName: 'Bernard Kwadwo Amoafo',
     handle: '@kwadwosheldon',
-    platform: 'YouTube',
+    platform: 'Multi-Platform',
     category: 'Pop Culture & Critique',
     status: 'Established',
-    subscribers: '680K Subscribers',
-    avatar: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=400&q=80',
-    coverImage: 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=1200&q=80',
-    bio: 'Founder of Kwadwo Sheldon Studios, digital satirist, and social commentator famous for "Yawa of the Day" and uncompromising media critique.',
+    subscribers: '4.3M+ Combined Reach',
+    avatar: 'https://yt3.googleusercontent.com/mJATfrwDmaOBemb5ic91dCdGcfAPXOa21VwkH9529R1x8BH2sJKN0N0l588io3TQcDYam4orpA=s900-c-k-c0x00ffffff-no-rj',
+    bannerImage: 'https://i.ytimg.com/vi/_TLS_fHumLk/maxresdefault.jpg',
+    coverImage: 'https://i.ytimg.com/vi/_TLS_fHumLk/maxresdefault.jpg',
+    articleBodyImage: 'https://ghanaremembers.com/images/http/article_images/public/kwadwo-sheldon-1.jpg/f1d52b539308fd570e7c23ddf345cd2e/kwadwo-sheldon-1.webp',
+    bio: 'Bernard Kwadwo Amoafo, known as Kwadwo Sheldon, is a digital satirist and studio head of Kwadwo Sheldon Studios with 848K YouTube subscribers, 1.9M on X, and 1.4M on Instagram.',
     award: {
-      title: 'Digital Media Satirist of the Year',
-      year: '2025',
-      description: 'Awarded by Ghana Bloggers Association for pioneering fearless digital critique and building a full-scale digital broadcasting studio.'
+      title: 'Entertainment Creator of the Year (KSS Studios)',
+      year: '2024',
+      description: 'Awarded at the Ghana Creators Festival for pioneering digital satire, news commentary, and independent studio broadcasting.'
     },
-    profileArticle: `Bernard Kwadwo Amoafo, known as Kwadwo Sheldon, is a powerhouse in Ghanaian online entertainment. Through flagship shows like "Yawa of the Day" and celebrity interview formats, Sheldon holds politicians, musicians, and public figures accountable while building one of the nation's premier digital production studios.`,
+    profileArticle: `Bernard Kwadwo Amoafo, known to audiences as Kwadwo Sheldon, has built one of Ghana's premier independent digital broadcasting enterprises, Kwadwo Sheldon Studios (KSS). With over 6,367 videos, 848,000 subscribers, and 250.85 million views on YouTube, alongside 1.9 million followers on X (@kwadwosheldon), 1.4 million on Instagram, and 195.6K on TikTok, Sheldon commands immense cultural influence.
+
+Through hit formats like "Yawa of the Day" and exclusive artist interviews, he provides fearless media critique and humor, winning Entertainment Creator of the Year at the Ghana Creators Festival.`,
     stats: {
-      youtubeSubscribers: '680K',
-      twitterFollowers: '850K',
+      twitterFollowers: '1.9M',
+      instagramFollowers: '1.4M',
+      youtubeSubscribers: '848K',
+      tiktokFollowers: '195.6K',
       engagementRate: '10.8%'
     },
     socialLinks: {
-      youtube: 'https://youtube.com/@kwadwosheldon',
-      twitter: 'https://twitter.com/kwadwosheldon'
+      youtube: 'https://www.youtube.com/@kwadwosheldonstudios',
+      twitter: 'https://x.com/kwadwosheldon',
+      instagram: 'https://www.instagram.com/kwadwosheldon/',
+      tiktok: 'https://www.tiktok.com/@kwadwosheldon',
+      website: 'https://kwadwosheldonstudios.com/'
     }
   },
   {
     id: 'sdk-dele',
     name: 'SDK Dele (Sadik Sulley)',
+    realName: 'Sadik Sulley',
     handle: '@sdkdele',
     platform: 'Multi-Platform',
     category: 'Comedy & Lifestyle',
     status: 'Established',
-    subscribers: '1.1M Followers',
-    avatar: 'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=400&q=80',
-    coverImage: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1200&q=80',
-    bio: 'Renowned Ghanaian comedian, actor, and creator of the viral "SDK Food Tour" showcasing authentic local Ghanaian street cuisine.',
+    subscribers: '1.14M+ Combined Reach',
+    avatar: 'https://yt3.googleusercontent.com/GtlecAR8oUVnBQWQo8xBaksao0GE0UObrXDIYSnj1ajsJJWrHt4sRuuw0KFkafpRM-kVBaPN=s900-c-k-c0x00ffffff-no-rj',
+    bannerImage: 'https://i.ytimg.com/vi/pNGK5qjIIok/maxresdefault.jpg',
+    coverImage: 'https://i.ytimg.com/vi/pNGK5qjIIok/maxresdefault.jpg',
+    articleBodyImage: 'https://toppingafrica.s3.amazonaws.com/2085/500603321_18506794963003234_6231104715022209978_n.jpg',
+    bio: 'Sadik Sulley (SDK Dele) is a beloved comedian, actor, and host of the viral SDK Food Tour celebrating authentic Ghanaian street food and family comedy (417.7K TikTok, 343.1K X, 331K IG).',
     award: {
-      title: 'Comedic Creator & Food Culture Icon',
-      year: '2025',
-      description: 'Conferred by Ghana Comedy Guild for timeless family humor and spotlighting indigenous Ghanaian street gastronomy.'
+      title: 'Comic Creator of the Year',
+      year: '2024',
+      description: 'Awarded at the Ghana Creators Festival for memorable relatable Ghanaian humor and culinary culture storytelling.'
     },
-    profileArticle: `Sadik Sulley, widely recognized as SDK Dele, has endeared himself to multiple generations of Ghanaians. From his iconic skits depicting typical Ghanaian parent-child dynamics to his wildly popular "SDK Food Tour" that champions local chop bars and street food vendors, SDK continues to be a cornerstone of wholesome Ghanaian entertainment.`,
+    profileArticle: `Sadik Sulley, widely recognized as SDK Dele, is a comedic institution in Ghanaian entertainment. With 417,700 TikTok followers (8.2M+ likes), 343,100 on X, 331,000 on Instagram, and 52,400 YouTube subscribers (151 videos, 3.63M+ views), SDK has captured the hearts of multiple generations.
+
+From his beloved sketches portraying classic Ghanaian parent-child interactions to his wildly popular "SDK Food Tour" exploring local chop bars and street-food gems across Accra and Kumasi, SDK was named Comic Creator of the Year at the Ghana Creators Festival for his wholesome cultural contributions.`,
     stats: {
-      youtubeSubscribers: '480K',
-      instagramFollowers: '1.1M',
-      tiktokFollowers: '1.3M',
+      tiktokFollowers: '417.7K',
+      twitterFollowers: '343.1K',
+      instagramFollowers: '331K',
+      youtubeSubscribers: '52.4K',
       engagementRate: '11.5%'
     },
     socialLinks: {
-      youtube: 'https://youtube.com/@sdkdele',
-      instagram: 'https://instagram.com/sdkdele'
+      tiktok: 'https://www.tiktok.com/@sdkdele',
+      twitter: 'https://x.com/sdkdele',
+      instagram: 'https://www.instagram.com/sdkdele/',
+      youtube: 'https://www.youtube.com/@sdkdele'
     }
   }
 ];

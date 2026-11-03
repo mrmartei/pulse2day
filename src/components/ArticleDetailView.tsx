@@ -21,6 +21,11 @@ export const ArticleDetailView: React.FC<ArticleDetailViewProps> = ({
 }) => {
   const [likes, setLikes] = useState(article.likes);
   const [hasLiked, setHasLiked] = useState(false);
+
+  React.useEffect(() => {
+    setLikes(article.likes);
+    setHasLiked(false);
+  }, [article.id, article.likes]);
   const [comments, setComments] = useState<Comment[]>([
     { id: '1', author: 'Kofi Mensah', avatar: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=100&q=80', content: 'Plexlink is such a needed innovation in Ghana! Paper cards always get lost. Big congrats to Mr Martei.', timestamp: '45 mins ago', likes: 22 },
     { id: '2', author: 'Akosua Serwaa', avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80', content: 'Tapped my first Plexlink card at the tech conference in Accra today. Instant contact saved directly to my phone.', timestamp: '20 mins ago', likes: 16 }
@@ -165,7 +170,7 @@ export const ArticleDetailView: React.FC<ArticleDetailViewProps> = ({
         <div className="aspect-video rounded overflow-hidden bg-slate-100 border border-slate-200 relative group">
           <img src={article.imageUrl} alt={article.title} className="w-full h-full object-cover" />
           <div className="absolute bottom-3 left-3 bg-slate-900/80 text-white text-[11px] font-sans px-3 py-1 rounded backdrop-blur-sm">
-            Photo: Plexlink Smart NFC Card & Link-in-Bio Digital Identity
+            Photo: {article.featuredCreatorId === 'mr-martei' ? 'Plexlink Smart NFC Card & Link-in-Bio Digital Identity' : `${article.category} Report • ${article.channel}`}
           </div>
         </div>
 
@@ -174,7 +179,7 @@ export const ArticleDetailView: React.FC<ArticleDetailViewProps> = ({
           <div className="bg-gradient-to-r from-red-50 to-amber-50 border border-red-200 rounded-lg p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 font-sans">
             <div className="flex items-center space-x-4">
               <img
-                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80"
+                src="https://yt3.googleusercontent.com/iPDGhDeG-UIGsF8WZlGQBBLWcax4l7UKMdpvFYyome9gABUSAe2F4owxEhxD47GkEW1A_cEq=s900-c-k-c0x00ffffff-no-rj"
                 alt="Mr Martei"
                 className="w-14 h-14 rounded-full border-2 border-red-600 object-cover shadow"
               />
@@ -184,7 +189,7 @@ export const ArticleDetailView: React.FC<ArticleDetailViewProps> = ({
                     Product Founder Spotlight
                   </span>
                 </div>
-                <h3 className="font-bold text-slate-900 text-base mt-0.5">Mr Martei (Justice Martei)</h3>
+                <h3 className="font-bold text-slate-900 text-base mt-0.5">Mr Martei (Justice Martei Mamah)</h3>
                 <p className="text-xs text-slate-600">Software Engineer • Founder of Plexlink • Tech Creator</p>
               </div>
             </div>
@@ -198,9 +203,43 @@ export const ArticleDetailView: React.FC<ArticleDetailViewProps> = ({
           </div>
         )}
 
-        {/* Full Article Content with Link Parsing */}
+        {/* Full Article Content with Link Parsing & In-Body Image */}
         <div className="text-slate-800 text-base md:text-lg leading-relaxed space-y-6 font-serif">
-          {article.content.split('\n\n').map((paragraph, idx) => renderFormattedParagraph(paragraph, idx))}
+          {article.content.split('\n\n').map((paragraph, idx) => (
+            <React.Fragment key={`p-block-${idx}`}>
+              {renderFormattedParagraph(paragraph, idx)}
+              {idx === 1 && article.articleBodyImage && (
+                <div className="my-8 rounded-lg overflow-hidden border border-slate-200 bg-slate-50 font-sans shadow-sm">
+                  <img
+                    src={article.articleBodyImage}
+                    alt={article.articleBodyCaption || article.title}
+                    className="w-full max-h-[480px] object-cover"
+                  />
+                  {article.articleBodyCaption && (
+                    <div className="p-3 bg-slate-100 text-xs text-slate-600 border-t border-slate-200 font-sans flex items-center justify-between">
+                      <span>{article.articleBodyCaption}</span>
+                      <span className="text-[10px] uppercase font-bold text-red-700">Photo Report</span>
+                    </div>
+                  )}
+                </div>
+              )}
+            </React.Fragment>
+          ))}
+          {/* Fallback if article has fewer than 2 paragraphs but has an articleBodyImage */}
+          {article.content.split('\n\n').length <= 1 && article.articleBodyImage && (
+            <div className="my-8 rounded-lg overflow-hidden border border-slate-200 bg-slate-50 font-sans shadow-sm">
+              <img
+                src={article.articleBodyImage}
+                alt={article.articleBodyCaption || article.title}
+                className="w-full max-h-[480px] object-cover"
+              />
+              {article.articleBodyCaption && (
+                <div className="p-3 bg-slate-100 text-xs text-slate-600 border-t border-slate-200 font-sans">
+                  {article.articleBodyCaption}
+                </div>
+              )}
+            </div>
+          )}
         </div>
 
         {/* Reaction Bar */}
@@ -213,7 +252,7 @@ export const ArticleDetailView: React.FC<ArticleDetailViewProps> = ({
             <span>{likes} Helpful Votes</span>
           </button>
           <div className="text-xs text-slate-400 font-sans">
-            Ghana Pulse Editorial Tech Desk • Accra
+            Ghana Pulse Editorial {article.category} Desk • Accra
           </div>
         </div>
 

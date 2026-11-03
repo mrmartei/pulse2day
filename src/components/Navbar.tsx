@@ -1,5 +1,5 @@
 import React from 'react';
-import { Bookmark, Search, CloudSun, Menu, X, Newspaper } from 'lucide-react';
+import { Bookmark, Search, CloudSun, Menu, X } from 'lucide-react';
 
 interface NavbarProps {
   activeTab: 'news' | 'creators' | 'polls';
@@ -65,7 +65,9 @@ export const Navbar: React.FC<NavbarProps> = ({
               <h1 className="font-serif font-bold text-lg tracking-wide text-white uppercase leading-none">
                 Ghana Pulse
               </h1>
-              <p className="text-[10px] uppercase tracking-widest text-slate-400 font-sans mt-0.5">Established 2026 • Verified News</p>
+              <p className="text-[10px] uppercase tracking-wider text-slate-400 font-sans mt-0.5">
+                Ghana's Tech, Creator & Cultural Heartbeat
+              </p>
             </div>
           </div>
 
@@ -98,16 +100,33 @@ export const Navbar: React.FC<NavbarProps> = ({
         </div>
 
         <div className="flex items-center space-x-3">
-          <div className="relative hidden lg:block w-64">
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              if (window.location.hash.startsWith('#/article/') || window.location.hash.startsWith('#/creator/')) {
+                setActiveTab(activeTab === 'creators' ? 'creators' : 'news');
+              }
+            }}
+            className="relative hidden lg:block w-72"
+          >
             <Search className="absolute left-3 top-2.5 w-4 h-4 text-slate-400" />
             <input
               type="text"
               placeholder="Search news, creators..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-slate-800 border border-slate-700 rounded px-9 pr-4 py-1.5 text-sm text-white placeholder-slate-400 focus:outline-none focus:border-red-600 transition"
+              className="w-full bg-slate-800 border border-slate-700 rounded px-9 pr-8 py-1.5 text-sm text-white placeholder-slate-400 focus:outline-none focus:border-red-600 transition"
             />
-          </div>
+            {searchQuery && (
+              <button
+                type="button"
+                onClick={() => setSearchQuery('')}
+                className="absolute right-2.5 top-2.5 text-slate-400 hover:text-white text-xs"
+              >
+                ✕
+              </button>
+            )}
+          </form>
 
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}

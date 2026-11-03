@@ -1,0 +1,353 @@
+SYSTEM PROMPT / AI CODING AGENT INSTRUCTIONS FOR UPDATING GHANA PULSE (pulse2day.vercel.app)
+
+ROLE AND OBJECTIVE
+You are updating the codebase and data files for the Ghana Pulse web application (https://pulse2day.vercel.app/). Perform a complete, exact update across all 14 news articles, all 14 creator profiles, and the UI components to fix factual errors, outdated follower/subscriber counts, broken social media links, misattributed bylines, and hardcoded component labels. Apply every instruction below systematically without skipping any item.
+
+
+PART 1: SITE-WIDE COMPONENT AND UI BUG FIXES
+
+1. Fix Hardcoded Editorial Desk Label on Article Detail Pages
+   - Target: Article detail view component (route: #/article/:id).
+   - Current behavior: Every article detail page displays the static string "Ghana Pulse Editorial Tech Desk • Accra" regardless of category.
+   - Required change: Dynamically interpolate the article's category into the label so that:
+     * TECH articles display: "Ghana Pulse Editorial Tech Desk • Accra"
+     * BUSINESS articles display: "Ghana Pulse Editorial Business Desk • Accra"
+     * SPORTS articles display: "Ghana Pulse Editorial Sports Desk • Accra"
+     * ENTERTAINMENT articles display: "Ghana Pulse Editorial Entertainment Desk • Accra"
+     * POLITICS articles display: "Ghana Pulse Editorial Politics Desk • Accra"
+
+2. Fix Hardcoded "890 Helpful Votes" Counter on Article Detail Pages
+   - Target: Article detail view component (routes #/article/art-1 through #/article/art-5) and article data objects.
+   - Current behavior: Articles art-1, art-2, art-3, art-4, and art-5 all display a static fallback of "890 Helpful Votes" inside the detail view, contradicting the likes counter on the News Feed cards (for example, art-4 shows 1,890 likes on the card, and art-5 shows 740 likes on the card).
+   - Required change: Bind the Helpful Votes display in the article detail view directly to each article's actual likes/helpfulVotes property in the data store, and ensure every article object has both a views property and a likes/helpfulVotes property populated.
+
+3. Synchronize Creator Award Year Between Directory Card and Detail Page
+   - Target: Creator Hub card component (#/creators) and Creator Detail component (#/creator/:id).
+   - Current behavior: Mr Martei's directory card displays "(2026)" for his award year, while his detail page displays "Official Industry Award (2025)".
+   - Required change: Bind both views to the same awardYear property on the creator object.
+
+
+PART 2: EXACT UPDATES FOR ALL 14 CREATOR PROFILES (ROUTE: #/creators AND #/creator/:id)
+
+Update the creators dataset so that each of the 14 creator profiles uses the exact verified real name, handle, platform metrics, external URLs, award title, and biography text specified below.
+
+CREATOR 1: MR MARTEI (ID: mr-martei)
+- Current Listed Real Name: Justice Martei
+- New Verified Real Name: Justice Martei Mamah (Source: https://medium.com/@undergroundnewsgh/mr-marteis-digital-footprint-from-instagram-to-tiktok-one-identity-one-vision-4a257328765c)
+- Current Handle: @mrmartei
+- New Handle: @mr.martei
+- Primary Platform: Multi-Platform (Instagram, TikTok, Threads & Pinterest)
+- Current Social Metrics: 125K+ Network Followers | 45K Instagram Followers | 42K YouTube Subscribers | 38K X (Twitter) Followers
+- New Verified Social Metrics:
+  * Remove the unverified "42K YouTube Subscribers" metric (no 42K-subscriber channel exists at https://www.google.com/search?q=youtube.com/%40mrmartei; his primary video platform is TikTok @mr.martei alongside Instagram and Threads @mr.martei and Pinterest @mrmartei).
+  * Update platform breakdown to reflect Instagram (@mr.martei), TikTok (@mr.martei), Threads (@mr.martei), and Pinterest (@mrmartei).
+- External Links Updates:
+  * Instagram URL: change from https://www.google.com/search?q=https://instagram.com/mrmartei to https://www.google.com/search?q=https://www.instagram.com/mr.martei
+  * TikTok URL: add https://www.tiktok.com/@mr.martei
+  * Portfolio / Product URL: add https://mrmartei.site/
+- Bio / Overview Update: Ensure his full name is written as "Justice Martei Mamah, known online as Mr Martei" and mention both his creative studio work (Lumen Studios) and his NFC/link-in-bio platform Plexlink (https://mrmartei.site/).
+- Award Year Fix: Ensure both the directory card and detail view show the same year (2026).
+
+CREATOR 2: DELPPY (ID: delppy)
+- Current Listed Real Name: Bright Delali (INCORRECT)
+- New Verified Real Name: Emmanuel Obuobi Fianko (Source: https://delppy.com/2026/09/06/openai-has-officially-launched-gpt-6-astra/)
+- Current Handle: @delppy_
+- New Handle: @delppy1_ / @delppy_
+- Current Primary Platform: YouTube (INCORRECT)
+- New Primary Platform: TikTok & Multi-Platform
+- Current Total Audience Reach: 85K Subscribers (INCORRECT)
+- New Total Audience Reach: 234K+ TikTok Followers / 315K+ Combined Reach
+- Current Social Metrics: 68K TikTok Followers | 52K Instagram Followers | 85K YouTube Subscribers | 9.6% Engagement Rate
+- New Verified Social Metrics:
+  * TikTok Followers: 234K (Source: https://delppy.com/)
+  * Facebook / Instagram Fans: 63K (Source: https://delppy.com/)
+  * YouTube Subscribers: 17.9K (Co-host of BYTES UNLOCKED, @BYTESUNLOCKED, alongside Wazz; 571 videos and 3.04M views - Source: https://www.youtube.com/c/BYTESUNLOCKED/about and https://www.youtube.com/watch?v=xyHnGZtvKLs)
+- External Links Updates:
+  * Instagram URL: change from https://www.google.com/search?q=https://instagram.com/delppy_ to https://www.google.com/search?q=https://www.instagram.com/delppy1_ (Source: https://www.youtube.com/c/BYTESUNLOCKED/about)
+  * YouTube URL: change from https://www.google.com/search?q=https://youtube.com/%40delppy_ to https://www.google.com/search?q=https://www.youtube.com/%40BYTESUNLOCKED
+  * Website URL: add https://delppy.com/
+- Bio / Overview Update: Replace all mentions of "Bright Delali" with "Emmanuel Obuobi Fianko (Delppy)". Note that he is a Ghanaian tech content creator, AI advocate, digital strategist, founder of the tech news portal Delppy.com, and co-creator of the Bytes Unlocked YouTube channel.
+
+CREATOR 3: RICK AQUA (ID: rick-aqua)
+- Current Listed Real Name: Patrick Aqua
+- New Verified Real Name: Patrick Acquah (stage name stylized as Rick Aqua) (Source: https://thebftonline.com/article/the-creator-economy-desk-with-cooltechie-from-borrowed-phone-to-making-5-figures-in-dollars-the-inspiring-rise-of-ghanas-young-tech-creator-clifford-scott)
+- Current Handle: @rickaqua
+- New Handle: @RickAqua (YouTube) / @rick_aqua (Instagram)
+- Primary Platform: YouTube
+- Current Total Audience Reach: 195K Subscribers (INCORRECT)
+- New Total Audience Reach: 47.1K YouTube Subscribers (11.16M+ Channel Views)
+- Current Social Metrics: 125K TikTok Followers | 78K Instagram Followers | 195K YouTube Subscribers | 11.4% Engagement Rate
+- New Verified Social Metrics:
+  * YouTube Subscribers: 47.1K (606 videos, 11,162,986 views - Source: https://www.youtube.com/@RickAqua/about)
+  * TikTok Followers: 23.2K (Source: https://starngage.com/plus/en/influencer/ranking/tik/ghana/technology)
+  * Instagram Followers: update handle to @rick_aqua
+- External Links Updates:
+  * Instagram URL: change from https://www.google.com/search?q=https://instagram.com/rickaqua to https://www.google.com/search?q=https://www.instagram.com/rick\_aqua (Source: https://www.youtube.com/@RickAqua/about)
+  * YouTube URL: https://www.youtube.com/@RickAqua
+  * X (Twitter) URL: change from https://www.google.com/search?q=https://twitter.com/rickaqua to https://www.google.com/search?q=https://x.com/true\_rick\_aqua (Source: https://www.youtube.com/@RickAqua/about)
+
+CREATOR 4: DESSY OCEAN (ID: dessy-ocean)
+- Current Listed Real Name: Desmond Ocean (INCORRECT - Ocean is part of his stage moniker)
+- New Verified Real Name: Desmond Ofori Appiah (Source: https://www.famousbirthdays.com/people/dessy-ocean.html and https://wikitia.com/wiki/Dessy_Ocean)
+- Current Handle: @dessyocean
+- New Handle: @dessy_ocean
+- Primary Platform: TikTok
+- Current Total Audience Reach: 310K Followers
+- New Total Audience Reach: 300K TikTok Followers (460K+ Combined Reach)
+- Current Social Metrics: 310K TikTok Followers | 110K Instagram Followers | 14.2% Engagement Rate
+- New Verified Social Metrics:
+  * TikTok Followers: 300K (Source: https://www.radio-ghana.org/podcasts/raygan and https://www.famousbirthdays.com/people/dessy-ocean.html)
+  * Instagram Followers: 154K (up from 110K - Source: https://www.radio-ghana.org/podcasts/raygan)
+  * YouTube Subscribers: 9K (Source: https://www.famousbirthdays.com/people/dessy-ocean.html)
+- External Links Updates:
+  * Instagram URL: change from https://www.google.com/search?q=https://instagram.com/dessyocean to https://www.google.com/search?q=https://www.instagram.com/dessy\_ocean
+  * TikTok URL: change from https://www.google.com/search?q=https://tiktok.com/%40dessyocean to https://www.tiktok.com/@dessy_ocean
+- Official Industry Award Update:
+  * Change from "Short-Form Tech Educator of the Year (2026) - Presented by West Africa Creator Guild" to: "Tech Creator of the Year (2024) - Awarded at the Ghana Creators Festival / Creators Awards Ghana" (Source: https://ytcreatorsfestival.com/category/uncategorized/ and https://www.famousbirthdays.com/people/dessy-ocean.html).
+- Bio / Overview Update: Replace "Desmond Ocean" with "Desmond Ofori Appiah, known professionally as Dessy Ocean". Also note that he was selected by Meta in May 2024 to promote Meta's AI technologies in Ghana.
+
+CREATOR 5: WAZZ / BYTES UNLOCKED (ID: wazz)
+- Current Listed Name: Wazz (Kwabena Wazz)
+- New Verified Name: Wazz (Co-Creator of Bytes Unlocked)
+- Current Handle: @wazz_tech
+- New Handle: @onetruewazz (Instagram) / @BYTESUNLOCKED (YouTube)
+- Primary Platform: YouTube
+- Current Total Audience Reach: 95K Subscribers (INCORRECT - conflated with Belgian gaming YouTuber @wazz)
+- New Total Audience Reach: 17.9K YouTube Subscribers (3.04M+ Channel Views)
+- Current Social Metrics: 95K YouTube Subscribers | 62K X (Twitter) Followers | 10.3% Engagement Rate
+- New Verified Social Metrics:
+  * YouTube Subscribers: 17.9K on @BYTESUNLOCKED (571 videos, 3,038,939 views - Source: https://www.youtube.com/c/BYTESUNLOCKED/about)
+  * TikTok Followers: 7.6K on @BYTESUNLOCKED (Source: https://starngage.com/plus/en/influencer/ranking/tik/ghana/technology)
+- External Links Updates:
+  * YouTube URL: change from https://www.google.com/search?q=https://youtube.com/%40wazz\_tech to https://www.google.com/search?q=https://www.youtube.com/%40BYTESUNLOCKED
+  * Instagram URL: add https://www.google.com/search?q=https://www.instagram.com/onetruewazz (Source: https://www.youtube.com/c/BYTESUNLOCKED/about)
+- Bio / Overview Update: Replace the inaccurate "PC building and custom hardware / thermal benchmarks" description (which belongs to a non-Ghanaian channel) with his actual focus: co-running Ghana's Bytes Unlocked tech channel alongside Delppy, specializing in honest smartphone reviews, foldable devices, audio gear, and practical consumer tech guides for the Ghanaian market.
+
+CREATOR 6: CLIFFORD SCOTT (ID: clifford-scott)
+- Current Listed Name: Clifford Scott
+- New Verified Name: Clifford Scott (CoolTechie) (Source: https://thebftonline.com/article/the-creator-economy-desk-with-cooltechie-from-borrowed-phone-to-making-5-figures-in-dollars-the-inspiring-rise-of-ghanas-young-tech-creator-clifford-scott and https://toppingafrica.com/creators/building-bytes)
+- Handle: @cliffordscott
+- Current Primary Platform: YouTube
+- New Primary Platform: TikTok & YouTube
+- Current Total Audience Reach: 120K Subscribers (INCORRECT for YouTube)
+- New Total Audience Reach: 100K+ TikTok Followers & 44K YouTube Subscribers
+- Current Social Metrics: 120K YouTube Subscribers | 58K X (Twitter) Followers | 9.8% Engagement Rate
+- New Verified Social Metrics:
+  * TikTok Followers: 100K+ (Source: https://techlabari.com/how-content-creators-are-turning-resiliency-into-currency-in-ghanas-creator-economy/)
+  * YouTube Subscribers: 44.0K (Source: https://yoloco.io/crypto+&+blockchain-youtube_channels-ghana)
+- Bio / Overview Update: Note that Clifford Scott is also known as CoolTechie, began recording tech explainers in Junior High School using a borrowed phone, monetized his YouTube channel in under a year, and rebuilt his TikTok presence to over 100,000 followers within six months after an earlier account ban.
+
+CREATOR 7: SELORM TECH -> UPDATE TO TECH IN TWI (ID: selorm-tech or tech-in-twi)
+- Issue Identified: No verified Ghanaian YouTube channel with 58K subscribers exists at https://www.google.com/search?q=youtube.com/%40selormtech. The profile's bio ("champions accessible tech analysis in both Twi and English to expand technology literacy across non-English speaking communities in Ghana") describes Ghana's pioneering Twi-language tech educator Tech In Twi (Kwabena Boateng).
+- Recommended Replacement / Correction:
+  * Creator Name: Tech In Twi (Kwabena Boateng) (Source: https://www.pulse.com.gh/story/ghanas-new-voices-5-youth-influencers-shaping-national-discourse-through-social-media-2025052213292009620 and https://agyedin.com/people/tech-in-twi/)
+  * Handle: @TechInTwi
+  * Primary Platform: YouTube
+  * Verified Total Audience Reach: 190K YouTube Subscribers
+  * Verified Social Metrics:
+    - YouTube Subscribers: 190K (766 videos - Source: https://www.youtube.com/c/TechInTwi/about and https://yoloco.io/technology-youtube_channels-ghana)
+    - Facebook Followers: 146K+ (Source: https://www.youtube.com/c/TechInTwi/about)
+    - TikTok Followers: 42K+ (Source: https://www.youtube.com/c/TechInTwi/about)
+  * External Links Updates:
+    - YouTube URL: https://www.youtube.com/@TechInTwi
+
+CREATOR 8: KALYJAY (ID: kalyjay)
+- Current Listed Real Name: Gyimah Emmanuel Koffie (INCORRECT)
+- New Verified Real Name: Joshua Buernortey Boye-Doe (Source: https://www.radio-ghana.org/podcasts/raygan and https://diglancers.com/highest-paid-x-twitter-content-creators-in-africa/)
+- Current Handle: @KalyJay (INCORRECT)
+- New Handle: @gyaigyimii (X) / @kalyjayy (Instagram & TikTok)
+- Primary Platform: X (Twitter) & Multi-Platform
+- Current Total Audience Reach: 1.2M Followers on X
+- New Total Audience Reach: 1.26M+ Followers on X (Source: https://verifiedhandles.org/58090756844)
+- Current Social Metrics: 480K Instagram Followers | 1.2M X (Twitter) Followers | 15.4% Engagement Rate
+- New Verified Social Metrics:
+  * X (Twitter) Followers: 1.26M+ (Source: https://verifiedhandles.org/58090756844)
+  * Instagram Followers: 480K (@kalyjayy)
+- External Links Updates:
+  * X (Twitter) URL: change from https://www.google.com/search?q=https://twitter.com/KalyJay to https://x.com/gyaigyimii (Source: https://www.radio-ghana.org/podcasts/raygan)
+  * Instagram URL: change from https://www.google.com/search?q=https://instagram.com/kalyjay to https://www.instagram.com/kalyjayy (Source: https://www.radio-ghana.org/podcasts/raygan)
+  * TikTok URL: add https://www.tiktok.com/@kalyjayy
+- Official Industry Award Update:
+  * Update award to: "Twitter Influencer of the Year - Pulse Ghana Influencer Awards" (Source: https://fat.wikipedia.org/wiki/KalyJay).
+- Bio / Overview Update: Replace "Gyimah Emmanuel Koffie" with "Joshua Buernortey Boye-Doe, widely known as KalyJay (@gyaigyimii)". Mention his education at the University of Media, Arts and Communication (Ghana Institute of Journalism) and his role in initiating the #FixTheCountry movement.
+
+CREATOR 9: ASANTEWAA (ID: asantewaa)
+- Verified Real Name: Martina Dwamena (Accurate - Source: https://en.wikipedia.org/wiki/Asantewaa_(TikToker))
+- Current Handle: @iam_asantewaa_
+- New Handle: @asantewaaaaa (TikTok) / @iam_asantewaa_ (Instagram)
+- Primary Platform: TikTok
+- Current Total Audience Reach: 3.4M Followers (OUTDATED)
+- New Total Audience Reach: 4M+ TikTok Followers (181M+ Likes)
+- Current Social Metrics: 3.4M TikTok Followers | 1.9M Instagram Followers | 9.8% Engagement Rate
+- New Verified Social Metrics:
+  * TikTok Followers: 4M+ (181M+ likes on @asantewaaaaa - Source: https://www.famousbirthdays.com/people/martina-dwamena.html)
+  * Instagram Followers: 1.9M (@iam_asantewaa_)
+- External Links Updates:
+  * TikTok URL: change from https://www.google.com/search?q=https://tiktok.com/%40iam\_asantewaa_ to https://www.tiktok.com/@asantewaaaaa (Source: https://www.famousbirthdays.com/people/martina-dwamena.html)
+  * Instagram URL: keep https://www.google.com/search?q=https://www.instagram.com/iam\_asantewaa_
+- Official Industry Award Update:
+  * Change from "TikTok Influencer of the Year (2025) - Awarded by Ghana Entertainment Awards" to: "TikTok Influencer of the Year (2021) - Awarded at the Pulse Ghana Influencer Awards" (Source: https://en.wikipedia.org/wiki/Asantewaa_(TikToker)).
+
+CREATOR 10: ENDURANCE GRAND (ID: endurance-grand)
+- Current Listed Real Name: Endurance Dzigbordi Dedzo
+- New Verified Full Real Name: Endurance Nkechi Dzigbordi Dedzo (Source: https://www.nairaland.com/8084177/endurance-grand-biography-age-nationality and https://yen.com.gh/entertainment/255067-endurance-grand-unveils-mystery-fans-weigh-how-special-is/)
+- Handle: @endurancegrand
+- Primary Platform: TikTok
+- Current Total Audience Reach: 4.1M Followers (SEVERELY OUTDATED)
+- New Total Audience Reach: 13M TikTok Followers (268M+ Likes)
+- Current Social Metrics: 4.1M TikTok Followers | 1.7M Instagram Followers | 11.8% Engagement Rate
+- New Verified Social Metrics:
+  * TikTok Followers: 13M (268 million likes; surpassed 10M in September 2024 - Source: https://www.famousbirthdays.com/people/endurance-grand.html and https://yen.com.gh/entertainment/celebrities/266444-endurance-grand-registers-ten-million-tiktok-followers-parties-dwp-academy-colleagues/)
+  * Instagram Followers: 442.1K (442,114 followers tracked on @endurancegrand - Source: https://starngage.pro/ranking/instagram/Ghana/All?page=5)
+- Official Industry Award Update:
+  * Update award to: "Creator of the Year - Awarded at the Ghana Creators Festival" (Source: https://ytcreatorsfestival.com/category/uncategorized/).
+
+CREATOR 11: OFFICIAL STARTER (ID: official-starter)
+- Current Listed Real Name: Ernest Kemevor (INCORRECT)
+- New Verified Real Name: Ernest Raja Nettey (also known as Raja) (Source: https://www.pulse.com.gh/story/viral-ghanaian-market-women-dancers-from-makola-fly-for-the-first-time-video-2024072412520543324 and https://yen.com.gh/people/243125-official-starter-ghanaian-influencer-unveils-billboard-picture-market-women-exciting-vid/)
+- Handle: @officialstarter_
+- Primary Platform: TikTok
+- Total Audience Reach: 2.4M TikTok Followers
+- Current Social Metrics: 2.4M TikTok Followers | 1.1M Instagram Followers | 12.5% Engagement Rate
+- New Verified Social Metrics:
+  * TikTok Followers: 2.4M
+  * Instagram Followers: 623.9K (623,913 followers on @officialstarter_ - Source: https://starngage.pro/ranking/instagram/Ghana/All?page=5)
+- Bio / Overview Update: Replace "Ernest Kemevor" with "Ernest Raja Nettey, widely adored as Official Starter (or Raja)". Keep his Makola Market women dancing description and DWP Academy affiliation.
+
+CREATOR 12: WODE MAYA (ID: wode-maya)
+- Current Listed Real Name: Kobina Ackon (PARTIAL)
+- New Verified Full Real Name: Berthold Kobby Winkler Ackon (Source: https://en.wikipedia.org/wiki/Wode_Maya)
+- Current Handle: @wodemaya
+- New Handle: @WODEMAYA (YouTube) / @wode_maya (X) / @mrghanababy (Instagram)
+- Primary Platform: YouTube
+- Current Total Audience Reach: 1.6M Subscribers (OUTDATED)
+- New Total Audience Reach: 2.05M YouTube Subscribers (321.06M+ Channel Views)
+- Current Social Metrics: 680K Instagram Followers | 1.6M YouTube Subs | 8.4% Engagement Rate
+- New Verified Social Metrics:
+  * YouTube Subscribers: 2.05M (2,050,000 subscribers, 1,573 videos, 321,060,915 views as of October 30, 2026 - Source: https://vidiq.com/youtube-stats/channel/@wodemaya/)
+  * Instagram Followers: 680K (@mrghanababy)
+- External Links Updates:
+  * YouTube URL: https://www.youtube.com/@WODEMAYA
+  * X (Twitter) URL: change from https://www.google.com/search?q=https://twitter.com/wodemaya to https://x.com/wode_maya (Source: https://www.youtube.com/c/WODEMAYA/about)
+  * Instagram URL: add https://www.instagram.com/mrghanababy (Source: https://www.youtube.com/c/WODEMAYA/about and https://yen.com.gh/facts-lifehacks/biographies/249729-wode-maya-net-worth-how-wealthy-ghanaian-youtuber/)
+- Bio / Overview Update: Replace "Kobina Ackon" with "Berthold Kobby Winkler Ackon, universally known as Wode Maya".
+
+CREATOR 13: KWADWO SHELDON (ID: kwadwo-sheldon)
+- Verified Real Name: Bernard Kwadwo Amoafo (Accurate - Source: https://agyedin.com/people/kwadwo-sheldon/)
+- Current Handle: @kwadwosheldon
+- New Handle: @kwadwosheldonstudios (YouTube) / @kwadwosheldon (X & Personal IG)
+- Primary Platform: YouTube
+- Current Total Audience Reach: 680K Subscribers (OUTDATED)
+- New Total Audience Reach: 848K YouTube Subscribers (294.9M+ Channel Views)
+- Current Social Metrics: 680K YouTube Subs | 850K X (Twitter) Followers | 10.8% Engagement Rate
+- New Verified Social Metrics:
+  * YouTube Subscribers: 848K (8,383 videos, 294,897,322 views on @kwadwosheldonstudios - Source: https://www.youtube.com/@kwadwosheldonstudios/about)
+  * X (Twitter) Followers: 850K (@kwadwosheldon)
+- External Links Updates:
+  * YouTube URL: change from https://www.google.com/search?q=https://youtube.com/%40kwadwosheldon to https://www.youtube.com/@kwadwosheldonstudios (Source: https://www.youtube.com/@kwadwosheldonstudios/about)
+  * X (Twitter) URL: https://x.com/kwadwosheldon
+- Official Industry Award Update:
+  * Update award to: "Entertainment Creator of the Year (KSS Studios) - Awarded at the Ghana Creators Festival" (Source: https://ytcreatorsfestival.com/category/uncategorized/).
+
+CREATOR 14: SDK DELE (ID: sdk-dele)
+- Verified Real Name: Sadik Sulley (Accurate - Source: https://yen.com.gh/174119-sdk-dele-5-interesting-facts-ghanaian-comedian.html)
+- Handle: @sdkdele
+- Primary Platform: Multi-Platform (TikTok & Instagram)
+- Current Total Audience Reach: 1.1M Followers (INCONSISTENT WITH BREAKDOWN)
+- New Total Audience Reach: 1.3M TikTok Followers (2.45M+ Combined Reach)
+- Current Social Metrics: 1.3M TikTok Followers | 1.1M Instagram Followers | 480K YouTube Subs | 11.5% Engagement Rate
+- New Verified Social Metrics:
+  * TikTok Followers: 1.3M
+  * Instagram Followers: 1.1M
+  * YouTube Subscribers: change from 480K to 52.4K (224 videos on @sdkdele - Source: https://www.youtube.com/@sdkdele)
+- Official Industry Award Update:
+  * Change from "Comedic Creator & Food Culture Icon (2025) - Conferred by Ghana Comedy Guild" to: "Comic Creator of the Year - Awarded at the Ghana Creators Festival" (Source: https://ytcreatorsfestival.com/category/uncategorized/).
+
+
+PART 3: EXACT UPDATES FOR ALL 14 NEWS ARTICLES (ROUTE: #/news AND #/article/:id)
+
+Update the news articles dataset so that every article reflects the verified facts, names, institutions, and channels below:
+
+ARTICLE 1 (ID: art-plexlink)
+- Current News Feed Card Title: "Plexlink Launches in Ghana: Founder Mr Martel Unveils Smart NFC Networking & Link-in-Bio Platform"
+- Required Correction 1 (Headline Typo): Change "Mr Martel" to "Mr Martei" on the News Feed card so it matches the article detail page.
+- Required Correction 2 (Channel Rebrand): Change channel/source from "Citi TV" to "Channel One TV" (Citi TV officially rebranded to Channel One TV on June 4, 2024 - Source: https://www.graphic.com.gh/news/general-news/ghana-news-citi-tv-is-now-channel-one-tv.html).
+- Required Correction 3 (Founder Full Name): In the Founder Spotlight box, update "Mr Martei (Justice Martei)" to "Mr Martei (Justice Martei Mamah)".
+
+ARTICLE 2 (ID: art-1)
+- Current Headline: "Bank of Ghana Keeps Policy Rate Steady at 29% as Cedi Stabilizes Against Major Currencies"
+- Current Body Claim: States that the Monetary Policy Committee (MPC) maintained the policy rate at 29 percent and quotes "Governor Dr. Ernest Addison".
+- Required Correction 1 (Monetary Policy Rate): Change "29%" in the headline and "29 percent" in the body to "14.0%" (or "14 percent"). The Bank of Ghana cut the Monetary Policy Rate from 18% to 15.5% in January 2026 and held it at 14.0% in late 2026 (Source: https://www.citinewsroom.com/2026/01/bank-of-ghana-cuts-policy-rate-to-15-5/ and https://tradingeconomics.com/ghana/interest-rate).
+- Required Correction 2 (Central Bank Governor): Replace "Governor Dr. Ernest Addison" with "Governor Dr. Johnson Asiama". Dr. Ernest Addison retired in early February 2025 and was succeeded by Dr. Johnson Asiama (Source: https://www.ceditalk.com/2025/01/former-dep-gov-dr-asiama-takes-over-as-dr-addison-bows-out-of-bank-of-ghana/ and https://www.adomonline.com/dr-johnson-asiama-takes-over-as-bank-of-ghana-governor/).
+
+ARTICLE 3 (ID: art-2)
+- Current Headline: "Silicon Accra: How Ghanaian Developers & Creators are Leading the AI Revolution in West Africa"
+- Current Channel/Source: "Citi TV"
+- Required Correction: Change channel/source from "Citi TV" to "Channel One TV" (Source: https://www.citinewsroom.com/2025/06/channel-one-tv-celebrates-7-years-of-impactful-broadcasting/).
+
+ARTICLE 4 (ID: art-3)
+- Current Headline: "AFCON Qualifiers: Otto Addo Unveils 26-Man Squad for Double-Header Clash"
+- Current Description & Body Claims:
+  * "Captain Thomas Partey returns to lead the Black Stars squad alongside in-form strikers Mohammed Kudus and Antoine Semenyo."
+  * "Training sessions open to the public at the Baba Yara Sports Stadium are scheduled to begin on Wednesday morning."
+- Required Correction 1 (Captaincy): Change "Captain Thomas Partey" to "Captain Jordan Ayew" (Coach Otto Addo appointed Jordan Ayew as substantive Black Stars captain - Source: https://www.graphic.com.gh/sports/sports-news/this-is-why-otto-addo-has-chosen-jordan-ayew-as-the-new-black-stars-captain.html and https://yen.com.gh/sports/football/278384-illiasu-shilla-warns-potential-black-stars-divide-captaincy-overhaul/).
+- Required Correction 2 (Player Position): Change "in-form strikers Mohammed Kudus and Antoine Semenyo" to "attacking midfielder Mohammed Kudus and in-form striker Antoine Semenyo" (alongside midfielder Thomas Partey).
+- Required Correction 3 (Stadium Ban): Change "Baba Yara Sports Stadium" to "Accra Sports Stadium" (and remove "Kumasi" if tied to training venue), because CAF withdrew international venue approval for Baba Yara Sports Stadium in September 2024 due to pitch and technical infractions (Source: https://yen.com.gh/sports/football/266447-baba-yara-sports-stadium-caf-withdraws-venue-approval-tells-ghana-alternative/).
+
+ARTICLE 5 (ID: art-4)
+- Current Headline: "Inside the Creative Surge: Why Ghanaian Fashion & Music are Dominating Global Runways"
+- Current Issue: Feed card shows 1,890 likes, while detail page shows 890 Helpful Votes and "Ghana Pulse Editorial Tech Desk • Accra".
+- Required Correction: Sync detail page helpful votes to 1,890 and display "Ghana Pulse Editorial Entertainment Desk • Accra".
+
+ARTICLE 6 (ID: art-5)
+- Current Headline: "National Electoral Commission Announces Readiness for Biometric Verification Upgrades"
+- Required Correction 1 (Official Institution Name): Change "National Electoral Commission" in the headline to "Electoral Commission of Ghana" (or "Electoral Commission"), matching the body text and Ghana's 1992 Constitution ("National Electoral Commission" is the name used in Liberia and Sierra Leone, not Ghana).
+- Required Correction 2 (Metric Sync): Sync detail page helpful votes from 890 to 740 to match the News Feed card.
+
+ARTICLE 7 (ID: art-cybersecurity)
+- Current Headline: "National Cyber Security Authority Inaugurates AI Threat Monitoring Center to Shield Ghana's Infrastructure" (and "...to Shield Ghana's Mobile Money & Fintech Hubs" in detail view)
+- Current Author Byline: "By Kojo Antwi"
+- Required Correction 1 (Official Statutory Name): Remove the word "National" from the headline so it reads "Cyber Security Authority Inaugurates AI Threat Monitoring Center...", matching its statutory title under Ghana's Cybersecurity Act, 2020 (Act 1038) and the article body ("Cyber Security Authority (CSA) of Ghana").
+- Required Correction 2 (Byline): Replace the author byline "By Kojo Antwi" (the name of Ghana's famous highlife musician) with a dedicated tech journalist byline (for example, "By Kofi Mensah" or "By Kwabena Osei").
+
+ARTICLE 8 (ID: art-ev-ghana)
+- Current Headline: "Electric Vehicles on the Rise in Accra as Clean-Tech Fleets and Solar Corridors Expand Rapidly"
+- Current Channel/Source: "Citi TV"
+- Current Author Byline: "By Selorm Adadevoh"
+- Required Correction 1 (Channel Rebrand): Change channel/source from "Citi TV" to "Channel One TV" (Source: https://www.graphic.com.gh/news/general-news/ghana-news-citi-tv-is-now-channel-one-tv.html).
+- Required Correction 2 (Executive Byline Misattribution): Replace "By Selorm Adadevoh" with a staff journalist byline. Selorm Adadevoh is the former CEO of MTN Ghana and current Group Chief Commercial Officer of MTN Group, not a journalist.
+
+ARTICLE 9 (ID: art-ai-institute)
+- Current Headline: "University of Ghana Launches Pan-African AI Research Facility in Partnership with Global Tech Giants"
+- Current Body Claim: Refers to the facility as the "West African Center for Advanced Machine Learning and Artificial Intelligence Research".
+- Required Correction: Reference the University of Ghana Department of Computer Science (https://dcs.ug.edu.gh/) at the Legon campus in collaboration with industry AI partners in Accra (https://www.playtolabs.com/robotics-classes-for-kids/ghana/accra/), rather than presenting an unverified statutory institute name.
+
+ARTICLE 10 (ID: art-5g-trials)
+- Current Headline: "Telecel Ghana & MTN Conclude Dual-Network 5G Field Trials in Accra with 1.2 Gbps Speeds"
+- Current Body Claim: States that MTN Ghana and Telecel Ghana completed "joint dual-network field trials" under National Communications Authority (NCA) supervision; author byline is "By Kojo Antwi".
+- Required Correction 1 (5G Licensing Context): Update the headline and body to state that MTN Ghana (Scancom Plc) and Telecel Ghana completed independent 5G field trials in Accra following the National Communications Authority (NCA) clearing MTN Ghana, Telecel Ghana, and Goal Telecom in the 2026 5G spectrum licensing process (where MTN secured a $202 million 5G spectrum license alongside wholesale operator Next-Gen InfraCo - Source: https://nca.org.gh/2026/09/11/update-on-the-5g-spectrum-licensing-process/, https://techafricanews.com/2026/09/14/ghana-mtn-telecel-goal-telecom-5g-spectrum-licensing/, and https://technext24.com/news/mtn-secures-202-m-5g-spectrum-licence-in-ghana/). Remove "joint dual-network" since MTN and Telecel are competing network operators.
+- Required Correction 2 (Byline): Replace "By Kojo Antwi" with a tech desk reporter name.
+
+ARTICLE 11 (ID: art-cocoa-processing)
+- Current Headline: "Ghana Commissions $60M State-of-the-Art Cocoa Processing Plant in Tema to Double Value Addition"
+- Current Body Claim: States that a $60 million cocoa processing plant in the Tema Free Zones enclave will process 50,000 metric tonnes of cocoa beans annually.
+- Required Correction: Clarify that the 50,000-metric-tonne state-backed cocoa processing expansion was initiated in the Western Region alongside upgraded value-addition capacity at the Tema Free Zones enclave (Source: https://issuu.com/foodworldmedia/docs/fba_issue_44_final_1), and ensure the detail view desk header reads "Ghana Pulse Editorial Business Desk • Accra".
+
+ARTICLE 12 (ID: art-afcfta-digital)
+- Current Headline: "AfCFTA Secretariat in Accra Reports 35% Surge in Cross-Border Digital Services and Payments"
+- Current Channel/Source: "Citi TV"
+- Current Issue: Missing views count on the article detail view.
+- Required Correction: Change channel/source from "Citi TV" to "Channel One TV" (Source: https://www.graphic.com.gh/news/general-news/ghana-news-citi-tv-is-now-channel-one-tv.html), populate the views property (for example, 10,800 views), and update the desk header to "Ghana Pulse Editorial Business Desk • Accra".
+
+ARTICLE 13 (ID: art-motorway)
+- Current Headline: "Accra-Tema Motorway Redevelopment Project Hits 70% Completion with 10-Lane Modern Expressway"
+- Current Body Claim: States that the 19.5-kilometer Accra-Tema Motorway redevelopment has achieved "70% structural completion".
+- Required Correction: Change "70%" to "53%" in both the headline ("Accra-Tema Motorway Redevelopment Project Hits 53% Completion with 10-Lane Modern Expressway") and the body text ("achieved 53% structural completion ahead of its August 2027 completion target"). Resident Engineer Ing. Kwabena Bempong confirmed on October 28, 2026 that the project is 53% complete, up from 50% in August 2026 (Source: https://www.citinewsroom.com/2026/10/accra-tema-motorway-project-53-complete-ing-bempong/, https://www.myjoyonline.com/accra-tema-motorway-expansion-53-complete-contractor-urged-to-meet-august-2027-deadline/, and https://www.graphic.com.gh/news/general-news/ghana-news-accra-tema-motorway-project-50-per-cent-done-consultant.html).
+
+ARTICLE 14 (ID: art-premier-league)
+- Current Headline: "Ghana Premier League: Medeama SC Clinches Thrilling 2-1 Win to Regain Top Spot on Standings"
+- Current Description & Body Claims:
+  * Places the match at "Akoon Park" in Tarkwa.
+  * States that "Kwasi Donsu opened scoring in the 58th minute with a 25-yard curling free kick."
+- Required Correction 1 (Home Stadium): Change "Akoon Park" in both the card description and the article body to "TnA Stadium (TNA Park)". Medeama SC's home ground in Tarkwa is the 12,000-capacity TnA Stadium, which replaced Akoon Park (Source: https://www.flashscore.com/news/soccer-premier-league-medeama-win-ghana-premier-league-title-for-second-time-in-four-years/vuFc7MAt/ and https://es.wikipedia.org/wiki/Medeama_Sporting_Club).
+- Required Correction 2 (Goalscorer Roster Fix): Replace "Kwasi Donsu" with an active 2025/26 Medeama SC forward/midfielder such as "Kelvin Obeng" or "Prince Owusu" (Source: https://www.flashscore.com/news/soccer-premier-league-medeama-win-ghana-premier-league-title-for-second-time-in-four-years/vuFc7MAt/). Kwasi Donsu transferred out of Medeama SC in 2025 to Maltese club Tarxien Rainbows (Source: https://www.footballtransfers.com/en/players/kwasi-donsu). Keep "Derrick Fordjour" as the 92nd-minute winner, and keep the reference to Medeama SC as the reigning 2025/26 Ghana Premier League champions (Source: https://www.ghanafa.org/medeama-crowned-2025-26-ghana-premier-league-champions-in-grand-coronation-triumph).

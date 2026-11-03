@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { NewsArticle, Category } from '../types';
-import { Clock, Eye, ThumbsUp, Bookmark, Sparkles, Share2, ArrowRight, MessageSquare, Check } from 'lucide-react';
+import { Clock, Eye, ThumbsUp, Bookmark, ArrowRight } from 'lucide-react';
 
 interface NewsFeedProps {
   articles: NewsArticle[];
@@ -27,10 +27,13 @@ export const NewsFeed: React.FC<NewsFeedProps> = ({
   const filteredArticles = articles.filter(art => {
     const matchesCategory = selectedCategory === 'All' || art.category === selectedCategory;
     const matchesChannel = selectedChannel === 'All' || art.channel === selectedChannel;
-    const matchesSearch = searchQuery === '' || 
-      art.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
-      art.summary.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      art.author.toLowerCase().includes(searchQuery.toLowerCase());
+    const q = searchQuery.trim().toLowerCase();
+    const matchesSearch = q === '' || 
+      art.title.toLowerCase().includes(q) || 
+      art.summary.toLowerCase().includes(q) ||
+      art.category.toLowerCase().includes(q) ||
+      art.author.toLowerCase().includes(q) ||
+      art.content.toLowerCase().includes(q);
     return matchesCategory && matchesChannel && matchesSearch;
   });
 

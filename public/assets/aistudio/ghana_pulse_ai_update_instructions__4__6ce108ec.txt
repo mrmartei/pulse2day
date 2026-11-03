@@ -1,0 +1,519 @@
+================================================================================
+AI CODING AGENT INSTRUCTIONS: GHANA PULSE DATA, FOLLOWER, BIO & MULTI-IMAGE UPDATE
+Target Application: Ghana Pulse (https://pulse2day.vercel.app/)
+Scope: Global Brand Config, 14 Creator Profiles (Avatars, Banners & Article Body Images), and 14 News Articles
+================================================================================
+
+ROLE & OBJECTIVE
+----------------
+You are updating the frontend data store, mock database, and UI components for the "Ghana Pulse" web application.
+Your task is to apply all factual corrections, verified live follower/subscriber counts, verified external URLs, and 3 distinct verified direct image URLs per creator (Profile Avatar, Card/Header Banner, and Article Body Image) detailed in this specification.
+
+Search the codebase (typically in src/data/, src/constants/, src/mock/, or similar TypeScript/JavaScript data files and UI components) and execute every instruction below systematically.
+
+
+================================================================================
+PART 1: GLOBAL UI, ROUTING & SCHEMA FIXES
+================================================================================
+
+1.1. Fix Header Brand Identity & Subtitle
+-----------------------------------------
+- Locate the main Navbar / Header component.
+- Current state: Displays "GHANA PULSE" with subtitle "Accra's Digital Heartbeat".
+- Action: Standardize the brand name across the Navbar, Footer, and HTML &lt;title&gt; tag, or update the subtitle to "Ghana's Tech, Creator & Cultural Heartbeat" so it aligns with nationwide coverage (Kumasi, Tamale, Cape Coast, Ho, Takoradi, and Accra).
+
+1.2. Fix Broken Header Search Input
+-----------------------------------
+- Locate the header search input ("Search stories, creators...").
+- Current state: Typing into the input does not filter the news grid or creator directory, and pressing Enter does nothing.
+- Action: Bind the search input value to a global or route-aware filter state that filters:
+  a) News articles by title, category, summary, and body text when on `#/news`.
+  b) Creator profiles by name, handle, realName, niche, and bio when on `#/creators`.
+  c) Or navigate to a unified search results view on Enter.
+
+1.3. Fix Silent "Subscribe" Form
+--------------------------------
+- Locate the newsletter subscription component ("Join the Inner Circle" / "Subscribe").
+- Current state: Clicking "Subscribe" performs no action and shows no feedback.
+- Action: Add email format validation, prevent empty submissions, and display a clear confirmation state/toast ("Subscribed! Welcome to the Ghana Pulse Inner Circle.") upon submission.
+
+1.4. Add Creator Banner Image & Article Body Image Support to Schema and UI
+---------------------------------------------------------------------------
+- Locate the Creator data interface/schema and the Creator Card / Creator Detail page components.
+- Action:
+  a) Ensure each creator object supports three distinct image fields:
+     - `avatar` (or `profileImage` / `image`): Primary square/circular portrait used as the profile picture.
+     - `bannerImage` (or `coverImage`): Wide background banner displayed behind the profile avatar on the creator cards in `#/creators` and at the top header of `#/creator/:id`.
+     - `articleBodyImage` (or `secondaryImage` / `featureImage`): A third distinct in-action or feature photo embedded inside the creator's biography/article body on `#/creator/:id` (and in any creator spotlight articles).
+  b) Update the Creator Card component on `#/creators` so the card header background renders `creator.bannerImage` behind `creator.avatar` instead of a plain solid color or duplicate avatar image.
+  c) Update the Creator Detail page (`#/creator/:id`) so the top hero banner uses `creator.bannerImage`, the circular profile picture uses `creator.avatar`, and the biography/feature story body embeds `creator.articleBodyImage` with an appropriate caption.
+
+
+================================================================================
+PART 2: CREATOR DIRECTORY UPDATES (14 PROFILES - LIVE METRICS & 3 IMAGES EACH)
+================================================================================
+Locate the creators data array and update each creator object by its `id` or `name`.
+Every creator below includes 3 distinct direct image URLs:
+  1. Profile Avatar Image URL (`avatar` / `profileImage`)
+  2. Profile Card Banner Image URL (`bannerImage` / `coverImage`)
+  3. Article Body / Feature Image URL (`articleBodyImage` / `secondaryImage`)
+
+--------------------------------------------------------------------------------
+CREATOR 1: MR MARTEI (id: "mr-martei")
+--------------------------------------------------------------------------------
+- Name: Mr Martei (Fix typo "Mr Martel" on the News feed card for Article 1)
+- Real Name: Justice Martei Mamah
+- Primary Handle: @mr.martei (TikTok & YouTube) / @mr.marteii (Instagram)
+- Niche: Tech & Digital Innovation / Software & Hardware Founder
+- Profile Avatar Image URL:
+  https://yt3.googleusercontent.com/iPDGhDeG-UIGsF8WZlGQBBLWcax4l7UKMdpvFYyome9gABUSAe2F4owxEhxD47GkEW1A_cEq=s900-c-k-c0x00ffffff-no-rj
+- Profile Card Banner Image URL (Behind Profile Picture on Card & Header):
+  https://i.ytimg.com/vi/ta_-_bIYqQc/hqdefault.jpg
+- Article Body / Feature Image URL (Inside Creator Article Body):
+  https://www.google.com/search?q=https://i.ytimg.com/vi/Tq2eQiG1It0/hqdefault.jpg
+- Plexlink Product Mockup Image URL (Alternative Article Body Image):
+  https://i.ibb.co/Z6Dsp6y5/Taplink-mockup.png
+- Verified Follower Counts:
+  * Instagram (@mr.marteii): "16.2K"
+  * TikTok (@mr.martei): "8.9K" (exact live count: 8,919 followers)
+  * YouTube (@mr.martei): "146" (146 subscribers, 78 videos)
+  * Total Combined Reach Stat: "25.3K+"
+- External Links:
+  * TikTok: https://www.tiktok.com/@mr.martei
+  * Instagram: https://www.instagram.com/mr.marteii/
+  * YouTube: https://www.youtube.com/@mr.martei
+  * Portfolio: https://www.mrmartei.site/
+  * Product Website: https://www.plexlink.site/
+- Bio Fact-Check & Update:
+  Replace the claim "With a massive following across TikTok and Instagram..." with an accurate reflection of his niche audience (~25.3K combined across Instagram and TikTok) and highlight that he is the founder of Plexlink (https://www.plexlink.site/), an NFC/QR smart business card platform in Ghana, as well as the creator of the "Paste Here" Figma plugin and a software/web developer at mrmartei.site.
+
+--------------------------------------------------------------------------------
+CREATOR 2: DELPPY (id: "delppy")
+--------------------------------------------------------------------------------
+- Name: Delppy
+- Real Name: Emmanuel Obuobi Fianko (CRITICAL FIX: Replace incorrect name "Bright Delali")
+- Primary Handle: @delppy1_ (TikTok & Instagram) / @delppy_ (secondary TikTok)
+- Niche: Tech Reviews, AI Education & Cybersecurity
+- Profile Avatar Image URL (Pan-African AI Summit Speaker Portrait):
+  https://panafricanaisummit.com/storage/media/eZ0r51k1RsCg4ir5jQ14jyN6yxL35sVTk5YRjTO4.jpg
+- Profile Card Banner Image URL (Behind Profile Picture on Card & Header):
+  https://delppy.com/wp-content/uploads/2026/09/WhatsApp-Image-2026-09-04-at-09.50.07-2-390x220.jpeg
+- Article Body / Feature Image URL (Inside Creator Article Body):
+  https://diglancers.com/wp-content/uploads/2026/03/7wket4-compressed-300x300.jpg
+- Secondary Article Body Image Option:
+  https://delppy.com/wp-content/uploads/2026/08/WhatsApp-Image-2026-05-26-at-12.46.41-390x220.webp
+- Verified Follower Counts:
+  * TikTok (@delppy1_): "293.6K" (plus @delppy_ secondary account with "27.9K")
+  * Instagram (@delppy1_): "231K"
+  * YouTube (@BYTESUNLOCKED, co-hosted with Wazz): "18.3K"
+  * Total Combined Reach Stat: "570K+"
+- External Links:
+  * TikTok: https://www.google.com/search?q=https://www.tiktok.com/%40delppy1_
+  * Instagram: https://www.instagram.com/delppy1_/
+  * Website: https://delppy.com/
+  * YouTube (Co-Host): https://www.youtube.com/@BYTESUNLOCKED
+- Bio Fact-Check & Update:
+  Update realName to "Emmanuel Obuobi Fianko". Note that he is a Ghanaian tech content creator, cybersecurity and AI educator, founder of Delppy.com, speaker at the Pan-African AI Summit, and co-creator of the Bytes Unlocked YouTube channel alongside Wazz.
+
+--------------------------------------------------------------------------------
+CREATOR 3: RICK AQUA (id: "rick-aqua")
+--------------------------------------------------------------------------------
+- Name: Rick Aqua
+- Real Name: Patrick Acquah (Stylized as Rick Aqua)
+- Primary Handle: @rick_aqua (Instagram & TikTok) / @RickAqua (YouTube) / @true_rick_aqua (X)
+- Niche: Consumer Tech, Smartphone Tips & Gadget Unboxings
+- Profile Avatar Image URL:
+  https://yt3.googleusercontent.com/ytc/AIdro_meqDECKfl-7dl4Goxuegu3H5oD50VSYVxodINsTSj3SBI=s900-c-k-c0x00ffffff-no-rj
+- Profile Card Banner Image URL (Behind Profile Picture on Card & Header):
+  https://i.ytimg.com/vi/Lx3Qx8j_hpw/maxresdefault.jpg
+- Article Body / Feature Image URL (Inside Creator Article Body):
+  https://i.ytimg.com/vi/aTDdWtwd-s0/maxresdefault.jpg
+- Verified Follower Counts:
+  * Instagram (@rick_aqua): "162K"
+  * YouTube (@RickAqua): "47.2K" (606 videos, 11.16M+ total channel views)
+  * TikTok (@rick_aqua): "23.2K"
+  * Total Combined Reach Stat: "232K+"
+- External Links:
+  * Instagram: https://www.instagram.com/rick_aqua/
+  * YouTube: https://www.youtube.com/@RickAqua
+  * TikTok: https://www.google.com/search?q=https://www.tiktok.com/%40rick\_aqua
+  * X (Twitter): https://www.google.com/search?q=https://x.com/true\_rick\_aqua
+
+--------------------------------------------------------------------------------
+CREATOR 4: DESSY OCEAN (id: "dessy-ocean")
+--------------------------------------------------------------------------------
+- Name: Dessy Ocean
+- Real Name: Desmond Ofori Appiah (CRITICAL FIX: Replace incorrect name "Desmond Ocean")
+- Primary Handle: @dessy_ocean (TikTok, Instagram, X) / @dessyocean (YouTube)
+- Niche: Tech Lifestyle, Gadget Reviews & Digital Productivity
+- Profile Avatar Image URL (Ghana Media Tech Expo Portrait):
+  https://ghanamediatechexpo.org/wp-content/uploads/2025/11/Desmond-Ofori-Appiah-.jpg
+- Profile Card Banner Image URL (Behind Profile Picture on Card & Header):
+  https://miro.medium.com/v2/resize:fit:2400/1*8eGgWHwoWgb0DbmNpGWxfA.png
+- Article Body / Feature Image URL (Tech in Ghana Conference Portrait):
+  https://techinghanaconference.com/wp-content/uploads/2023/11/Desmond-Dessy-Ocean-scaled.jpeg
+- Verified Follower Counts:
+  * TikTok (@dessy_ocean): "293.2K" (5.6M+ likes)
+  * Instagram (@dessy_ocean): "156K"
+  * YouTube (@dessyocean): "9.29K" (852 videos, 1.32M+ views)
+  * X (@dessy_ocean): "5K" (5,022 followers)
+  * Total Combined Reach Stat: "463K+"
+- External Links:
+  * TikTok: https://www.tiktok.com/@dessy_ocean
+  * Instagram: https://www.instagram.com/dessy_ocean/
+  * YouTube: https://www.youtube.com/@dessyocean
+  * X (Twitter): https://x.com/dessy_ocean
+
+--------------------------------------------------------------------------------
+CREATOR 5: WAZZ / BYTES UNLOCKED (id: "wazz")
+--------------------------------------------------------------------------------
+- Name: Wazz (Bytes Unlocked)
+- Real Name: Wazz (Co-Creator of Bytes Unlocked)
+- Primary Handle: @onetruewazz (Instagram) / @wazzhimself (TikTok) / @BYTESUNLOCKED (YouTube)
+- Niche: Deep-Dive Hardware Reviews, Audio & Mobile Tech
+- Profile Avatar Image URL (Bytes Unlocked Official Avatar):
+  https://yt3.googleusercontent.com/ytc/AIdro_n0aB7_Cr0SG7z_sCbJm6Xl_K1NCgBxTU3UqIOS1S-6-n0=s900-c-k-c0x00ffffff-no-rj
+- Profile Card Banner Image URL (Behind Profile Picture on Card & Header):
+  https://i.ytimg.com/vi/p7HfjFeo__4/maxresdefault.jpg
+- Article Body / Feature Image URL (Inside Creator Article Body):
+  https://www.google.com/search?q=https://i.ytimg.com/vi/COWaiCDcm5Y/hq720.jpg
+- Verified Follower Counts:
+  * Instagram (@onetruewazz): "480K"
+  * TikTok (@wazzhimself): "85.6K"
+  * YouTube (@BYTESUNLOCKED): "18.3K" (571 videos, 3.04M+ total views)
+  * Total Combined Reach Stat: "584K+"
+- External Links:
+  * Instagram: https://www.google.com/search?q=https://www.instagram.com/onetruewazz/
+  * TikTok: https://www.tiktok.com/@wazzhimself
+  * YouTube: https://www.youtube.com/@BYTESUNLOCKED
+- Bio Fact-Check & Update:
+  Replace the unverified handle `@wazz_tech` with his verified handles (`@onetruewazz` on Instagram, `@wazzhimself` on TikTok, and `@BYTESUNLOCKED` on YouTube, which he co-hosts with Delppy).
+
+--------------------------------------------------------------------------------
+CREATOR 6: CLIFFORD SCOTT (id: "clifford-scott")
+--------------------------------------------------------------------------------
+- Name: Clifford Scott
+- Real Name: Clifford Scott (also known as CoolTechie)
+- Primary Handle: @cliffordscott_ (TikTok & Instagram) / @CliffordScott (YouTube)
+- Niche: Aesthetic Tech Setups, PC Gaming & Desk Tours
+- Profile Avatar Image URL (Labari Journal Feature Portrait):
+  https://labarijournal.com/wp-content/uploads/2025/12/Screenshot-2025-12-17-at-1.26.36-PM-632x1024.png
+- Profile Card Banner Image URL (Behind Profile Picture on Card & Header):
+  https://i.ytimg.com/vi/OJSwJ_RWIbA/hqdefault.jpg
+- Article Body / Feature Image URL (Inside Creator Article Body):
+  https://i.ytimg.com/vi/ZUFAhmnDN0A/hqdefault.jpg
+- Verified Follower Counts:
+  * TikTok (@cliffordscott_): "150K"
+  * YouTube (@CliffordScott): "46.4K" (246 videos, 5.21M+ views)
+  * Instagram (@cliffordscott_): "34.7K"
+  * Total Combined Reach Stat: "231K+"
+- External Links:
+  * TikTok: https://www.google.com/search?q=https://www.tiktok.com/%40cliffordscott_
+  * YouTube: https://www.google.com/search?q=https://www.youtube.com/%40CliffordScott
+  * Instagram: https://www.instagram.com/cliffordscott_/
+
+--------------------------------------------------------------------------------
+CREATOR 7: SELORM TECH / TECH IN TWI (id: "selorm-tech")
+--------------------------------------------------------------------------------
+- Name: Selorm Tech (or Tech In Twi — see disambiguation note below)
+- Real Name: Selorm (@selorm.k) OR Kwabena Boateng (Founder of Tech In Twi)
+- Primary Handle: @selorm.k (Instagram) / @selormtechnology (YouTube) OR @TechInTwi (YouTube)
+- Niche: Local-Language Tech Literacy, Coding & Digital Security
+- Profile Avatar Image URL:
+  https://pbs.twimg.com/profile_images/2045979387347050497/CVhMsuOW.jpg
+- Profile Card Banner Image URL (Behind Profile Picture on Card & Header):
+  https://i.ytimg.com/vi/RAgVWURsoIE/hq720.jpg
+- Article Body / Feature Image URL (Inside Creator Article Body):
+  https://yt3.googleusercontent.com/qUM6YxXRkdO2WLSuwzdQjQB2pkcDjYiMyqR3UZWS6-9QjiQ4jtRBW3BfCGddFWb8FF4QQJGmKXo=s900-c-k-c0x00ffffff-no-rj
+- Verified Follower Counts:
+  * If keeping Selorm (@selorm.k):
+    - Instagram (@selorm.k): "155.9K"
+    - YouTube (@selormtechnology): "134"
+  * If aligning with the Twi-language tech educator bio ("Tech In Twi" by Kwabena Boateng):
+    - YouTube (@TechInTwi): "190K"
+    - Facebook (Tech In Twi): "146K+"
+    - TikTok (@techintwi): "42K+"
+- External Links:
+  * Instagram (Selorm): https://www.instagram.com/selorm.k/
+  * YouTube (Selorm Technology): https://www.google.com/search?q=https://www.youtube.com/%40selormtechnology
+  * YouTube (Tech In Twi): https://www.youtube.com/@TechInTwi
+
+--------------------------------------------------------------------------------
+CREATOR 8: KALYJAY (id: "kalyjay")
+--------------------------------------------------------------------------------
+- Name: Kalyjay
+- Real Name: Joshua Buernortey Boye-Doe (CRITICAL FIX: Replace completely wrong name "Gyimah Emmanuel Koffie")
+- Primary Handle: @gyaigyimii (X) / @kalyjayy (Instagram & TikTok)
+- Niche: Social Activism, Viral Marketing & X Spaces Host
+- Profile Avatar Image URL (Wikimedia Commons Portrait):
+  https://upload.wikimedia.org/wikipedia/commons/7/7e/KalyJay_at_a_bar_in_osu.jpg
+- Profile Card Banner Image URL (Behind Profile Picture on Card & Header):
+  https://cdn.yen.com.gh/images/360x203/c8dd8d2a75046518.jpeg?v=1
+- Article Body / Feature Image URL (Inside Creator Article Body):
+  https://cdn.ghanaweb.com/imagelib/pics/851/85169391.jpg
+- Verified Follower Counts:
+  * X / Twitter (@gyaigyimii): "2.1M" (Fix outdated "1.2M" on site)
+  * Instagram (@kalyjayy): "74.2K" (Fix outdated "450K" on site)
+  * TikTok (@kalyjayy): "15.8K" (392.4K likes)
+  * Snapchat (@kalyjay): "310K+"
+  * Total Combined Reach Stat: "2.5M+"
+- External Links:
+  * X (Twitter): https://x.com/gyaigyimii
+  * Instagram: https://www.instagram.com/kalyjayy/
+  * TikTok: https://www.tiktok.com/@kalyjayy
+
+--------------------------------------------------------------------------------
+CREATOR 9: ASANTEWAA (id: "asantewaa")
+--------------------------------------------------------------------------------
+- Name: Asantewaa
+- Real Name: Martina Dwamena
+- Primary Handle: @asantewaaaaa (TikTok) / @_asantewaaaa_ (Instagram)
+- Niche: TikTok Entertainment, Brand Influencing & Lifestyle
+- Profile Avatar Image URL (3Music Awards Portrait):
+  https://upload.wikimedia.org/wikipedia/commons/7/7c/Asantewaa_at_3_Music_Awards_22_26.jpg
+- Profile Card Banner Image URL (Behind Profile Picture on Card & Header):
+  https://cdn.yen.com.gh/tags/600x600/4b956fe5c270b0fa.jpeg?v=1
+- Article Body / Feature Image URL (Inside Creator Article Body):
+  https://cdn.ghanaweb.com/imagelib/pics/604/60458616.295.jpg
+- Verified Follower Counts:
+  * TikTok (@asantewaaaaa): "4.1M" (130.9M+ likes; fix outdated "3.8M" on site)
+  * Instagram (@_asantewaaaa_): "1.1M" (fix outdated "1.5M" on site)
+  * Total Combined Reach Stat: "5.2M+"
+- External Links:
+  * TikTok: https://www.tiktok.com/@asantewaaaaa
+  * Instagram: https://www.instagram.com/_asantewaaaa_/
+
+--------------------------------------------------------------------------------
+CREATOR 10: ENDURANCE GRAND (id: "endurance-grand")
+--------------------------------------------------------------------------------
+- Name: Endurance Grand
+- Real Name: Endurance Nkechi Dzigbordi Dedzo
+- Primary Handle: @endurancegrand (TikTok & Instagram) / @EnduranceGrand (YouTube)
+- Niche: Afro-Dance Choreography, DWP Academy Star & Global Fashion
+- Profile Avatar Image URL (Official YouTube Avatar):
+  https://yt3.googleusercontent.com/xNYLT0yJgCqcgq0Fwcu4uh41asGSveCU6zAj3gpPu2xoDQdHlUnS5SHJQn8SxwJRQqJHQpEGBWo=s900-c-k-c0x00ffffff-no-rj
+- Profile Card Banner Image URL (Behind Profile Picture on Card & Header):
+  https://i.ytimg.com/vi/SlaQjtKdS6U/maxresdefault.jpg
+- Article Body / Feature Image URL (Official Studio Portrait):
+  https://endurancegrand.co/wp-content/uploads/2023/03/228A6872-2-scaled.jpg
+- Verified Follower Counts:
+  * TikTok (@endurancegrand): "14M" (442.8M+ likes; CRITICAL FIX: replace outdated "4.2M" on site)
+  * Instagram (@endurancegrand): "1.7M" (replace outdated "1.8M" on site)
+  * YouTube (@EnduranceGrand): "723K" (852 videos, 219.97M+ views)
+  * Total Combined Reach Stat: "16.4M+"
+- External Links:
+  * TikTok: https://www.tiktok.com/@endurancegrand
+  * Instagram: https://www.instagram.com/endurancegrand/
+  * YouTube: https://www.youtube.com/@EnduranceGrand
+  * Official Website: https://endurancegrand.co/
+
+--------------------------------------------------------------------------------
+CREATOR 11: OFFICIAL STARTER (id: "official-starter")
+--------------------------------------------------------------------------------
+- Name: Official Starter
+- Real Name: Ernest Raja Nettey (CRITICAL FIX: Replace incorrect surname "Ernest Kemevor")
+- Primary Handle: @officialstarter_ (TikTok, Instagram & YouTube)
+- Niche: Community Dance, Street Joy & Philanthropy (Makola Market Women Collaborations)
+- Profile Avatar Image URL (Official YouTube Avatar):
+  https://yt3.googleusercontent.com/UPEE7P2vdvJHajKE8KaCuvJrwIeUmupVBo5tnUIKsq12_sMaApXYmJYZ6BONuK1xS6uBi0N5aw=s900-c-k-c0x00ffffff-no-rj
+- Profile Card Banner Image URL (Behind Profile Picture on Card & Header):
+  https://i.ytimg.com/vi/eILqjIYpazY/maxresdefault.jpg
+- Article Body / Feature Image URL (Inside Creator Article Body):
+  https://i.ytimg.com/vi/lKfVzzIJerg/maxresdefault.jpg
+- Verified Follower Counts:
+  * TikTok (@officialstarter_): "4.3M" (108.1M+ likes; fix outdated "2.5M" on site)
+  * Instagram (@officialstarter_): "671K" (fix outdated "900K" on site)
+  * YouTube (@officialstarter_): "164K" (1,123 videos, 55.66M+ views)
+  * Total Combined Reach Stat: "5.1M+"
+- External Links:
+  * TikTok: https://www.google.com/search?q=https://www.tiktok.com/%40officialstarter_
+  * Instagram: https://www.instagram.com/officialstarter_/
+  * YouTube: https://www.youtube.com/@officialstarter_
+
+--------------------------------------------------------------------------------
+CREATOR 12: WODE MAYA (id: "wode-maya")
+--------------------------------------------------------------------------------
+- Name: Wode Maya
+- Real Name: Berthold Kobby Winkler Ackon
+- Primary Handle: @wodemaya (YouTube) / @mrghanababy (Instagram) / @wode_maya (X)
+- Niche: Pan-African Travel Vlogging, Documentary Filmmaking & Investment
+- Profile Avatar Image URL (Official YouTube Avatar):
+  https://www.google.com/search?q=https://yt3.ggpht.com/LoEIb550gchEDJy8MQiNBtqm5UZRuywFA4kiSyYM1fiWFfFsbK4yH9VXEqMiFR\_CSHIT86BJKQ%3Ds800-c-k-c0x00ffffff-no-rj
+- Profile Card Banner Image URL (Behind Profile Picture on Card & Header):
+  https://i.ytimg.com/vi/Ix9-1CpcOhQ/maxresdefault.jpg
+- Article Body / Feature Image URL (Wikimedia Commons Portrait):
+  https://upload.wikimedia.org/wikipedia/commons/b/ba/Wode_Maya_at_Ham%27s_Residence.jpg
+- Verified Follower Counts:
+  * YouTube (@wodemaya): "2.05M" (2,172 videos, 349.89M+ views; fix outdated "1.4M" on site)
+  * Instagram (@mrghanababy): "402K" (fix outdated "600K" on site)
+  * X / Twitter (@wode_maya): "328.9K"
+  * Facebook: "1.5M+"
+  * Total Combined Reach Stat: "4.3M+"
+- External Links:
+  * YouTube: https://www.youtube.com/@wodemaya
+  * Instagram: https://www.instagram.com/mrghanababy/
+  * X (Twitter): https://x.com/wode_maya
+  * Official Website: https://wodemaya.me/
+
+--------------------------------------------------------------------------------
+CREATOR 13: KWADWO SHELDON (id: "kwadwo-sheldon")
+--------------------------------------------------------------------------------
+- Name: Kwadwo Sheldon
+- Real Name: Bernard Kwadwo Amoafo
+- Primary Handle: @kwadwosheldon (X, Instagram, TikTok) / @kwadwosheldonstudios (YouTube)
+- Niche: Digital Media Mogul, Pop Culture Commentary & Sports Breakdown
+- Profile Avatar Image URL (Official YouTube Avatar):
+  https://yt3.googleusercontent.com/mJATfrwDmaOBemb5ic91dCdGcfAPXOa21VwkH9529R1x8BH2sJKN0N0l588io3TQcDYam4orpA=s900-c-k-c0x00ffffff-no-rj
+- Profile Card Banner Image URL (Behind Profile Picture on Card & Header):
+  https://i.ytimg.com/vi/_TLS_fHumLk/maxresdefault.jpg
+- Article Body / Feature Image URL (Inside Creator Article Body):
+  https://www.google.com/search?q=https://ghanaremembers.com/images/http/article\_images/public/kwadwo-sheldon-1.jpg/f1d52b539308fd570e7c23ddf345cd2e/kwadwo-sheldon-1.webp
+- Secondary Brand Banner Asset:
+  https://kwadwosheldonstudios.com/img/use/KSSBRANDASSETS[Recovered]-51.png
+- Verified Follower Counts:
+  * X / Twitter (@kwadwosheldon): "1.9M"
+  * Instagram (@kwadwosheldon): "1.4M" (fix outdated "1.1M" on site)
+  * YouTube (@kwadwosheldonstudios): "848K" (6,367 videos, 250.85M+ views; fix outdated "650K" on site)
+  * TikTok (@kwadwosheldon): "195.6K" (5.6M+ likes)
+  * Total Combined Reach Stat: "4.3M+"
+- External Links:
+  * YouTube: https://www.youtube.com/@kwadwosheldonstudios
+  * Instagram: https://www.instagram.com/kwadwosheldon/
+  * X (Twitter): https://x.com/kwadwosheldon
+  * TikTok: https://www.tiktok.com/@kwadwosheldon
+  * Studio Website: https://kwadwosheldonstudios.com/
+
+--------------------------------------------------------------------------------
+CREATOR 14: SDK DELE (id: "sdk-dele")
+--------------------------------------------------------------------------------
+- Name: SDK Dele
+- Real Name: Sadik Sulley
+- Primary Handle: @sdkdele (TikTok, X, Instagram, YouTube)
+- Niche: Comedy Skits, Satire & Culinary/Food Vlogging
+- Profile Avatar Image URL (Official YouTube Avatar):
+  https://yt3.googleusercontent.com/GtlecAR8oUVnBQWQo8xBaksao0GE0UObrXDIYSnj1ajsJJWrHt4sRuuw0KFkafpRM-kVBaPN=s900-c-k-c0x00ffffff-no-rj
+- Profile Card Banner Image URL (Behind Profile Picture on Card & Header):
+  https://i.ytimg.com/vi/pNGK5qjIIok/maxresdefault.jpg
+- Article Body / Feature Image URL (Inside Creator Article Body):
+  https://toppingafrica.s3.amazonaws.com/2085/500603321_18506794963003234_6231104715022209978_n.jpg
+- Verified Follower Counts:
+  * TikTok (@sdkdele): "417.7K" (8.2M+ likes; CRITICAL FIX: replace outdated "1.5M" on site)
+  * X / Twitter (@sdkdele): "343.1K"
+  * Instagram (@sdkdele): "331K" (CRITICAL FIX: replace outdated "950K" on site)
+  * YouTube (@sdkdele): "52.4K" (151 videos, 3.63M+ views)
+  * Total Combined Reach Stat: "1.14M+"
+- External Links:
+  * TikTok: https://www.tiktok.com/@sdkdele
+  * Instagram: https://www.instagram.com/sdkdele/
+  * X (Twitter): https://x.com/sdkdele
+  * YouTube: https://www.youtube.com/@sdkdele
+
+
+================================================================================
+PART 3: NEWS ARTICLES FACT-CHECKS & IMAGE UPDATES (ALL 14 ARTICLES)
+================================================================================
+
+3.1. Article 1 (id: "art-plexlink") — Plexlink NFC Smart Cards by Mr Martei
+---------------------------------------------------------------------------
+- Broken Hero Image Fix:
+  Current URL (`https://images.unsplash.com/photo-1556742049-0a67c5574f73?auto=format&fit=crop&w=1200&q=80`) returns HTTP 404.
+  * Replace Hero/Thumbnail `imageUrl` with Plexlink's official product mockup image:
+    https://i.ibb.co/Z6Dsp6y5/Taplink-mockup.png
+  * Add Secondary/In-Article Body Image (`articleBodyImage` — Mr Martei's official Plexlink demo thumbnail):
+    https://www.google.com/url?sa=E\&source=gmail\&q=https://i.ytimg.com/vi/QZYg94MzPQA/hqdefault.jpg
+- Typo Fix:
+  In the News Grid summary card, change `"created by tech influencer Mr Martel"` to `"created by tech creator and developer Mr Martei (Justice Martei Mamah)"`.
+- Product & Pricing Fact-Check:
+  Update the article body with verified details from https://www.plexlink.site/:
+  * Standard Plexlink NFC/QR Card price: GHS 300 (one-time fee, no monthly subscription required).
+  * Custom Branded Plexlink Card price: GHS 450.
+  * Core Features: Tap-to-share via NFC or scan via custom QR code, works on both iOS and Android without requiring an app download, real-time profile updates via the Plexlink web dashboard, custom themes, social/payment links, and verified badge options.
+  * Official Link: https://www.plexlink.site/
+
+3.2. Article 2 (id: "art-tech-creators") — Top Ghanaian Tech Creators Reshaping the Ecosystem
+---------------------------------------------------------------------------------------------
+- Update the inline creator references and embedded images inside this article to match the verified names, handles, follower counts, and article body images from Part 2:
+  * Delppy (Emmanuel Obuobi Fianko, @delppy1_ — 293.6K TikTok, 231K Instagram)
+  * Rick Aqua (Patrick Acquah, @rick_aqua — 162K Instagram, 47.2K YouTube, 23.2K TikTok)
+  * Dessy Ocean (Desmond Ofori Appiah, @dessy_ocean — 293.2K TikTok, 156K Instagram)
+  * Wazz & Delppy (@BYTESUNLOCKED — 18.3K YouTube; Wazz @onetruewazz — 480K Instagram)
+  * Clifford Scott (@cliffordscott_ — 150K TikTok, 46.4K YouTube, 34.7K Instagram)
+  * Mr Martei (@mr.martei / @mr.marteii — 16.2K Instagram, 8.9K TikTok, founder of Plexlink)
+
+3.3. Article 3 (id: "art-1") — Telecel Ghana 5G Rollout
+-------------------------------------------------------
+- Fact-Check Correction:
+  Clarify in the article text that Ghana's national 5G wholesale infrastructure is operated by Next-Gen Infraco (NGIC) — a consortium partnering with Ascend Digital, K-NET, Radisys, Nokia, Tech Mahindra, AT Ghana, and Telecel Ghana — rather than a standalone single-operator spectrum deployment.
+
+3.4. Article 4 (id: "art-2") — Hubtel Crosses $2B Processed Volume
+------------------------------------------------------------------
+- Fact-Check Verification:
+  Keep core facts intact (Hubtel, founded by Alex Bram, headquartered in Kokomlemle, Accra, licensed Enhanced Payment Service Provider by the Bank of Ghana). Ensure currency figures clearly distinguish between USD ($2B+) and GHS equivalents.
+
+3.5. Article 5 (id: "art-3") — Ashesi University AI & Robotics Lab
+------------------------------------------------------------------
+- Fact-Check Verification:
+  Keep core facts intact (Ashesi University in Berekuso, Eastern Region, founded by Patrick Awuah, focusing on ethical AI, agricultural drones, NLP for local languages like Twi, Ewe, and Ga, and healthcare diagnostics).
+
+3.6. Article 6 (id: "art-4") — AfroFuture (formerly Afrochella) Cultural & Economic Impact
+------------------------------------------------------------------------------------------
+- Fact-Check Verification:
+  Ensure the text notes that Culture Management Group (CMG), co-founded by Abdul Abdullah, rebranded Afrochella to AfroFuture at El Wak Stadium in Accra.
+
+3.7. Article 7 (id: "art-5") — Solar Mini-Grids Powering Northern Ghana Agro-Processing
+---------------------------------------------------------------------------------------
+- Fact-Check Verification:
+  Align context with Ghana's Renewable Energy Master Plan and Bank of Ghana / World Bank / African Development Bank distributed solar mini-grid initiatives in the Northern, Savannah, and Upper East regions.
+
+3.8. Article 8 (id: "art-6") — Accra's East Legon & Osu Startup Coworking Boom
+------------------------------------------------------------------------------
+- Fact-Check Verification:
+  Reference real Accra innovation hubs alongside general coworking spaces (such as MEST Africa in East Legon, Impact Hub Accra in Osu, Stanbic Incubator at Silver Star Tower, and Basecamp Initiative).
+
+3.9. Article 9 (id: "art-7") — Bank of Ghana's eCedi CBDC Offline Pilot
+-----------------------------------------------------------------------
+- Fact-Check Verification:
+  Ensure the article accurately notes that the Bank of Ghana partnered with Giesecke+Devrient (G+D) on the eCedi retail CBDC pilot, specifically testing offline smartcard/wearable transactions in Sefwi Asafo (Western North Region) alongside urban interoperability testing in Accra.
+
+3.10. Article 10 (id: "art-8") — Kumasi's Suame Magazine & KNUST EV Retrofitting Movement
+-----------------------------------------------------------------------------------------
+- Fact-Check Verification:
+  Credit The Brew-Hammond Energy Centre at KNUST (Kwame Nkrumah University of Science and Technology) and local Suame Magazine artisans (alongside Ghanaian EV pioneers like SolarTaxi and Kofa) working on electric mobility and battery-swapping ecosystems.
+
+3.11. Article 11 (id: "art-9") — Ghana Card Integration as Digital TIN & National ID
+------------------------------------------------------------------------------------
+- Fact-Check Verification:
+  Keep core facts intact: the National Identification Authority (NIA) Ghana Card serves as the unified Tax Identification Number (TIN) for the Ghana Revenue Authority (GRA), SSNIT number, NHIS linkage, and SIM registration / biometric banking verification.
+
+3.12. Article 12 (id: "art-10") — Telemedicine & Drone Medical Delivery in Rural Ghana
+--------------------------------------------------------------------------------------
+- Fact-Check Verification:
+  Explicitly reference Zipline Ghana's autonomous medical drone distribution centers (Omenako, Mpanya, Vobsi, Sefwi Wiawso, Anum, and Kete Krachi) partnering with the Ghana Health Service alongside local telemedicine platforms (such as mPharma and Bisa Health).
+
+3.13. Article 13 (id: "art-11") — Ghanaian Afrobeats, Highlife & Asakaa Digital Streaming Boom
+----------------------------------------------------------------------------------------------
+- Fact-Check Verification:
+  Keep core facts intact (global streaming rise across Audiomack, Boomplay, Spotify, and Apple Music led by Black Sherif, King Promise, Stonebwoy, Amaarae, Gyakie, and Kumasi's Asakaa drill movement).
+
+3.14. Article 14 (id: "art-12") — Agritech & Cocoa Traceability in Ghana's Western Region
+-----------------------------------------------------------------------------------------
+- Fact-Check Verification:
+  Reference the Ghana Cocoa Board (COCOBOD) Cocoa Management System (CMS) and Ghanaian agritech startups (such as Farmerline, AgroCenta, Trotro Tractor, and Complete Farmer) helping farmers comply with EU Deforestation Regulation (EUDR) geolocation and supply-chain traceability standards.
+
+
+================================================================================
+PART 4: VERIFICATION CHECKLIST FOR THE AI CODING AGENT
+================================================================================
+Before finishing your code changes, verify that:
+[ ] 1. Every creator object has all 3 distinct image properties populated (`avatar`, `bannerImage`, and `articleBodyImage`) using the exact direct URLs in Part 2, with zero duplicate URLs within the same creator profile.
+[ ] 2. The Creator Card component on `#/creators` displays `bannerImage` as the background banner behind the circular `avatar` image.
+[ ] 3. The Creator Profile page (`#/creator/:id`) displays `bannerImage` in the header, `avatar` as the profile photo, and `articleBodyImage` inside the article/biography body.
+[ ] 4. Article 1 (`art-plexlink`) uses `https://i.ibb.co/Z6Dsp6y5/Taplink-mockup.png` as its hero image and `https://i.ytimg.com/vi/QZYg94MzPQA/hqdefault.jpg` inside the article body, and fixes the "Mr Martel" typo to "Mr Martei".
+[ ] 5. All 4 incorrect creator real names are fixed:
+       - Delppy -> Emmanuel Obuobi Fianko (NOT Bright Delali)
+       - Dessy Ocean -> Desmond Ofori Appiah (NOT Desmond Ocean)
+       - Kalyjay -> Joshua Buernortey Boye-Doe (NOT Gyimah Emmanuel Koffie)
+       - Official Starter -> Ernest Raja Nettey (NOT Ernest Kemevor)
+[ ] 6. All follower and subscriber counts match the verified live figures in Part 2 (including Mr Martei's 8.9K TikTok and 16.2K Instagram, Endurance Grand's 14M TikTok, Wode Maya's 2.05M YouTube, and Kwadwo Sheldon's 848K YouTube / 1.9M X / 1.4M Instagram).
+[ ] 7. The header search input and newsletter subscribe button are wired up and functional.
+================================================================================
