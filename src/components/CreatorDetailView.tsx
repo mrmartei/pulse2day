@@ -1,13 +1,14 @@
 import React, { useEffect } from 'react';
-import { ContentCreator } from '../types';
-import { ArrowLeft, Award, TrendingUp, ExternalLink, Share2, Check } from 'lucide-react';
+import { ContentCreator, EventPressItem } from '../types';
+import { ArrowLeft, Award, TrendingUp, ExternalLink, Share2, Check, Calendar, Mic } from 'lucide-react';
 
 interface CreatorDetailViewProps {
   creator: ContentCreator;
+  pressEvents?: EventPressItem[];
   onBack: () => void;
 }
 
-export const CreatorDetailView: React.FC<CreatorDetailViewProps> = ({ creator, onBack }) => {
+export const CreatorDetailView: React.FC<CreatorDetailViewProps> = ({ creator, pressEvents = [], onBack }) => {
   const [copied, setCopied] = React.useState(false);
 
   useEffect(() => {
@@ -199,6 +200,52 @@ export const CreatorDetailView: React.FC<CreatorDetailViewProps> = ({ creator, o
               {creator.bio}
             </p>
           </div>
+
+          {/* Press & Speaking Appearances */}
+          {pressEvents.length > 0 && (
+            <div className="space-y-4 pt-4 border-t border-slate-200">
+              <div className="flex items-center justify-between">
+                <h3 className="font-serif font-bold text-xl text-slate-900 flex items-center space-x-2">
+                  <Mic className="w-5 h-5 text-red-700" />
+                  <span>Events, Summits & Press Appearances</span>
+                </h3>
+                <a
+                  href="#/events"
+                  className="text-xs font-bold text-red-700 hover:underline"
+                >
+                  View All Events & Press →
+                </a>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {pressEvents.map((ev) => (
+                  <a
+                    key={ev.id}
+                    href={`#/event/${ev.id}`}
+                    className="bg-slate-50 hover:bg-red-50/40 border border-slate-200 hover:border-red-200 rounded-lg p-4 transition flex flex-col justify-between group"
+                  >
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-between text-[11px] font-bold">
+                        <span className="text-red-700 uppercase tracking-wide">{ev.outletOrEvent}</span>
+                        <span className="text-slate-500 inline-flex items-center space-x-1">
+                          <Calendar className="w-3 h-3" />
+                          <span>{ev.dateLabel}</span>
+                        </span>
+                      </div>
+                      <h4 className="font-serif font-bold text-sm text-slate-900 group-hover:text-red-700 transition leading-snug">
+                        {ev.title}
+                      </h4>
+                      <p className="text-xs text-slate-600 line-clamp-2 leading-relaxed">
+                        {ev.summary}
+                      </p>
+                    </div>
+                    <span className="text-xs font-bold text-red-700 mt-3 pt-2 border-t border-slate-200/70 inline-block group-hover:underline">
+                      Open Press Feature →
+                    </span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
 
         {/* Audience Statistics & Social Platforms */}
         <div className="space-y-4 pt-4 border-t border-slate-200">

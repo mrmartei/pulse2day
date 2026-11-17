@@ -1,4 +1,4 @@
-import { NewsArticle, ContentCreator, PollQuestion } from '../types';
+import { NewsArticle, ContentCreator, PollQuestion, EventPressItem } from '../types';
 
 export const BREAKING_NEWS = [
   "Plexlink officially launches in Ghana: Founder Mr Martei debuts smart NFC networking & link-in-bio platform with GHS 300 standard cards.",
@@ -790,3 +790,110 @@ export const INITIAL_POLL: PollQuestion = {
   ],
   totalVotes: 4960
 };
+
+export const EVENTS_PRESS: EventPressItem[] = [
+  {
+    id: 'next-digital-wealth-summit-2026',
+    type: 'Summit & Conference',
+    title: 'Mr Martei Speaks on AI & Building Digital Wealth at The Next Digital Wealth Summit',
+    outletOrEvent: 'The Next Digital Wealth Summit',
+    episodeOrSession: 'Featured Session: Artificial Intelligence & Building Sustainable Digital Wealth',
+    dateLabel: 'November 2, 2026 (2 weeks ago)',
+    isoDate: '2026-11-02',
+    location: 'Accra, Ghana',
+    summary: 'Two weeks ago, Ghanaian tech creator, software engineer, and Plexlink founder Mr Martei (Justice Martei Mamah) joined founders and digital strategists at The Next Digital Wealth Summit to break down practical AI leverage and product-led wealth creation.',
+    content: `ACCRA — Two weeks ago at The Next Digital Wealth Summit, software engineer, tech creator, and Plexlink founder [Mr Martei](#/creator/mr-martei) (Justice Martei Mamah) delivered a standout presentation centered on the intersection of Artificial Intelligence and building long-term digital wealth from Africa.
+
+Addressing an audience of creators, early-stage startup builders, freelancers, and entrepreneurs, [Mr Martei](#/creator/mr-martei) challenged attendees to look beyond chasing viral social metrics alone and instead convert online attention into owned software, digital products, and scalable systems.
+
+"AI has dramatically compressed the time between an idea and a working product," Mr Martei noted during his summit session. "A solo builder in Accra today can use AI-assisted coding, design automation, and content distribution to ship real tools to a global audience—whether that is a Figma plugin like Paste Here or a physical-digital platform like Plexlink."
+
+Mr Martei walked participants through a practical blueprint for AI-era digital wealth: pairing niche technical education on TikTok and Instagram with direct-to-consumer digital infrastructure, automating customer onboarding, and using smart contactless networking tools so every in-person summit or client meeting turns into measurable digital pipeline.`,
+    keyTakeaways: [
+      'Transitioning from ad-dependent content creation to owning software products, SaaS tools, and hardware-enabled platforms.',
+      'Using Artificial Intelligence as a productivity multiplier for solo developers, designers, and lean Ghanaian startups.',
+      'Building defensible personal brand equity where trust drives direct product adoption without middlemen.',
+      'Turning offline events and summits into compounding digital networks with instant contactless contact sharing.'
+    ],
+    imageUrl: 'https://i.ytimg.com/vi/Tq2eQiG1It0/hqdefault.jpg',
+    featuredCreatorId: 'mr-martei',
+    featuredCreatorName: 'Mr Martei (Justice Martei Mamah)',
+    topicTags: ['Artificial Intelligence', 'Digital Wealth', 'Creator Economy', 'Accra Summit']
+  },
+  {
+    id: 'zedfm-zedtech-content-creation-2025',
+    type: 'Podcast & Radio',
+    title: 'Mr Martei Appears on ZedFM’s ZedTech Episode to Unpack Tech Content Creation in Ghana',
+    outletOrEvent: 'ZedFM (101.9 FM)',
+    episodeOrSession: 'ZedTech — Content Creation, Consistency & Digital Storytelling',
+    dateLabel: '2025 (Last Year)',
+    isoDate: '2025-10-15',
+    location: 'Accra, Ghana (Radio & Digital Broadcast)',
+    summary: 'On a feature episode of ZedFM’s technology program ZedTech last year, Mr Martei shared his blueprint for launching tech content creation in Ghana, simplifying complex tools for everyday audiences, and staying consistent.',
+    content: `ACCRA — Last year, tech creator and developer [Mr Martei](#/creator/mr-martei) (Justice Martei Mamah) sat down on ZedFM’s flagship technology show, ZedTech, for an in-depth broadcast focused on the realities and opportunities of content creation in Ghana.
+
+During the ZedTech episode, [Mr Martei](#/creator/mr-martei) reflected on how aspiring Ghanaian creators can break into technology and educational media without waiting for expensive studio equipment. Emphasizing clarity over complexity, he explained how breaking down everyday software workflows, web development concepts, and digital design tricks helped him cultivate a loyal community across Instagram (@mr.marteii), TikTok (@mr.martei), and YouTube.
+
+Speaking to ZedFM listeners across Accra and online streams, he emphasized that sustainable content creation relies on solving genuine audience problems: "When viewers leave your 60-second reel having learned a practical skill or discovered a tool that saves them hours of work, they do not just watch—they share, return, and trust what you build next."
+
+The ZedTech conversation also explored how Ghanaian creators can balance technical work with regular publishing schedules, collaborate with fellow tech voices, and position themselves for brand partnerships and product launches.`,
+    keyTakeaways: [
+      'Starting content creation with accessible smartphone tools and prioritizing clear audio and crisp storytelling.',
+      'Translating technical software and design topics into practical, everyday value for Ghanaian youth and professionals.',
+      'Maintaining creative consistency alongside software engineering and client project commitments.',
+      'Building long-term credibility in niche tech communities rather than chasing short-lived trends.'
+    ],
+    imageUrl: 'https://i.ytimg.com/vi/ta_-_bIYqQc/hqdefault.jpg',
+    featuredCreatorId: 'mr-martei',
+    featuredCreatorName: 'Mr Martei (Justice Martei Mamah)',
+    topicTags: ['ZedFM', 'ZedTech', 'Content Creation', 'Broadcast Interview']
+  },
+  {
+    id: 'pan-african-ai-summit-delppy',
+    type: 'Summit & Conference',
+    title: 'Delppy Leads Consumer AI & Cybersecurity Literacy Discussion at Pan-African AI Summit',
+    outletOrEvent: 'Pan-African AI Summit',
+    episodeOrSession: 'Speaker Spotlight: Everyday AI Adoption & Mobile Security',
+    dateLabel: 'September 2026',
+    isoDate: '2026-09-18',
+    location: 'Accra International Conference Centre',
+    summary: 'Tech educator and Bytes Unlocked co-host Delppy (Emmanuel Obuobi Fianko) spoke at the Pan-African AI Summit on equipping everyday smartphone users with practical AI skills and cybersecurity awareness.',
+    content: `ACCRA — At the Pan-African AI Summit in Accra, Ghanaian technology educator [Delppy](#/creator/delppy) (Emmanuel Obuobi Fianko) joined regional AI researchers and policy leaders to examine how artificial intelligence reaches everyday consumers outside corporate boardrooms.
+
+Drawing on insights from his 570K+ combined community across TikTok, Instagram, and the Bytes Unlocked YouTube channel, Delppy demonstrated why localized tech education is critical as AI tools become embedded in mobile banking, messaging apps, and consumer smartphones.
+
+He underscored the parallel need for strong digital hygiene—educating creators and everyday citizens on spotting AI-enabled phishing attempts, securing multi-factor authentication, and evaluating consumer hardware honestly.`,
+    keyTakeaways: [
+      'Making practical AI prompts and productivity tools accessible to non-technical smartphone users across Ghana.',
+      'Integrating cybersecurity awareness into creator-led technology education.',
+      'Supporting indigenous and West African digital voices in shaping continental AI narratives.'
+    ],
+    imageUrl: 'https://panafricanaisummit.com/storage/media/eZ0r51k1RsCg4ir5jQ14jyN6yxL35sVTk5YRjTO4.jpg',
+    featuredCreatorId: 'delppy',
+    featuredCreatorName: 'Delppy (Emmanuel Obuobi Fianko)',
+    topicTags: ['Pan-African AI Summit', 'Cybersecurity', 'Tech Literacy']
+  },
+  {
+    id: 'tech-in-ghana-dessy-ocean',
+    type: 'Press Appearance',
+    title: 'Dessy Ocean Highlights Creator AI Workflows at Tech in Ghana Conference',
+    outletOrEvent: 'Tech in Ghana Conference',
+    episodeOrSession: 'Creator Economy & Emerging Digital Productivity Tools',
+    dateLabel: 'August 2026',
+    isoDate: '2026-08-12',
+    location: 'Accra, Ghana',
+    summary: 'Meta AI campaign creator Dessy Ocean (Desmond Ofori Appiah) addressed founders and digital creatives at the Tech in Ghana Conference on accelerating short-form educational media.',
+    content: `ACCRA — Recognized across Ghana for making complex smartphone settings and AI features effortless to understand, [Dessy Ocean](#/creator/dessy-ocean) (Desmond Ofori Appiah) took the stage at the Tech in Ghana Conference to discuss the convergence of creator media and emerging AI ecosystems.
+
+Selected by Meta in May 2024 to promote Meta's AI technologies in Ghana, Dessy shared how rapid short-form tutorials help demystify AI assistants for students, entrepreneurs, and small businesses across the country.`,
+    keyTakeaways: [
+      'Demonstrating real-world AI assistant workflows for Ghanaian small business owners.',
+      'Bridging global platform innovations with local creator storytelling formats.',
+      'Empowering young creators across Accra, Kumasi, and Takoradi to build digital literacy channels.'
+    ],
+    imageUrl: 'https://techinghanaconference.com/wp-content/uploads/2023/11/Desmond-Dessy-Ocean-scaled.jpeg',
+    featuredCreatorId: 'dessy-ocean',
+    featuredCreatorName: 'Dessy Ocean (Desmond Ofori Appiah)',
+    topicTags: ['Tech in Ghana', 'Meta AI', 'Digital Productivity']
+  }
+];

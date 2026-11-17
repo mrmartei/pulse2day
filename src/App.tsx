@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { NEWS_ARTICLES, CONTENT_CREATORS, INITIAL_POLL, BREAKING_NEWS } from './data/mockData';
-import { NewsArticle, ContentCreator } from './types';
+import { NEWS_ARTICLES, CONTENT_CREATORS, INITIAL_POLL, BREAKING_NEWS, EVENTS_PRESS } from './data/mockData';
+import { NewsArticle, ContentCreator, EventPressItem } from './types';
 import { Navbar } from './components/Navbar';
 import { NewsFeed } from './components/NewsFeed';
 import { CreatorsHub } from './components/CreatorsHub';
+import { EventsPressHub } from './components/EventsPressHub';
+import { EventPressDetailView } from './components/EventPressDetailView';
 import { PollsSection } from './components/PollsSection';
 import { ArticleDetailView } from './components/ArticleDetailView';
 import { CreatorDetailView } from './components/CreatorDetailView';
@@ -11,7 +13,7 @@ import { BookmarksDrawer } from './components/BookmarksDrawer';
 import { Footer } from './components/Footer';
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState<'news' | 'creators' | 'polls'>('news');
+  const [activeTab, setActiveTab] = useState<'news' | 'creators' | 'events' | 'polls'>('news');
   const [searchQuery, setSearchQuery] = useState('');
   const [bookmarkedIds, setBookmarkedIds] = useState<string[]>([]);
   const [isBookmarksOpen, setIsBookmarksOpen] = useState(false);
@@ -26,6 +28,8 @@ export default function App() {
       setCurrentPath(hash);
       if (hash === '#/creators' || hash.startsWith('#/creator/')) {
         setActiveTab('creators');
+      } else if (hash === '#/events' || hash === '#/press' || hash.startsWith('#/event/')) {
+        setActiveTab('events');
       } else if (hash === '#/polls') {
         setActiveTab('polls');
       } else {
@@ -61,12 +65,15 @@ export default function App() {
   // Determine current view from hash
   const isArticleRoute = currentPath.startsWith('#/article/');
   const isCreatorRoute = currentPath.startsWith('#/creator/');
+  const isEventRoute = currentPath.startsWith('#/event/');
 
   const articleId = isArticleRoute ? currentPath.replace('#/article/', '') : null;
   const creatorId = isCreatorRoute ? currentPath.replace('#/creator/', '') : null;
+  const eventId = isEventRoute ? currentPath.replace('#/event/', '') : null;
 
   const selectedArticle = NEWS_ARTICLES.find(a => a.id === articleId) || null;
   const selectedCreator = CONTENT_CREATORS.find(c => c.id === creatorId || (creatorId === 'tech-in-twi' && c.id === 'selorm-tech')) || null;
+  const selectedEvent = EVENTS_PRESS.find(e => e.id === eventId) || null;
 
   const handleSelectArticle = (article: NewsArticle) => {
     window.location.hash = `#/article/${article.id}`;
@@ -76,7 +83,11 @@ export default function App() {
     window.location.hash = `#/creator/${creator.id}`;
   };
 
-  const handleReturnHome = (tab: 'news' | 'creators' | 'polls' = 'news') => {
+  const handleSelectEvent = (eventItem: EventPressItem) => {
+    window.location.hash = `#/event/${eventItem.id}`;
+  };
+
+  const handleReturnHome = (tab: 'news' | 'creators' | 'events' | 'polls' = 'news') => {
     setActiveTab(tab);
     window.location.hash = `#/${tab}`;
   };
@@ -127,7 +138,16 @@ export default function App() {
         ) : isCreatorRoute && selectedCreator ? (
           <CreatorDetailView
             creator={selectedCreator}
+            pressEvents={EVENTS_PRESS.filter(e => e.featuredCreatorId === selectedCreator.id)}
             onBack={() => handleReturnHome('creators')}
+          />
+        ) : isEventRoute && selectedEvent ? (
+          <EventPressDetailView
+            item={selectedEvent}
+            allEvents={EVENTS_PRESS}
+            creators={CONTENT_CREATORS}
+            onBack={() => handleReturnHome('events')}
+            onSelectEvent={handleSelectEvent}
           />
         ) : (
           <>
@@ -179,6 +199,14 @@ export default function App() {
                 creators={CONTENT_CREATORS}
                 searchQuery={searchQuery}
                 onSelectCreator={handleSelectCreator}
+              />
+            )}
+
+            {(currentPath === '#/events' || currentPath === '#/press') && (
+              <EventsPressHub
+                events={EVENTS_PRESS}
+                searchQuery={searchQuery}
+                onSelectEvent={handleSelectEvent}
               />
             )}
 

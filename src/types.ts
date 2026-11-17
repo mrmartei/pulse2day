@@ -77,3 +77,21 @@ export interface Comment {
   timestamp: string;
   likes: number;
 }
+
+export interface EventPressItem {
+  id: string;
+  type: 'Press Appearance' | 'Summit & Conference' | 'Podcast & Radio' | 'Industry Spotlight';
+  title: string;
+  outletOrEvent: string;
+  episodeOrSession?: string;
+  dateLabel: string;
+  isoDate: string;
+  location: string;
+  summary: string;
+  content: string;
+  keyTakeaways: string[];
+  imageUrl: string;
+  featuredCreatorId?: string;
+  featuredCreatorName?: string;
+  topicTags: string[];
+}

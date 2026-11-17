@@ -2,8 +2,8 @@ import React from 'react';
 import { Bookmark, Search, CloudSun, Menu, X } from 'lucide-react';
 
 interface NavbarProps {
-  activeTab: 'news' | 'creators' | 'polls';
-  setActiveTab: (tab: 'news' | 'creators' | 'polls') => void;
+  activeTab: 'news' | 'creators' | 'events' | 'polls';
+  setActiveTab: (tab: 'news' | 'creators' | 'events' | 'polls') => void;
   searchQuery: string;
   setSearchQuery: (query: string) => void;
   bookmarkedCount: number;
@@ -89,6 +89,14 @@ export const Navbar: React.FC<NavbarProps> = ({
               Creators Hub
             </button>
             <button
+              onClick={() => setActiveTab('events')}
+              className={`px-4 py-1.5 rounded text-sm font-medium transition ${
+                activeTab === 'events' ? 'bg-red-700 text-white' : 'text-slate-300 hover:text-white hover:bg-slate-700'
+              }`}
+            >
+              Events & Press
+            </button>
+            <button
               onClick={() => setActiveTab('polls')}
               className={`px-4 py-1.5 rounded text-sm font-medium transition ${
                 activeTab === 'polls' ? 'bg-red-700 text-white' : 'text-slate-300 hover:text-white hover:bg-slate-700'
@@ -103,8 +111,18 @@ export const Navbar: React.FC<NavbarProps> = ({
           <form
             onSubmit={(e) => {
               e.preventDefault();
-              if (window.location.hash.startsWith('#/article/') || window.location.hash.startsWith('#/creator/')) {
-                setActiveTab(activeTab === 'creators' ? 'creators' : 'news');
+              if (
+                window.location.hash.startsWith('#/article/') ||
+                window.location.hash.startsWith('#/creator/') ||
+                window.location.hash.startsWith('#/event/')
+              ) {
+                setActiveTab(
+                  activeTab === 'creators'
+                    ? 'creators'
+                    : activeTab === 'events'
+                    ? 'events'
+                    : 'news'
+                );
               }
             }}
             className="relative hidden lg:block w-72"
@@ -161,6 +179,12 @@ export const Navbar: React.FC<NavbarProps> = ({
             className={`w-full text-left px-4 py-2 rounded font-medium ${activeTab === 'creators' ? 'bg-red-700 text-white' : 'text-slate-300 hover:bg-slate-800'}`}
           >
             Creators Hub
+          </button>
+          <button
+            onClick={() => { setActiveTab('events'); setMobileMenuOpen(false); }}
+            className={`w-full text-left px-4 py-2 rounded font-medium ${activeTab === 'events' ? 'bg-red-700 text-white' : 'text-slate-300 hover:bg-slate-800'}`}
+          >
+            Events & Press
           </button>
           <button
             onClick={() => { setActiveTab('polls'); setMobileMenuOpen(false); }}

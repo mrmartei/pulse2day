@@ -47,13 +47,13 @@ export const Footer: React.FC = () => {
         </div>
 
         <div>
-          <h4 className="font-bold text-xs text-white mb-4 uppercase tracking-wider">News Desks</h4>
+          <h4 className="font-bold text-xs text-white mb-4 uppercase tracking-wider">Events & Press</h4>
           <ul className="space-y-2 text-xs text-slate-400 font-sans">
-            <li><span className="hover:text-white transition cursor-pointer">Politics & Governance</span></li>
-            <li><span className="hover:text-white transition cursor-pointer">Business & Economy</span></li>
-            <li><span className="hover:text-white transition cursor-pointer">Technology & Startups</span></li>
-            <li><span className="hover:text-white transition cursor-pointer">Sports & AFCON</span></li>
-            <li><span className="hover:text-white transition cursor-pointer">Entertainment & Arts</span></li>
+            <li><a href="#/event/next-digital-wealth-summit-2026" className="hover:text-white transition">Mr Martei at Digital Wealth Summit</a></li>
+            <li><a href="#/event/zedfm-zedtech-content-creation-2025" className="hover:text-white transition">Mr Martei on ZedFM (ZedTech)</a></li>
+            <li><a href="#/event/pan-african-ai-summit-delppy" className="hover:text-white transition">Delppy at Pan-African AI Summit</a></li>
+            <li><a href="#/event/tech-in-ghana-dessy-ocean" className="hover:text-white transition">Dessy Ocean at Tech in Ghana</a></li>
+            <li><a href="#/events" className="text-red-400 hover:text-red-300 font-semibold transition">All Events & Press →</a></li>
           </ul>
         </div>
 
