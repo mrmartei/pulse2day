@@ -43,14 +43,17 @@ export interface ContentCreator {
   stats: {
     tiktokFollowers?: string;
     instagramFollowers?: string;
+    secondaryInstagramFollowers?: string;
     youtubeSubscribers?: string;
     twitterFollowers?: string;
     linkedinFollowers?: string;
     facebookFollowers?: string;
+    snapchatFollowers?: string;
     threadsFollowers?: string;
     pinterestFollowers?: string;
     engagementRate: string;
   };
+  brandPartners?: string[];
   socialLinks: {
     youtube?: string;
     twitter?: string;

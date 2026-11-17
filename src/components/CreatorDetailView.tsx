@@ -144,11 +144,11 @@ export const CreatorDetailView: React.FC<CreatorDetailViewProps> = ({ creator, p
             <div className="bg-gradient-to-r from-slate-900 to-slate-800 text-white rounded-lg p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 font-sans shadow-sm border border-slate-700">
               <div className="space-y-1">
                 <span className="text-[10px] font-bold uppercase tracking-wider text-amber-400 bg-amber-400/20 px-2 py-0.5 rounded border border-amber-400/30">
-                  Featured Innovation & Product Launch
+                  Featured Innovation & Studio Leadership
                 </span>
-                <h3 className="font-bold text-base text-white">Founder & Creator of Plexlink</h3>
+                <h3 className="font-bold text-base text-white">Founder & CEO of Lumen Studios • Founder of Plexlink</h3>
                 <p className="text-xs text-slate-300 max-w-xl leading-relaxed">
-                  Plexlink is a link-in-bio tool, digital contact card sharing, and networking platform with custom NFC products (GHS 300 / GHS 450) for easy contactless contact sharing.
+                  Lumen Studios builds creative digital products & media, while Plexlink offers link-in-bio profiles, digital contact sharing, and custom NFC cards (GHS 300 / GHS 450).
                 </p>
               </div>
               <a
@@ -259,8 +259,16 @@ export const CreatorDetailView: React.FC<CreatorDetailViewProps> = ({ creator, p
             )}
             {creator.stats.instagramFollowers && (
               <div>
-                <span className="text-[10px] uppercase font-bold text-slate-400">Instagram Followers</span>
+                <span className="text-[10px] uppercase font-bold text-slate-400">
+                  {creator.id === 'mr-martei' ? 'Instagram (Primary @mr.marteii)' : 'Instagram Followers'}
+                </span>
                 <div className="text-lg font-bold text-slate-900 font-mono">{creator.stats.instagramFollowers}</div>
+              </div>
+            )}
+            {creator.stats.secondaryInstagramFollowers && (
+              <div>
+                <span className="text-[10px] uppercase font-bold text-slate-400">Instagram (2nd @mr.martei)</span>
+                <div className="text-lg font-bold text-slate-900 font-mono">{creator.stats.secondaryInstagramFollowers}</div>
               </div>
             )}
             {creator.stats.youtubeSubscribers && (
@@ -273,6 +281,12 @@ export const CreatorDetailView: React.FC<CreatorDetailViewProps> = ({ creator, p
               <div>
                 <span className="text-[10px] uppercase font-bold text-slate-400">X (Twitter) Followers</span>
                 <div className="text-lg font-bold text-slate-900 font-mono">{creator.stats.twitterFollowers}</div>
+              </div>
+            )}
+            {creator.stats.snapchatFollowers && (
+              <div>
+                <span className="text-[10px] uppercase font-bold text-slate-400">Snapchat Followers</span>
+                <div className="text-lg font-bold text-slate-900 font-mono">{creator.stats.snapchatFollowers}</div>
               </div>
             )}
             {creator.stats.facebookFollowers && (
@@ -301,6 +315,24 @@ export const CreatorDetailView: React.FC<CreatorDetailViewProps> = ({ creator, p
               </div>
             </div>
           </div>
+
+          {creator.brandPartners && creator.brandPartners.length > 0 && (
+            <div className="bg-slate-50 border border-slate-200 rounded-lg p-4 space-y-2.5">
+              <span className="text-[11px] uppercase font-bold tracking-wider text-slate-500 block">
+                Verified Local & International Brand Partners
+              </span>
+              <div className="flex flex-wrap gap-2">
+                {creator.brandPartners.map((partner) => (
+                  <span
+                    key={partner}
+                    className="bg-white border border-slate-200 text-slate-800 text-xs font-semibold px-3 py-1 rounded shadow-2xs"
+                  >
+                    {partner}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
 
         {/* Footer Links */}

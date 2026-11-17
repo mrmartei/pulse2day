@@ -11,12 +11,12 @@ export const NEWS_ARTICLES: NewsArticle[] = [
   {
     id: 'art-plexlink',
     title: 'Plexlink Launches in Ghana: Founder Mr Martei Unveils Smart NFC Networking & Link-in-Bio Platform',
-    summary: 'Built and founded by Ghanaian tech creator and developer Mr Martei (Justice Martei Mamah), Plexlink introduces a next-generation link-in-bio and digital contact card sharing platform with custom NFC products for instant, frictionless networking.',
-    content: `ACCRA, GHANA — In an era where traditional paper business cards are rapidly becoming obsolete, Ghanaian tech creator and software engineer [Mr Martei](#/creator/mr-martei) (Justice Martei Mamah) has officially launched Plexlink (https://www.plexlink.site/), an all-in-one link-in-bio tool and smart contact sharing networking platform tailored for modern African creators, entrepreneurs, and business professionals.
+    summary: 'Built and founded by Ghanaian tech creator, software engineer, and Lumen Studios CEO Mr Martei (Justice Martei Mamah), Plexlink introduces a next-generation link-in-bio and digital contact card sharing platform with custom NFC products for instant, frictionless networking.',
+    content: `ACCRA, GHANA — In an era where traditional paper business cards are rapidly becoming obsolete, Ghanaian tech creator, software engineer, and Founder & CEO of Lumen Studios [Mr Martei](#/creator/mr-martei) (Justice Martei Mamah) has officially launched Plexlink (https://www.plexlink.site/), an all-in-one link-in-bio tool and smart contact sharing networking platform tailored for modern African creators, entrepreneurs, and business professionals.
 
 Unlike traditional internet service providers or fiber utilities, Plexlink operates at the cutting edge of personal branding, smart contact card sharing, and professional networking. The platform combines a customizable, high-speed digital link-in-bio profile with sleek physical NFC (Near Field Communication) smart cards, tags, and stickers. With a single tap of a Plexlink NFC product against any modern smartphone, users can instantly share their contact card (vCard), social media links, portfolio showcases, WhatsApp messaging channel, and mobile money payment details—without requiring the recipient to download any external app.
 
-"Networking in Ghana and across Africa has historically relied on paper cards that get lost, thrown away, or quickly outdated," explained founder and lead developer [Mr Martei](#/creator/mr-martei) during the launch in Accra. "We built Plexlink from the ground up to empower African creatives, corporate executives, and startup founders with an intelligent digital identity. Whenever your phone number, social handle, or portfolio changes, your Plexlink profile automatically updates in real-time."
+"Networking in Ghana and across Africa has historically relied on paper cards that get lost, thrown away, or quickly outdated," explained Lumen Studios Founder & CEO and Plexlink architect [Mr Martei](#/creator/mr-martei) during the launch in Accra. "We built Plexlink from the ground up to empower African creatives, corporate executives, and startup founders with an intelligent digital identity. Whenever your phone number, social handle, or portfolio changes, your Plexlink profile automatically updates in real-time."
 
 Verified Product & Pricing Details:
 • Standard Plexlink NFC/QR Card: GHS 300 (one-time fee, no monthly subscription required).
@@ -51,7 +51,7 @@ Visual aesthetics and cinematic production are championed by [Rick Aqua](#/creat
 
 Younger creators are also making monumental strides: [Clifford Scott](#/creator/clifford-scott) (@cliffordscott_), known as CoolTechie, has built a following of 150K on TikTok and 46.4K on YouTube with student-friendly software guides and desk setup inspiration. Bridging local language gaps, [Kwabena Boateng](#/creator/selorm-tech) of Tech In Twi (@TechInTwi) educates 190,000 YouTube subscribers and 146,000+ Facebook followers in the Twi language.
 
-And proving that creators can also build tangible hardware products, [Mr Martei](#/creator/mr-martei) (Justice Martei Mamah, @mr.martei with 16.2K on Instagram and 8.9K on TikTok) has built and launched Plexlink, Ghana's premier smart NFC business card and link-in-bio platform. Together, these creators are cementing Ghana as West Africa's most vibrant digital storytelling sandbox.`,
+And proving that creators can also build tangible hardware and software products, [Mr Martei](#/creator/mr-martei) (Justice Martei Mamah, Founder & CEO of Lumen Studios, @mr.martei — 41.4K+ combined reach across 16.4K primary Instagram @mr.marteii, 9.1K TikTok @mr.martei, 7.4K secondary Instagram @mr.martei, 6K Snapchat, 2.4K Facebook, and 142 YouTube) has built and launched Plexlink, Ghana's premier smart NFC business card and link-in-bio platform, alongside commercial collaborations with partners such as Oraimo Ghana, Syinix Ghana, QCY Ghana, Wolevo, Numero eSIM, and Bisame App. Together, these creators are cementing Ghana as West Africa's most vibrant digital storytelling sandbox.`,
     category: 'Tech',
     channel: 'Channel One TV',
     author: 'Efua Mensah',
@@ -298,28 +298,39 @@ export const CONTENT_CREATORS: ContentCreator[] = [
     platform: 'Multi-Platform',
     category: 'Tech & Culture',
     status: 'Established',
-    subscribers: '25.3K+ Combined Reach',
+    subscribers: '41.4K+ Combined Reach',
     avatar: 'https://yt3.googleusercontent.com/iPDGhDeG-UIGsF8WZlGQBBLWcax4l7UKMdpvFYyome9gABUSAe2F4owxEhxD47GkEW1A_cEq=s900-c-k-c0x00ffffff-no-rj',
     bannerImage: 'https://i.ytimg.com/vi/ta_-_bIYqQc/hqdefault.jpg',
     coverImage: 'https://i.ytimg.com/vi/ta_-_bIYqQc/hqdefault.jpg',
     articleBodyImage: 'https://i.ytimg.com/vi/Tq2eQiG1It0/hqdefault.jpg',
-    bio: 'Justice Martei Mamah, known online as Mr Martei, is a Ghanaian software engineer, tech creator, and the founder of Plexlink (https://www.plexlink.site/), an NFC/QR smart business card and link-in-bio platform in Ghana, creator of the "Paste Here" Figma plugin, and developer at mrmartei.site (~25.3K combined reach across Instagram and TikTok).',
+    bio: 'Justice Martei Mamah, known online as Mr Martei, is a Ghanaian software engineer, tech creator, Founder & CEO of Lumen Studios, and Founder of Plexlink (https://www.plexlink.site/). With a 41.4K+ combined reach across Instagram (@mr.marteii primary & @mr.martei secondary), TikTok, Snapchat, Facebook, and YouTube, he partners with brands like Oraimo Ghana, Syinix Ghana, QCY Ghana, Wolevo, Numero eSIM, and Bisame App.',
     award: {
       title: 'Digital Product Founder & Tech Innovator of the Year',
       year: '2026',
-      description: 'Awarded by Ghana Digital Innovation Awards for pioneering Plexlink, bringing smart NFC contactless networking and link-in-bio solutions to African professionals.'
+      description: 'Awarded by Ghana Digital Innovation Awards for pioneering Plexlink and leading Lumen Studios, bringing smart NFC contactless networking and creative digital engineering to African professionals.'
     },
-    profileArticle: `Justice Martei Mamah, known online as Mr Martei, is a Ghanaian software engineer, web developer, tech creator, and founder of Plexlink (https://www.plexlink.site/). With an engaged audience of over 25.3K combined followers across Instagram (@mr.marteii with 16.2K followers), TikTok (@mr.martei with 8.9K followers), and YouTube (146 subscribers, 78 videos), Mr Martei is redefining personal branding and digital utility in West Africa.
+    profileArticle: `Justice Martei Mamah, known online as Mr Martei, is a Ghanaian software engineer, web developer, tech creator, Founder & CEO of Lumen Studios, and Founder of Plexlink (https://www.plexlink.site/). With an engaged network of 41.4K+ combined followers across primary Instagram (@mr.marteii with 16.4K followers), TikTok (@mr.martei with 9.1K followers), secondary Instagram (@mr.martei with 7.4K followers), Snapchat (6K followers), Facebook (2.4K followers), and YouTube (@mr.martei with 142 subscribers), Mr Martei is redefining personal branding and digital utility in West Africa.
 
-Frustrated by the environmental waste and inefficiency of traditional paper business cards at African conferences and networking gatherings, Mr Martei designed and engineered Plexlink to let professionals share comprehensive contact cards, portfolios, and social profiles with a single tap of an NFC card on any smartphone—without requiring an app download.
+As Founder & CEO of Lumen Studios, he leads creative digital media production and software product development, while his flagship venture Plexlink eliminates the friction of traditional paper business cards at conferences and business gatherings—enabling professionals to share comprehensive contact cards, portfolios, and social profiles with a single NFC tap on any smartphone.
 
-In addition to Plexlink, Mr Martei developed the widely praised "Paste Here" Figma plugin for designers worldwide and manages creative software projects through his portfolio platform at mrmartei.site. His regular breakdowns of web technologies, gadget architectures, and digital design tools make him one of Ghana's most promising software founders and digital creators.`,
+In addition to Plexlink and Lumen Studios, Mr Martei developed the widely used "Paste Here" Figma plugin for designers worldwide and maintains an active developer portfolio at mrmartei.site. His trusted voice in consumer electronics and digital workflows has earned commercial collaborations with leading local and international partners including Oraimo Ghana, Syinix Ghana, QCY Ghana, Wolevo, Numero eSIM, and Bisame App.`,
     stats: {
-      instagramFollowers: '16.2K',
-      tiktokFollowers: '8.9K',
-      youtubeSubscribers: '146',
+      instagramFollowers: '16.4K',
+      tiktokFollowers: '9.1K',
+      secondaryInstagramFollowers: '7.4K',
+      snapchatFollowers: '6K',
+      facebookFollowers: '2.4K',
+      youtubeSubscribers: '142',
       engagementRate: '12.8%'
     },
+    brandPartners: [
+      'Oraimo Ghana',
+      'Syinix Ghana',
+      'QCY Ghana',
+      'Wolevo',
+      'Numero eSIM',
+      'Bisame App'
+    ],
     socialLinks: {
       tiktok: 'https://www.tiktok.com/@mr.martei',
       instagram: 'https://www.instagram.com/mr.marteii/',
@@ -801,16 +812,16 @@ export const EVENTS_PRESS: EventPressItem[] = [
     dateLabel: 'November 2, 2026 (2 weeks ago)',
     isoDate: '2026-11-02',
     location: 'Accra, Ghana',
-    summary: 'Two weeks ago, Ghanaian tech creator, software engineer, and Plexlink founder Mr Martei (Justice Martei Mamah) joined founders and digital strategists at The Next Digital Wealth Summit to break down practical AI leverage and product-led wealth creation.',
-    content: `ACCRA — Two weeks ago at The Next Digital Wealth Summit, software engineer, tech creator, and Plexlink founder [Mr Martei](#/creator/mr-martei) (Justice Martei Mamah) delivered a standout presentation centered on the intersection of Artificial Intelligence and building long-term digital wealth from Africa.
+    summary: 'Two weeks ago, Ghanaian tech creator, software engineer, Lumen Studios Founder & CEO, and Plexlink founder Mr Martei (Justice Martei Mamah) joined founders and digital strategists at The Next Digital Wealth Summit to break down practical AI leverage and product-led wealth creation.',
+    content: `ACCRA — Two weeks ago at The Next Digital Wealth Summit, software engineer, tech creator, Founder & CEO of Lumen Studios, and Plexlink founder [Mr Martei](#/creator/mr-martei) (Justice Martei Mamah) delivered a standout presentation centered on the intersection of Artificial Intelligence and building long-term digital wealth from Africa.
 
-Addressing an audience of creators, early-stage startup builders, freelancers, and entrepreneurs, [Mr Martei](#/creator/mr-martei) challenged attendees to look beyond chasing viral social metrics alone and instead convert online attention into owned software, digital products, and scalable systems.
+Addressing an audience of creators, early-stage startup builders, freelancers, and entrepreneurs, [Mr Martei](#/creator/mr-martei) challenged attendees to look beyond chasing viral social metrics alone and instead convert online attention into owned software, creative studios, digital products, and scalable systems.
 
-"AI has dramatically compressed the time between an idea and a working product," Mr Martei noted during his summit session. "A solo builder in Accra today can use AI-assisted coding, design automation, and content distribution to ship real tools to a global audience—whether that is a Figma plugin like Paste Here or a physical-digital platform like Plexlink."
+"AI has dramatically compressed the time between an idea and a working product," Mr Martei noted during his summit session. "A solo builder or lean studio in Accra today can use AI-assisted coding, design automation, and content distribution to ship real tools to a global audience—whether that is a Figma plugin like Paste Here, creative client work at Lumen Studios, or a physical-digital platform like Plexlink."
 
-Mr Martei walked participants through a practical blueprint for AI-era digital wealth: pairing niche technical education on TikTok and Instagram with direct-to-consumer digital infrastructure, automating customer onboarding, and using smart contactless networking tools so every in-person summit or client meeting turns into measurable digital pipeline.`,
+Mr Martei walked participants through a practical blueprint for AI-era digital wealth: pairing niche technical education across his 41.4K+ audience with direct-to-consumer digital infrastructure, automating customer onboarding, and using smart contactless networking tools so every in-person summit or client meeting turns into measurable digital pipeline.`,
     keyTakeaways: [
-      'Transitioning from ad-dependent content creation to owning software products, SaaS tools, and hardware-enabled platforms.',
+      'Transitioning from ad-dependent content creation to owning studios like Lumen Studios, software tools, and hardware-enabled platforms.',
       'Using Artificial Intelligence as a productivity multiplier for solo developers, designers, and lean Ghanaian startups.',
       'Building defensible personal brand equity where trust drives direct product adoption without middlemen.',
       'Turning offline events and summits into compounding digital networks with instant contactless contact sharing.'
@@ -818,7 +829,7 @@ Mr Martei walked participants through a practical blueprint for AI-era digital w
     imageUrl: 'https://i.ytimg.com/vi/Tq2eQiG1It0/hqdefault.jpg',
     featuredCreatorId: 'mr-martei',
     featuredCreatorName: 'Mr Martei (Justice Martei Mamah)',
-    topicTags: ['Artificial Intelligence', 'Digital Wealth', 'Creator Economy', 'Accra Summit']
+    topicTags: ['Artificial Intelligence', 'Digital Wealth', 'Lumen Studios', 'Accra Summit']
   },
   {
     id: 'zedfm-zedtech-content-creation-2025',
@@ -829,19 +840,19 @@ Mr Martei walked participants through a practical blueprint for AI-era digital w
     dateLabel: '2025 (Last Year)',
     isoDate: '2025-10-15',
     location: 'Accra, Ghana (Radio & Digital Broadcast)',
-    summary: 'On a feature episode of ZedFM’s technology program ZedTech last year, Mr Martei shared his blueprint for launching tech content creation in Ghana, simplifying complex tools for everyday audiences, and staying consistent.',
-    content: `ACCRA — Last year, tech creator and developer [Mr Martei](#/creator/mr-martei) (Justice Martei Mamah) sat down on ZedFM’s flagship technology show, ZedTech, for an in-depth broadcast focused on the realities and opportunities of content creation in Ghana.
+    summary: 'On a feature episode of ZedFM’s technology program ZedTech last year, Lumen Studios Founder & CEO Mr Martei shared his blueprint for launching tech content creation in Ghana, simplifying complex tools, and working with major local and international brand partners.',
+    content: `ACCRA — Last year, tech creator, software developer, and Founder & CEO of Lumen Studios [Mr Martei](#/creator/mr-martei) (Justice Martei Mamah) sat down on ZedFM’s flagship technology show, ZedTech, for an in-depth broadcast focused on the realities and opportunities of content creation in Ghana.
 
-During the ZedTech episode, [Mr Martei](#/creator/mr-martei) reflected on how aspiring Ghanaian creators can break into technology and educational media without waiting for expensive studio equipment. Emphasizing clarity over complexity, he explained how breaking down everyday software workflows, web development concepts, and digital design tricks helped him cultivate a loyal community across Instagram (@mr.marteii), TikTok (@mr.martei), and YouTube.
+During the ZedTech episode, [Mr Martei](#/creator/mr-martei) reflected on how aspiring Ghanaian creators can break into technology and educational media without waiting for expensive studio equipment. Emphasizing clarity over complexity, he explained how breaking down everyday software workflows, web development concepts, and digital design tricks helped him grow a 41.4K+ cross-platform community spanning Instagram (@mr.marteii primary & @mr.martei secondary), TikTok (@mr.martei), Snapchat, Facebook, and YouTube.
 
 Speaking to ZedFM listeners across Accra and online streams, he emphasized that sustainable content creation relies on solving genuine audience problems: "When viewers leave your 60-second reel having learned a practical skill or discovered a tool that saves them hours of work, they do not just watch—they share, return, and trust what you build next."
 
-The ZedTech conversation also explored how Ghanaian creators can balance technical work with regular publishing schedules, collaborate with fellow tech voices, and position themselves for brand partnerships and product launches.`,
+The ZedTech conversation also explored how Ghanaian creators can balance technical work and studio leadership at Lumen Studios with regular publishing schedules, collaborate with fellow tech voices, and build long-term relationships with verified local and international brand partners—including Oraimo Ghana, Syinix Ghana, QCY Ghana, Wolevo, Numero eSIM, and Bisame App.`,
     keyTakeaways: [
       'Starting content creation with accessible smartphone tools and prioritizing clear audio and crisp storytelling.',
       'Translating technical software and design topics into practical, everyday value for Ghanaian youth and professionals.',
-      'Maintaining creative consistency alongside software engineering and client project commitments.',
-      'Building long-term credibility in niche tech communities rather than chasing short-lived trends.'
+      'Balancing creative consistency with software engineering and leadership as Founder & CEO of Lumen Studios.',
+      'Attracting verified local and international partners such as Oraimo Ghana, Syinix Ghana, QCY Ghana, Wolevo, Numero eSIM, and Bisame App.'
     ],
     imageUrl: 'https://i.ytimg.com/vi/ta_-_bIYqQc/hqdefault.jpg',
     featuredCreatorId: 'mr-martei',

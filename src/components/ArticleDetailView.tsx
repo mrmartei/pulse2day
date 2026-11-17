@@ -225,7 +225,7 @@ export const ArticleDetailView: React.FC<ArticleDetailViewProps> = ({
                   </span>
                 </div>
                 <h3 className="font-bold text-slate-900 text-base mt-0.5">Mr Martei (Justice Martei Mamah)</h3>
-                <p className="text-xs text-slate-600">Software Engineer • Founder of Plexlink • Tech Creator</p>
+                <p className="text-xs text-slate-600">Founder & CEO, Lumen Studios • Founder, Plexlink • Software Engineer & Tech Creator</p>
               </div>
             </div>
             <a
