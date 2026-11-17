@@ -20,7 +20,7 @@ export const ArticleModal: React.FC<ArticleModalProps> = ({
   const [likes, setLikes] = useState(article.likes);
   const [hasLiked, setHasLiked] = useState(false);
   const [comments, setComments] = useState<Comment[]>([
-    { id: '1', author: 'Kofi Mensah', avatar: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=100&q=80', content: 'This is a very insightful report. Thanks Ghana Pulse for keeping us updated!', timestamp: '1 hour ago', likes: 14 },
+    { id: '1', author: 'Kofi Mensah', avatar: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=100&q=80', content: 'This is a very insightful report. Thanks GhPulse for keeping us updated!', timestamp: '1 hour ago', likes: 14 },
     { id: '2', author: 'Akosua Serwaa', avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80', content: 'Indeed. The developments in our tech and business sectors are very promising.', timestamp: '30 mins ago', likes: 8 }
   ]);
   const [newComment, setNewComment] = useState('');
@@ -130,7 +130,7 @@ export const ArticleModal: React.FC<ArticleModalProps> = ({
               <span>{likes} Helpful Votes</span>
             </button>
             <div className="text-xs text-slate-400 font-sans">
-              Ghana Pulse Editorial Desk
+              GhPulse Editorial Desk
             </div>
           </div>
 

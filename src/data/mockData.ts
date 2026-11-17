@@ -30,7 +30,7 @@ Early beta testers among Ghanaian tech creators, real estate agencies in Airport
     channel: 'Channel One TV',
     author: 'Efua Mensah',
     publishedAt: '30 mins ago',
-    imageUrl: 'https://i.ibb.co/Z6Dsp6y5/Taplink-mockup.png',
+    imageUrl: '/assets/aistudio/PlexLink_rr_570f6f4f.png',
     articleBodyImage: 'https://i.ytimg.com/vi/QZYg94MzPQA/hqdefault.jpg',
     articleBodyCaption: 'Product Demo: Founder Mr Martei demonstrating Plexlink contactless NFC networking & mobile dashboard in action',
     readTime: '4 min read',

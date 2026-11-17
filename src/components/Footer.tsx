@@ -23,7 +23,7 @@ export const Footer: React.FC = () => {
       {subscribed && (
         <div className="fixed bottom-6 right-6 z-50 bg-emerald-600 text-white text-xs md:text-sm font-semibold px-5 py-3 rounded-lg shadow-xl border border-emerald-500 animate-in fade-in slide-in-from-bottom duration-300 flex items-center space-x-2">
           <span>✓</span>
-          <span>Subscribed! Welcome to the Ghana Pulse Inner Circle.</span>
+          <span>Subscribed! Welcome to the GhPulse Inner Circle.</span>
         </div>
       )}
       <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8 pb-12 border-b border-slate-800">
@@ -33,7 +33,7 @@ export const Footer: React.FC = () => {
               <span className="text-white font-serif font-bold text-sm">GP</span>
             </div>
             <div>
-              <span className="font-serif font-bold text-lg tracking-wide uppercase block leading-none">Ghana Pulse</span>
+              <span className="font-serif font-bold text-xl tracking-tight block leading-none">GhPulse</span>
               <span className="text-[10px] text-slate-400 uppercase tracking-wider block mt-1">Ghana's Tech, Creator & Cultural Heartbeat</span>
             </div>
           </div>
@@ -89,14 +89,14 @@ export const Footer: React.FC = () => {
               <p className="text-[11px] text-red-400 font-sans">{errorMsg}</p>
             )}
             {subscribed && (
-              <p className="text-[11px] text-emerald-400 font-sans font-medium">Subscribed! Welcome to the Ghana Pulse Inner Circle.</p>
+              <p className="text-[11px] text-emerald-400 font-sans font-medium">Subscribed! Welcome to the GhPulse Inner Circle.</p>
             )}
           </form>
         </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 font-sans">
-        <p>© 2026 Ghana Pulse News Network. All rights reserved.</p>
+        <p>© 2026 GhPulse News Network. All rights reserved.</p>
         <div className="flex items-center space-x-4 mt-4 sm:mt-0">
           <span className="hover:text-slate-400 cursor-pointer">Privacy Policy</span>
           <span>•</span>

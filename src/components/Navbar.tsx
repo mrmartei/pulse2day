@@ -62,8 +62,8 @@ export const Navbar: React.FC<NavbarProps> = ({
               <span className="text-white font-serif font-bold text-xl tracking-tighter">GP</span>
             </div>
             <div>
-              <h1 className="font-serif font-bold text-lg tracking-wide text-white uppercase leading-none">
-                Ghana Pulse
+              <h1 className="font-serif font-bold text-xl tracking-tight text-white leading-none">
+                GhPulse
               </h1>
               <p className="text-[10px] uppercase tracking-wider text-slate-400 font-sans mt-0.5">
                 Ghana's Tech, Creator & Cultural Heartbeat

@@ -25,7 +25,42 @@ export const ArticleDetailView: React.FC<ArticleDetailViewProps> = ({
   React.useEffect(() => {
     setLikes(article.likes);
     setHasLiked(false);
-  }, [article.id, article.likes]);
+
+    const previousTitle = document.title;
+    document.title = `${article.title} — GhPulse`;
+
+    const structuredData = {
+      '@context': 'https://schema.org',
+      '@type': 'NewsArticle',
+      headline: article.title,
+      description: article.summary,
+      image: [article.imageUrl],
+      articleSection: article.category,
+      author: {
+        '@type': 'Person',
+        name: article.author,
+      },
+      publisher: {
+        '@type': 'NewsMediaOrganization',
+        name: 'GhPulse',
+      },
+      url: window.location.href,
+    };
+
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.id = 'ghpulse-article-jsonld';
+    script.text = JSON.stringify(structuredData);
+    document.head.appendChild(script);
+
+    return () => {
+      document.title = previousTitle;
+      const existing = document.getElementById('ghpulse-article-jsonld');
+      if (existing) {
+        existing.remove();
+      }
+    };
+  }, [article]);
   const [comments, setComments] = useState<Comment[]>([
     { id: '1', author: 'Kofi Mensah', avatar: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=100&q=80', content: 'Plexlink is such a needed innovation in Ghana! Paper cards always get lost. Big congrats to Mr Martei.', timestamp: '45 mins ago', likes: 22 },
     { id: '2', author: 'Akosua Serwaa', avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80', content: 'Tapped my first Plexlink card at the tech conference in Accra today. Instant contact saved directly to my phone.', timestamp: '20 mins ago', likes: 16 }
@@ -252,7 +287,7 @@ export const ArticleDetailView: React.FC<ArticleDetailViewProps> = ({
             <span>{likes} Helpful Votes</span>
           </button>
           <div className="text-xs text-slate-400 font-sans">
-            Ghana Pulse Editorial {article.category} Desk • Accra
+            GhPulse Editorial {article.category} Desk • Accra
           </div>
         </div>
 

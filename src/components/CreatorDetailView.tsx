@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ContentCreator } from '../types';
 import { ArrowLeft, Award, TrendingUp, ExternalLink, Share2, Check } from 'lucide-react';
 
@@ -9,6 +9,65 @@ interface CreatorDetailViewProps {
 
 export const CreatorDetailView: React.FC<CreatorDetailViewProps> = ({ creator, onBack }) => {
   const [copied, setCopied] = React.useState(false);
+
+  useEffect(() => {
+    const previousTitle = document.title;
+    document.title = `${creator.name} (${creator.handle}) — GhPulse Creator Profile`;
+
+    const sameAsLinks = [
+      creator.socialLinks.website,
+      creator.socialLinks.tiktok,
+      creator.socialLinks.instagram,
+      creator.socialLinks.youtube,
+      creator.socialLinks.twitter,
+      creator.socialLinks.threads,
+    ].filter((link): link is string => Boolean(link));
+
+    const structuredData = {
+      '@context': 'https://schema.org',
+      '@type': 'ProfilePage',
+      url: window.location.href,
+      publisher: {
+        '@type': 'NewsMediaOrganization',
+        name: 'GhPulse',
+      },
+      mainEntity: {
+        '@type': 'Person',
+        name: creator.realName,
+        alternateName: [creator.name, creator.handle],
+        description: creator.bio,
+        image: creator.avatar,
+        jobTitle: `Digital Content Creator (${creator.category})`,
+        nationality: 'Ghanaian',
+        award: `${creator.award.title} (${creator.award.year})`,
+        url: window.location.href,
+        sameAs: sameAsLinks,
+      },
+    };
+
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.id = 'ghpulse-creator-jsonld';
+    script.text = JSON.stringify(structuredData);
+    document.head.appendChild(script);
+
+    const metaDesc = document.querySelector('meta[name="description"]');
+    const previousDesc = metaDesc?.getAttribute('content') || '';
+    if (metaDesc) {
+      metaDesc.setAttribute('content', creator.bio);
+    }
+
+    return () => {
+      document.title = previousTitle;
+      const existingScript = document.getElementById('ghpulse-creator-jsonld');
+      if (existingScript) {
+        existingScript.remove();
+      }
+      if (metaDesc && previousDesc) {
+        metaDesc.setAttribute('content', previousDesc);
+      }
+    };
+  }, [creator]);
 
   const handleCopyLink = () => {
     navigator.clipboard.writeText(window.location.href);
@@ -199,40 +258,40 @@ export const CreatorDetailView: React.FC<CreatorDetailViewProps> = ({ creator, o
 
         {/* Footer Links */}
         <div className="flex flex-wrap items-center justify-between gap-4 pt-6 border-t border-slate-200">
-          <span className="text-xs text-slate-500 font-sans">Ghana Pulse Creator Profiles • Accra</span>
+          <span className="text-xs text-slate-500 font-sans">GhPulse Creator Profiles • Accra</span>
           <div className="flex flex-wrap items-center gap-2">
             {creator.socialLinks.website && (
-              <a href={creator.socialLinks.website} target="_blank" rel="noopener noreferrer" className="bg-slate-100 hover:bg-slate-200 text-slate-800 px-3 py-1.5 rounded text-xs font-semibold transition flex items-center space-x-1">
+              <a href={creator.socialLinks.website} target="_blank" rel="me noopener noreferrer" className="bg-slate-100 hover:bg-slate-200 text-slate-800 px-3 py-1.5 rounded text-xs font-semibold transition flex items-center space-x-1">
                 <span>Website</span>
                 <ExternalLink className="w-3 h-3" />
               </a>
             )}
             {creator.socialLinks.instagram && (
-              <a href={creator.socialLinks.instagram} target="_blank" rel="noopener noreferrer" className="bg-slate-100 hover:bg-slate-200 text-slate-800 px-3 py-1.5 rounded text-xs font-semibold transition flex items-center space-x-1">
+              <a href={creator.socialLinks.instagram} target="_blank" rel="me noopener noreferrer" className="bg-slate-100 hover:bg-slate-200 text-slate-800 px-3 py-1.5 rounded text-xs font-semibold transition flex items-center space-x-1">
                 <span>Instagram</span>
                 <ExternalLink className="w-3 h-3" />
               </a>
             )}
             {creator.socialLinks.tiktok && (
-              <a href={creator.socialLinks.tiktok} target="_blank" rel="noopener noreferrer" className="bg-slate-100 hover:bg-slate-200 text-slate-800 px-3 py-1.5 rounded text-xs font-semibold transition flex items-center space-x-1">
+              <a href={creator.socialLinks.tiktok} target="_blank" rel="me noopener noreferrer" className="bg-slate-100 hover:bg-slate-200 text-slate-800 px-3 py-1.5 rounded text-xs font-semibold transition flex items-center space-x-1">
                 <span>TikTok</span>
                 <ExternalLink className="w-3 h-3" />
               </a>
             )}
             {creator.socialLinks.youtube && (
-              <a href={creator.socialLinks.youtube} target="_blank" rel="noopener noreferrer" className="bg-slate-100 hover:bg-slate-200 text-slate-800 px-3 py-1.5 rounded text-xs font-semibold transition flex items-center space-x-1">
+              <a href={creator.socialLinks.youtube} target="_blank" rel="me noopener noreferrer" className="bg-slate-100 hover:bg-slate-200 text-slate-800 px-3 py-1.5 rounded text-xs font-semibold transition flex items-center space-x-1">
                 <span>YouTube</span>
                 <ExternalLink className="w-3 h-3" />
               </a>
             )}
             {creator.socialLinks.twitter && (
-              <a href={creator.socialLinks.twitter} target="_blank" rel="noopener noreferrer" className="bg-slate-100 hover:bg-slate-200 text-slate-800 px-3 py-1.5 rounded text-xs font-semibold transition flex items-center space-x-1">
+              <a href={creator.socialLinks.twitter} target="_blank" rel="me noopener noreferrer" className="bg-slate-100 hover:bg-slate-200 text-slate-800 px-3 py-1.5 rounded text-xs font-semibold transition flex items-center space-x-1">
                 <span>X (Twitter)</span>
                 <ExternalLink className="w-3 h-3" />
               </a>
             )}
             {creator.socialLinks.threads && (
-              <a href={creator.socialLinks.threads} target="_blank" rel="noopener noreferrer" className="bg-slate-100 hover:bg-slate-200 text-slate-800 px-3 py-1.5 rounded text-xs font-semibold transition flex items-center space-x-1">
+              <a href={creator.socialLinks.threads} target="_blank" rel="me noopener noreferrer" className="bg-slate-100 hover:bg-slate-200 text-slate-800 px-3 py-1.5 rounded text-xs font-semibold transition flex items-center space-x-1">
                 <span>Threads</span>
                 <ExternalLink className="w-3 h-3" />
               </a>
