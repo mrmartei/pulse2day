@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { ContentCreator, EventPressItem } from '../types';
 import { ArrowLeft, Award, TrendingUp, ExternalLink, Share2, Check, Calendar, Mic } from 'lucide-react';
+import { handleSpaLinkClick } from '../utils/navigation';
 
 interface CreatorDetailViewProps {
   creator: ContentCreator;
@@ -10,65 +11,6 @@ interface CreatorDetailViewProps {
 
 export const CreatorDetailView: React.FC<CreatorDetailViewProps> = ({ creator, pressEvents = [], onBack }) => {
   const [copied, setCopied] = React.useState(false);
-
-  useEffect(() => {
-    const previousTitle = document.title;
-    document.title = `${creator.name} (${creator.handle}) — GhPulse Creator Profile`;
-
-    const sameAsLinks = [
-      creator.socialLinks.website,
-      creator.socialLinks.tiktok,
-      creator.socialLinks.instagram,
-      creator.socialLinks.youtube,
-      creator.socialLinks.twitter,
-      creator.socialLinks.threads,
-    ].filter((link): link is string => Boolean(link));
-
-    const structuredData = {
-      '@context': 'https://schema.org',
-      '@type': 'ProfilePage',
-      url: window.location.href,
-      publisher: {
-        '@type': 'NewsMediaOrganization',
-        name: 'GhPulse',
-      },
-      mainEntity: {
-        '@type': 'Person',
-        name: creator.realName,
-        alternateName: [creator.name, creator.handle],
-        description: creator.bio,
-        image: creator.avatar,
-        jobTitle: `Digital Content Creator (${creator.category})`,
-        nationality: 'Ghanaian',
-        award: `${creator.award.title} (${creator.award.year})`,
-        url: window.location.href,
-        sameAs: sameAsLinks,
-      },
-    };
-
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.id = 'ghpulse-creator-jsonld';
-    script.text = JSON.stringify(structuredData);
-    document.head.appendChild(script);
-
-    const metaDesc = document.querySelector('meta[name="description"]');
-    const previousDesc = metaDesc?.getAttribute('content') || '';
-    if (metaDesc) {
-      metaDesc.setAttribute('content', creator.bio);
-    }
-
-    return () => {
-      document.title = previousTitle;
-      const existingScript = document.getElementById('ghpulse-creator-jsonld');
-      if (existingScript) {
-        existingScript.remove();
-      }
-      if (metaDesc && previousDesc) {
-        metaDesc.setAttribute('content', previousDesc);
-      }
-    };
-  }, [creator]);
 
   const handleCopyLink = () => {
     navigator.clipboard.writeText(window.location.href);
@@ -80,13 +22,19 @@ export const CreatorDetailView: React.FC<CreatorDetailViewProps> = ({ creator, p
     <div className="max-w-4xl mx-auto py-8 space-y-8 animate-in fade-in duration-200">
       {/* Back button and share */}
       <div className="flex items-center justify-between">
-        <button
-          onClick={onBack}
+        <a
+          href="/creators"
+          onClick={(e) => {
+            handleSpaLinkClick(e, '/creators');
+            if (!e.metaKey && !e.ctrlKey && !e.shiftKey && !e.altKey && e.button === 0) {
+              onBack();
+            }
+          }}
           className="inline-flex items-center space-x-2 text-sm font-bold text-slate-700 hover:text-red-700 bg-white border border-slate-200 px-4 py-2 rounded shadow-sm transition"
         >
           <ArrowLeft className="w-4 h-4" />
           <span>Back to Creators Directory</span>
-        </button>
+        </a>
 
         <button
           onClick={handleCopyLink}
@@ -152,7 +100,8 @@ export const CreatorDetailView: React.FC<CreatorDetailViewProps> = ({ creator, p
                 </p>
               </div>
               <a
-                href="#/article/art-plexlink"
+                href="/article/art-plexlink"
+                onClick={(e) => handleSpaLinkClick(e, '/article/art-plexlink')}
                 className="bg-red-700 hover:bg-red-800 text-white text-xs font-bold px-4 py-2.5 rounded transition shadow-sm inline-flex items-center space-x-1.5 whitespace-nowrap self-stretch sm:self-auto justify-center"
               >
                 <span>Read Plexlink Launch Story →</span>
@@ -166,7 +115,7 @@ export const CreatorDetailView: React.FC<CreatorDetailViewProps> = ({ creator, p
               <Award className="w-4 h-4 text-amber-600" />
               <span>Official Industry Award ({creator.award.year})</span>
             </div>
-            <h3 className="font-serif font-bold text-lg text-slate-900">{creator.award.title}</h3>
+            <h2 className="font-serif font-bold text-lg text-slate-900">{creator.award.title}</h2>
             <p className="text-sm text-slate-700 leading-relaxed font-sans">
               {creator.award.description}
             </p>
@@ -174,9 +123,9 @@ export const CreatorDetailView: React.FC<CreatorDetailViewProps> = ({ creator, p
 
           {/* Profile Article Body */}
           <div className="space-y-6">
-            <h3 className="font-serif font-bold text-xl text-slate-900 border-b border-slate-200 pb-2">
+            <h2 className="font-serif font-bold text-xl text-slate-900 border-b border-slate-200 pb-2">
               Profile & Career Journey: {creator.name}
-            </h3>
+            </h2>
             <p className="text-slate-800 text-base md:text-lg leading-relaxed font-serif">
               {creator.profileArticle}
             </p>
@@ -205,12 +154,13 @@ export const CreatorDetailView: React.FC<CreatorDetailViewProps> = ({ creator, p
           {pressEvents.length > 0 && (
             <div className="space-y-4 pt-4 border-t border-slate-200">
               <div className="flex items-center justify-between">
-                <h3 className="font-serif font-bold text-xl text-slate-900 flex items-center space-x-2">
+                <h2 className="font-serif font-bold text-xl text-slate-900 flex items-center space-x-2">
                   <Mic className="w-5 h-5 text-red-700" />
                   <span>Events, Summits & Press Appearances</span>
-                </h3>
+                </h2>
                 <a
-                  href="#/events"
+                  href="/events"
+                  onClick={(e) => handleSpaLinkClick(e, '/events')}
                   className="text-xs font-bold text-red-700 hover:underline"
                 >
                   View All Events & Press →
@@ -220,7 +170,8 @@ export const CreatorDetailView: React.FC<CreatorDetailViewProps> = ({ creator, p
                 {pressEvents.map((ev) => (
                   <a
                     key={ev.id}
-                    href={`#/event/${ev.id}`}
+                    href={`/event/${ev.id}`}
+                    onClick={(e) => handleSpaLinkClick(e, `/event/${ev.id}`)}
                     className="bg-slate-50 hover:bg-red-50/40 border border-slate-200 hover:border-red-200 rounded-lg p-4 transition flex flex-col justify-between group"
                   >
                     <div className="space-y-2">
@@ -231,9 +182,9 @@ export const CreatorDetailView: React.FC<CreatorDetailViewProps> = ({ creator, p
                           <span>{ev.dateLabel}</span>
                         </span>
                       </div>
-                      <h4 className="font-serif font-bold text-sm text-slate-900 group-hover:text-red-700 transition leading-snug">
+                      <h3 className="font-serif font-bold text-sm text-slate-900 group-hover:text-red-700 transition leading-snug">
                         {ev.title}
-                      </h4>
+                      </h3>
                       <p className="text-xs text-slate-600 line-clamp-2 leading-relaxed">
                         {ev.summary}
                       </p>

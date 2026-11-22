@@ -1,5 +1,6 @@
 import React from 'react';
 import { Bookmark, Search, CloudSun, Menu, X } from 'lucide-react';
+import { handleSpaLinkClick } from '../utils/navigation';
 
 interface NavbarProps {
   activeTab: 'news' | 'creators' | 'events' | 'polls';
@@ -19,6 +20,13 @@ export const Navbar: React.FC<NavbarProps> = ({
   onOpenBookmarks
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
+
+  const navItems: Array<{ tab: 'news' | 'creators' | 'events' | 'polls'; href: string; label: string }> = [
+    { tab: 'news', href: '/', label: 'Latest News' },
+    { tab: 'creators', href: '/creators', label: 'Creators Hub' },
+    { tab: 'events', href: '/events', label: 'Events & Press' },
+    { tab: 'polls', href: '/polls', label: 'Community Polls' },
+  ];
 
   return (
     <header className="sticky top-0 z-50 bg-slate-900 border-b border-slate-800 text-white">
@@ -53,57 +61,41 @@ export const Navbar: React.FC<NavbarProps> = ({
       {/* Main navigation */}
       <div className="max-w-7xl mx-auto px-4 py-3.5 flex items-center justify-between">
         <div className="flex items-center space-x-8">
-          {/* Actual professional logo */}
-          <div 
-            onClick={() => setActiveTab('news')} 
+          {/* Brand Logo Link */}
+          <a
+            href="/"
+            onClick={(e) => handleSpaLinkClick(e, '/')}
             className="cursor-pointer flex items-center space-x-3 group"
           >
-            <div className="w-10 h-10 bg-red-700 flex items-center justify-center rounded shadow-sm border border-red-600">
-              <span className="text-white font-serif font-bold text-xl tracking-tighter">GP</span>
-            </div>
+            <img
+              src="/ghpulse-logo.jpg"
+              alt="GhPulse Logo"
+              referrerPolicy="no-referrer"
+              className="w-11 h-11 rounded-full object-cover shadow-sm border border-amber-400/60 bg-slate-950 shrink-0"
+            />
             <div>
-              <h1 className="font-serif font-bold text-xl tracking-tight text-white leading-none">
+              <span className="font-serif font-bold text-xl tracking-tight text-white leading-none block">
                 GhPulse
-              </h1>
+              </span>
               <p className="text-[10px] uppercase tracking-wider text-slate-400 font-sans mt-0.5">
                 Ghana's Tech, Creator & Cultural Heartbeat
               </p>
             </div>
-          </div>
+          </a>
 
-          <nav className="hidden md:flex items-center space-x-1 bg-slate-800 p-1 rounded border border-slate-700">
-            <button
-              onClick={() => setActiveTab('news')}
-              className={`px-4 py-1.5 rounded text-sm font-medium transition ${
-                activeTab === 'news' ? 'bg-red-700 text-white' : 'text-slate-300 hover:text-white hover:bg-slate-700'
-              }`}
-            >
-              Latest News
-            </button>
-            <button
-              onClick={() => setActiveTab('creators')}
-              className={`px-4 py-1.5 rounded text-sm font-medium transition ${
-                activeTab === 'creators' ? 'bg-red-700 text-white' : 'text-slate-300 hover:text-white hover:bg-slate-700'
-              }`}
-            >
-              Creators Hub
-            </button>
-            <button
-              onClick={() => setActiveTab('events')}
-              className={`px-4 py-1.5 rounded text-sm font-medium transition ${
-                activeTab === 'events' ? 'bg-red-700 text-white' : 'text-slate-300 hover:text-white hover:bg-slate-700'
-              }`}
-            >
-              Events & Press
-            </button>
-            <button
-              onClick={() => setActiveTab('polls')}
-              className={`px-4 py-1.5 rounded text-sm font-medium transition ${
-                activeTab === 'polls' ? 'bg-red-700 text-white' : 'text-slate-300 hover:text-white hover:bg-slate-700'
-              }`}
-            >
-              Community Polls
-            </button>
+          <nav aria-label="Primary navigation" className="hidden md:flex items-center space-x-1 bg-slate-800 p-1 rounded border border-slate-700">
+            {navItems.map((item) => (
+              <a
+                key={item.tab}
+                href={item.href}
+                onClick={(e) => handleSpaLinkClick(e, item.href)}
+                className={`px-4 py-1.5 rounded text-sm font-medium transition ${
+                  activeTab === item.tab ? 'bg-red-700 text-white' : 'text-slate-300 hover:text-white hover:bg-slate-700'
+                }`}
+              >
+                {item.label}
+              </a>
+            ))}
           </nav>
         </div>
 
@@ -111,10 +103,11 @@ export const Navbar: React.FC<NavbarProps> = ({
           <form
             onSubmit={(e) => {
               e.preventDefault();
+              const pathname = window.location.pathname;
               if (
-                window.location.hash.startsWith('#/article/') ||
-                window.location.hash.startsWith('#/creator/') ||
-                window.location.hash.startsWith('#/event/')
+                pathname.startsWith('/article/') ||
+                pathname.startsWith('/creator/') ||
+                pathname.startsWith('/event/')
               ) {
                 setActiveTab(
                   activeTab === 'creators'
@@ -149,6 +142,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="md:hidden p-2 text-slate-300 hover:text-white"
+            aria-label="Toggle Menu"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -168,30 +162,21 @@ export const Navbar: React.FC<NavbarProps> = ({
               className="w-full bg-slate-800 border border-slate-700 rounded px-9 pr-4 py-2 text-sm text-white placeholder-slate-400 focus:outline-none focus:border-red-600"
             />
           </div>
-          <button
-            onClick={() => { setActiveTab('news'); setMobileMenuOpen(false); }}
-            className={`w-full text-left px-4 py-2 rounded font-medium ${activeTab === 'news' ? 'bg-red-700 text-white' : 'text-slate-300 hover:bg-slate-800'}`}
-          >
-            Latest News
-          </button>
-          <button
-            onClick={() => { setActiveTab('creators'); setMobileMenuOpen(false); }}
-            className={`w-full text-left px-4 py-2 rounded font-medium ${activeTab === 'creators' ? 'bg-red-700 text-white' : 'text-slate-300 hover:bg-slate-800'}`}
-          >
-            Creators Hub
-          </button>
-          <button
-            onClick={() => { setActiveTab('events'); setMobileMenuOpen(false); }}
-            className={`w-full text-left px-4 py-2 rounded font-medium ${activeTab === 'events' ? 'bg-red-700 text-white' : 'text-slate-300 hover:bg-slate-800'}`}
-          >
-            Events & Press
-          </button>
-          <button
-            onClick={() => { setActiveTab('polls'); setMobileMenuOpen(false); }}
-            className={`w-full text-left px-4 py-2 rounded font-medium ${activeTab === 'polls' ? 'bg-red-700 text-white' : 'text-slate-300 hover:bg-slate-800'}`}
-          >
-            Community Polls
-          </button>
+          {navItems.map((item) => (
+            <a
+              key={item.tab}
+              href={item.href}
+              onClick={(e) => {
+                handleSpaLinkClick(e, item.href);
+                setMobileMenuOpen(false);
+              }}
+              className={`block w-full text-left px-4 py-2 rounded font-medium ${
+                activeTab === item.tab ? 'bg-red-700 text-white' : 'text-slate-300 hover:bg-slate-800'
+              }`}
+            >
+              {item.label}
+            </a>
+          ))}
         </div>
       )}
     </header>

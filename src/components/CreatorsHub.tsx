@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ContentCreator } from '../types';
 import { Users, Award } from 'lucide-react';
+import { handleSpaLinkClick } from '../utils/navigation';
 
 interface CreatorsHubProps {
   creators: ContentCreator[];
@@ -13,7 +14,6 @@ export const CreatorsHub: React.FC<CreatorsHubProps> = ({ creators, onSelectCrea
   const [activePlatform, setActivePlatform] = useState<string>('All');
   const [activeStatus, setActiveStatus] = useState<string>('All');
 
-  const categories = ['All', ...Array.from(new Set(creators.map(c => c.category)))];
   const platforms = ['All', 'TikTok', 'Instagram', 'YouTube', 'Multi-Platform'];
   const statuses = ['All', 'Established', 'Breakthrough'];
 
@@ -37,9 +37,9 @@ export const CreatorsHub: React.FC<CreatorsHubProps> = ({ creators, onSelectCrea
       {/* Editorial Header */}
       <div className="bg-white border border-slate-200 rounded-lg p-6 md:p-8 shadow-sm">
         <span className="text-xs font-bold text-red-700 uppercase tracking-widest">Digital Media Directory & Profiles</span>
-        <h2 className="text-3xl font-serif font-bold text-slate-900 mt-1">
+        <h1 className="text-3xl font-serif font-bold text-slate-900 mt-1">
           Ghana Content Creators & Award Winners
-        </h2>
+        </h1>
         <p className="text-slate-600 text-sm mt-2 max-w-3xl leading-relaxed">
           Explore established icons and breakthrough digital creators across TikTok, Instagram, and YouTube. Click any creator to read their full profile article, achievements, and niche awards.
         </p>
@@ -94,9 +94,15 @@ export const CreatorsHub: React.FC<CreatorsHubProps> = ({ creators, onSelectCrea
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredCreators.map(creator => (
-            <div
+            <a
               key={creator.id}
-              onClick={() => onSelectCreator(creator)}
+              href={`/creator/${creator.id}`}
+              onClick={(e) => {
+                handleSpaLinkClick(e, `/creator/${creator.id}`);
+                if (!e.metaKey && !e.ctrlKey && !e.shiftKey && !e.altKey && e.button === 0) {
+                  onSelectCreator(creator);
+                }
+              }}
               className="bg-white rounded-lg overflow-hidden border border-slate-200 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group"
             >
               <div>
@@ -123,9 +129,9 @@ export const CreatorsHub: React.FC<CreatorsHubProps> = ({ creators, onSelectCrea
                       className="w-14 h-14 rounded-full border-2 border-white object-cover shadow-md shrink-0 bg-slate-800"
                     />
                     <div className="min-w-0">
-                      <h3 className="font-bold text-white text-base truncate">
+                      <h2 className="font-bold text-white text-base truncate">
                         {creator.name}
-                      </h3>
+                      </h2>
                       <p className="text-xs text-slate-200 font-medium truncate">{creator.handle}</p>
                     </div>
                   </div>
@@ -162,7 +168,7 @@ export const CreatorsHub: React.FC<CreatorsHubProps> = ({ creators, onSelectCrea
                   Read Profile →
                 </span>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       )}

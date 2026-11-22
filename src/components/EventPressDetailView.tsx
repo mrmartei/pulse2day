@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { EventPressItem, ContentCreator } from '../types';
 import {
   ArrowLeft,
@@ -13,6 +13,7 @@ import {
   Radio,
   Sparkles,
 } from 'lucide-react';
+import { handleSpaLinkClick } from '../utils/navigation';
 
 interface EventPressDetailViewProps {
   item: EventPressItem;
@@ -35,78 +36,6 @@ export const EventPressDetailView: React.FC<EventPressDetailViewProps> = ({
     ? creators.find((c) => c.id === item.featuredCreatorId)
     : undefined;
 
-  useEffect(() => {
-    const previousTitle = document.title;
-    document.title = `${item.title} — GhPulse Events & Press`;
-
-    const structuredData =
-      item.type === 'Summit & Conference'
-        ? {
-            '@context': 'https://schema.org',
-            '@type': 'Event',
-            name: item.outletOrEvent,
-            description: item.summary,
-            startDate: item.isoDate,
-            location: {
-              '@type': 'Place',
-              name: item.location,
-            },
-            performer: featuredCreator
-              ? {
-                  '@type': 'Person',
-                  name: featuredCreator.realName,
-                  alternateName: [featuredCreator.name, featuredCreator.handle],
-                }
-              : undefined,
-            organizer: {
-              '@type': 'Organization',
-              name: item.outletOrEvent,
-            },
-            url: window.location.href,
-          }
-        : {
-            '@context': 'https://schema.org',
-            '@type': 'NewsArticle',
-            headline: item.title,
-            description: item.summary,
-            datePublished: item.isoDate,
-            image: [item.imageUrl],
-            about: featuredCreator
-              ? {
-                  '@type': 'Person',
-                  name: featuredCreator.realName,
-                  alternateName: [featuredCreator.name, featuredCreator.handle],
-                }
-              : undefined,
-            publisher: {
-              '@type': 'NewsMediaOrganization',
-              name: 'GhPulse',
-            },
-            url: window.location.href,
-          };
-
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.id = 'ghpulse-event-jsonld';
-    script.text = JSON.stringify(structuredData);
-    document.head.appendChild(script);
-
-    const metaDesc = document.querySelector('meta[name="description"]');
-    const previousDesc = metaDesc?.getAttribute('content') || '';
-    if (metaDesc) {
-      metaDesc.setAttribute('content', item.summary);
-    }
-
-    return () => {
-      document.title = previousTitle;
-      const existing = document.getElementById('ghpulse-event-jsonld');
-      if (existing) existing.remove();
-      if (metaDesc && previousDesc) {
-        metaDesc.setAttribute('content', previousDesc);
-      }
-    };
-  }, [item, featuredCreator]);
-
   const handleCopyLink = () => {
     navigator.clipboard.writeText(window.location.href);
     setCopied(true);
@@ -125,12 +54,17 @@ export const EventPressDetailView: React.FC<EventPressDetailViewProps> = ({
         elements.push(paragraph.substring(lastIndex, matchIndex));
       }
       const anchorText = match[1];
-      const href = match[2];
+      const rawHref = match[2];
+      const href = rawHref.startsWith('#/') ? rawHref.slice(1) : rawHref;
+      const isInternal = href.startsWith('/');
 
       elements.push(
         <a
           key={`link-${pIndex}-${matchIndex}`}
           href={href}
+          onClick={isInternal ? (e) => handleSpaLinkClick(e, href) : undefined}
+          target={isInternal ? undefined : '_blank'}
+          rel={isInternal ? undefined : 'noopener noreferrer'}
           className="text-red-700 font-bold underline hover:text-red-800 transition inline-flex items-center space-x-0.5 bg-red-50 px-1 py-0.5 rounded border border-red-200/60"
         >
           <span>{anchorText}</span>
@@ -163,13 +97,19 @@ export const EventPressDetailView: React.FC<EventPressDetailViewProps> = ({
     <div className="max-w-4xl mx-auto py-8 space-y-8 animate-in fade-in duration-200">
       {/* Top Action Bar */}
       <div className="flex items-center justify-between">
-        <button
-          onClick={onBack}
+        <a
+          href="/events"
+          onClick={(e) => {
+            handleSpaLinkClick(e, '/events');
+            if (!e.metaKey && !e.ctrlKey && !e.shiftKey && !e.altKey && e.button === 0) {
+              onBack();
+            }
+          }}
           className="inline-flex items-center space-x-2 text-sm font-bold text-slate-700 hover:text-red-700 bg-white border border-slate-200 px-4 py-2 rounded shadow-sm transition"
         >
           <ArrowLeft className="w-4 h-4" />
           <span>Back to Events & Press</span>
-        </button>
+        </a>
 
         <button
           onClick={handleCopyLink}
@@ -250,7 +190,8 @@ export const EventPressDetailView: React.FC<EventPressDetailViewProps> = ({
               </div>
             </div>
             <a
-              href={`#/creator/${featuredCreator.id}`}
+              href={`/creator/${featuredCreator.id}`}
+              onClick={(e) => handleSpaLinkClick(e, `/creator/${featuredCreator.id}`)}
               className="bg-red-700 hover:bg-red-800 text-white text-xs font-bold px-4 py-2.5 rounded transition shadow-sm inline-flex items-center space-x-1.5 whitespace-nowrap self-stretch sm:self-auto justify-center"
             >
               <span>View Creator Profile</span>
@@ -305,9 +246,15 @@ export const EventPressDetailView: React.FC<EventPressDetailViewProps> = ({
           <h3 className="font-serif font-bold text-xl text-slate-900">More Events & Press Coverage</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {relatedEvents.map((rel) => (
-              <div
+              <a
                 key={rel.id}
-                onClick={() => onSelectEvent(rel)}
+                href={`/event/${rel.id}`}
+                onClick={(e) => {
+                  handleSpaLinkClick(e, `/event/${rel.id}`);
+                  if (!e.metaKey && !e.ctrlKey && !e.shiftKey && !e.altKey && e.button === 0) {
+                    onSelectEvent(rel);
+                  }
+                }}
                 className="bg-white rounded-lg p-4 border border-slate-200 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group"
               >
                 <div className="space-y-2">
@@ -319,7 +266,7 @@ export const EventPressDetailView: React.FC<EventPressDetailViewProps> = ({
                 <span className="text-xs text-slate-400 pt-3 mt-3 border-t border-slate-100">
                   {rel.dateLabel}
                 </span>
-              </div>
+              </a>
             ))}
           </div>
         </div>

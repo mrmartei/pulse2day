@@ -1,5 +1,6 @@
 import React from 'react';
 import { Shield } from 'lucide-react';
+import { handleSpaLinkClick } from '../utils/navigation';
 
 export const Footer: React.FC = () => {
   const [email, setEmail] = React.useState('');
@@ -29,9 +30,12 @@ export const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8 pb-12 border-b border-slate-800">
         <div className="space-y-4 md:col-span-1">
           <div className="flex items-center space-x-2.5">
-            <div className="w-8 h-8 bg-red-700 flex items-center justify-center rounded">
-              <span className="text-white font-serif font-bold text-sm">GP</span>
-            </div>
+            <img
+              src="/ghpulse-logo.jpg"
+              alt="GhPulse Logo"
+              referrerPolicy="no-referrer"
+              className="w-10 h-10 rounded-full object-cover shadow-sm border border-amber-400/60 bg-slate-950 shrink-0"
+            />
             <div>
               <span className="font-serif font-bold text-xl tracking-tight block leading-none">GhPulse</span>
               <span className="text-[10px] text-slate-400 uppercase tracking-wider block mt-1">Ghana's Tech, Creator & Cultural Heartbeat</span>
@@ -49,23 +53,23 @@ export const Footer: React.FC = () => {
         <div>
           <h4 className="font-bold text-xs text-white mb-4 uppercase tracking-wider">Events & Press</h4>
           <ul className="space-y-2 text-xs text-slate-400 font-sans">
-            <li><a href="#/event/next-digital-wealth-summit-2026" className="hover:text-white transition">Mr Martei at Digital Wealth Summit</a></li>
-            <li><a href="#/event/zedfm-zedtech-content-creation-2025" className="hover:text-white transition">Mr Martei on ZedFM (ZedTech)</a></li>
-            <li><a href="#/event/pan-african-ai-summit-delppy" className="hover:text-white transition">Delppy at Pan-African AI Summit</a></li>
-            <li><a href="#/event/tech-in-ghana-dessy-ocean" className="hover:text-white transition">Dessy Ocean at Tech in Ghana</a></li>
-            <li><a href="#/events" className="text-red-400 hover:text-red-300 font-semibold transition">All Events & Press →</a></li>
+            <li><a href="/event/next-digital-wealth-summit-2026" onClick={(e) => handleSpaLinkClick(e, '/event/next-digital-wealth-summit-2026')} className="hover:text-white transition">Mr Martei at Digital Wealth Summit</a></li>
+            <li><a href="/event/zedfm-zedtech-content-creation-2025" onClick={(e) => handleSpaLinkClick(e, '/event/zedfm-zedtech-content-creation-2025')} className="hover:text-white transition">Mr Martei on ZedFM (ZedTech)</a></li>
+            <li><a href="/event/pan-african-ai-summit-delppy" onClick={(e) => handleSpaLinkClick(e, '/event/pan-african-ai-summit-delppy')} className="hover:text-white transition">Delppy at Pan-African AI Summit</a></li>
+            <li><a href="/event/tech-in-ghana-dessy-ocean" onClick={(e) => handleSpaLinkClick(e, '/event/tech-in-ghana-dessy-ocean')} className="hover:text-white transition">Dessy Ocean at Tech in Ghana</a></li>
+            <li><a href="/events" onClick={(e) => handleSpaLinkClick(e, '/events')} className="text-red-400 hover:text-red-300 font-semibold transition">All Events & Press →</a></li>
           </ul>
         </div>
 
         <div>
           <h4 className="font-bold text-xs text-white mb-4 uppercase tracking-wider">Featured Creators</h4>
           <ul className="space-y-2 text-xs text-slate-400 font-sans">
-            <li><a href="#/creator/mr-martei" className="hover:text-white transition">Mr Martei (Plexlink)</a></li>
-            <li><a href="#/creator/delppy" className="hover:text-white transition">Delppy</a></li>
-            <li><a href="#/creator/rick-aqua" className="hover:text-white transition">Rick Aqua</a></li>
-            <li><a href="#/creator/dessy-ocean" className="hover:text-white transition">Dessy Ocean</a></li>
-            <li><a href="#/creator/kalyjay" className="hover:text-white transition">Kalyjay</a></li>
-            <li><a href="#/creators" className="text-red-400 hover:text-red-300 font-semibold transition">View All Creators →</a></li>
+            <li><a href="/creator/mr-martei" onClick={(e) => handleSpaLinkClick(e, '/creator/mr-martei')} className="hover:text-white transition">Mr Martei (Plexlink)</a></li>
+            <li><a href="/creator/delppy" onClick={(e) => handleSpaLinkClick(e, '/creator/delppy')} className="hover:text-white transition">Delppy</a></li>
+            <li><a href="/creator/rick-aqua" onClick={(e) => handleSpaLinkClick(e, '/creator/rick-aqua')} className="hover:text-white transition">Rick Aqua</a></li>
+            <li><a href="/creator/dessy-ocean" onClick={(e) => handleSpaLinkClick(e, '/creator/dessy-ocean')} className="hover:text-white transition">Dessy Ocean</a></li>
+            <li><a href="/creator/kalyjay" onClick={(e) => handleSpaLinkClick(e, '/creator/kalyjay')} className="hover:text-white transition">Kalyjay</a></li>
+            <li><a href="/creators" onClick={(e) => handleSpaLinkClick(e, '/creators')} className="text-red-400 hover:text-red-300 font-semibold transition">View All Creators →</a></li>
           </ul>
         </div>
 

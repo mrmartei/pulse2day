@@ -11,40 +11,64 @@ import { ArticleDetailView } from './components/ArticleDetailView';
 import { CreatorDetailView } from './components/CreatorDetailView';
 import { BookmarksDrawer } from './components/BookmarksDrawer';
 import { Footer } from './components/Footer';
+import { applyClientSeo, normalizeRoutePath, resolveCreatorBySlug } from './utils/seo';
+import { SPA_NAVIGATE_EVENT, navigateTo, handleSpaLinkClick } from './utils/navigation';
+
+function getInitialRoutePath(): string {
+  if (typeof window === 'undefined') return '/';
+  // Gracefully upgrade legacy #/... hash URLs to clean crawlable paths
+  if (window.location.hash && window.location.hash.startsWith('#/')) {
+    const cleanFromHash = normalizeRoutePath(window.location.hash.slice(1));
+    window.history.replaceState({}, '', cleanFromHash);
+    return cleanFromHash;
+  }
+  return normalizeRoutePath(window.location.pathname);
+}
+
+function getTabForPath(pathname: string): 'news' | 'creators' | 'events' | 'polls' {
+  if (pathname === '/creators' || pathname.startsWith('/creator/')) return 'creators';
+  if (pathname === '/events' || pathname === '/press' || pathname.startsWith('/event/')) return 'events';
+  if (pathname === '/polls') return 'polls';
+  return 'news';
+}
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState<'news' | 'creators' | 'events' | 'polls'>('news');
+  const [currentPath, setCurrentPath] = useState<string>(() => getInitialRoutePath());
+  const [activeTab, setActiveTab] = useState<'news' | 'creators' | 'events' | 'polls'>(() =>
+    getTabForPath(getInitialRoutePath())
+  );
   const [searchQuery, setSearchQuery] = useState('');
   const [bookmarkedIds, setBookmarkedIds] = useState<string[]>([]);
   const [isBookmarksOpen, setIsBookmarksOpen] = useState(false);
   const [breakingIndex, setBreakingIndex] = useState(0);
 
-  // Parse current URL hash for path routing
-  const [currentPath, setCurrentPath] = useState<string>(window.location.hash || '#/news');
-
   useEffect(() => {
-    const handleHashChange = () => {
-      const hash = window.location.hash || '#/news';
-      setCurrentPath(hash);
-      if (hash === '#/creators' || hash.startsWith('#/creator/')) {
-        setActiveTab('creators');
-      } else if (hash === '#/events' || hash === '#/press' || hash.startsWith('#/event/')) {
-        setActiveTab('events');
-      } else if (hash === '#/polls') {
-        setActiveTab('polls');
-      } else {
-        setActiveTab('news');
+    const syncRoute = () => {
+      let nextPath = normalizeRoutePath(window.location.pathname);
+      if (window.location.hash && window.location.hash.startsWith('#/')) {
+        nextPath = normalizeRoutePath(window.location.hash.slice(1));
+        window.history.replaceState({}, '', nextPath);
       }
+      setCurrentPath(nextPath);
+      setActiveTab(getTabForPath(nextPath));
       window.scrollTo({ top: 0, behavior: 'smooth' });
     };
-    window.addEventListener('hashchange', handleHashChange);
-    if (!window.location.hash) {
-      window.location.hash = '#/news';
-    } else {
-      handleHashChange();
-    }
-    return () => window.removeEventListener('hashchange', handleHashChange);
+
+    window.addEventListener('popstate', syncRoute);
+    window.addEventListener('hashchange', syncRoute);
+    window.addEventListener(SPA_NAVIGATE_EVENT, syncRoute);
+
+    return () => {
+      window.removeEventListener('popstate', syncRoute);
+      window.removeEventListener('hashchange', syncRoute);
+      window.removeEventListener(SPA_NAVIGATE_EVENT, syncRoute);
+    };
   }, []);
+
+  // Keep <title>, canonical URL, meta tags, and Schema.org JSON-LD synchronized on every route
+  useEffect(() => {
+    applyClientSeo(currentPath);
+  }, [currentPath]);
 
   // Rotate breaking news ticker
   useEffect(() => {
@@ -62,35 +86,40 @@ export default function App() {
 
   const bookmarkedArticles = NEWS_ARTICLES.filter(a => bookmarkedIds.includes(a.id));
 
-  // Determine current view from hash
-  const isArticleRoute = currentPath.startsWith('#/article/');
-  const isCreatorRoute = currentPath.startsWith('#/creator/');
-  const isEventRoute = currentPath.startsWith('#/event/');
+  // Determine current view from clean path
+  const isArticleRoute = currentPath.startsWith('/article/');
+  const isCreatorRoute = currentPath.startsWith('/creator/');
+  const isEventRoute = currentPath.startsWith('/event/');
 
-  const articleId = isArticleRoute ? currentPath.replace('#/article/', '') : null;
-  const creatorId = isCreatorRoute ? currentPath.replace('#/creator/', '') : null;
-  const eventId = isEventRoute ? currentPath.replace('#/event/', '') : null;
+  const articleId = isArticleRoute ? decodeURIComponent(currentPath.slice('/article/'.length)) : null;
+  const creatorId = isCreatorRoute ? decodeURIComponent(currentPath.slice('/creator/'.length)) : null;
+  const eventId = isEventRoute ? decodeURIComponent(currentPath.slice('/event/'.length)) : null;
 
-  const selectedArticle = NEWS_ARTICLES.find(a => a.id === articleId) || null;
-  const selectedCreator = CONTENT_CREATORS.find(c => c.id === creatorId || (creatorId === 'tech-in-twi' && c.id === 'selorm-tech')) || null;
-  const selectedEvent = EVENTS_PRESS.find(e => e.id === eventId) || null;
+  const selectedArticle = articleId ? NEWS_ARTICLES.find(a => a.id === articleId) || null : null;
+  const selectedCreator = creatorId ? resolveCreatorBySlug(creatorId) || null : null;
+  const selectedEvent = eventId ? EVENTS_PRESS.find(e => e.id === eventId) || null : null;
 
   const handleSelectArticle = (article: NewsArticle) => {
-    window.location.hash = `#/article/${article.id}`;
+    navigateTo(`/article/${article.id}`);
   };
 
   const handleSelectCreator = (creator: ContentCreator) => {
-    window.location.hash = `#/creator/${creator.id}`;
+    navigateTo(`/creator/${creator.id}`);
   };
 
   const handleSelectEvent = (eventItem: EventPressItem) => {
-    window.location.hash = `#/event/${eventItem.id}`;
+    navigateTo(`/event/${eventItem.id}`);
   };
 
   const handleReturnHome = (tab: 'news' | 'creators' | 'events' | 'polls' = 'news') => {
     setActiveTab(tab);
-    window.location.hash = `#/${tab}`;
+    navigateTo(tab === 'news' ? '/' : `/${tab}`);
   };
+
+  const isCreatorsHubRoute = currentPath === '/creators';
+  const isEventsHubRoute = currentPath === '/events' || currentPath === '/press';
+  const isPollsRoute = currentPath === '/polls';
+  const isHomeNewsRoute = !isCreatorsHubRoute && !isEventsHubRoute && !isPollsRoute;
 
   return (
     <div className="min-h-screen bg-slate-100 text-slate-900 font-sans flex flex-col selection:bg-red-700 selection:text-white">
@@ -115,12 +144,13 @@ export default function App() {
               {BREAKING_NEWS[breakingIndex]}
             </p>
           </div>
-          <button 
-            onClick={() => handleReturnHome('news')}
+          <a
+            href="/"
+            onClick={(e) => handleSpaLinkClick(e, '/')}
             className="hidden md:block underline hover:text-red-200 transition shrink-0 ml-4 font-bold"
           >
             Full Updates →
-          </button>
+          </a>
         </div>
       </div>
 
@@ -151,7 +181,7 @@ export default function App() {
           />
         ) : (
           <>
-            {(currentPath === '#/news' || currentPath === '' || currentPath === '#/') && (
+            {isHomeNewsRoute && (
               <>
                 {/* Editorial Lead Banner */}
                 <div className="bg-white border border-slate-200 rounded-lg p-6 md:p-8 shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
@@ -194,7 +224,7 @@ export default function App() {
               </>
             )}
 
-            {currentPath === '#/creators' && (
+            {isCreatorsHubRoute && (
               <CreatorsHub
                 creators={CONTENT_CREATORS}
                 searchQuery={searchQuery}
@@ -202,7 +232,7 @@ export default function App() {
               />
             )}
 
-            {(currentPath === '#/events' || currentPath === '#/press') && (
+            {isEventsHubRoute && (
               <EventsPressHub
                 events={EVENTS_PRESS}
                 searchQuery={searchQuery}
@@ -210,7 +240,7 @@ export default function App() {
               />
             )}
 
-            {currentPath === '#/polls' && (
+            {isPollsRoute && (
               <div className="space-y-6 py-6">
                 <div className="text-center max-w-xl mx-auto space-y-2">
                   <h2 className="text-3xl font-serif font-bold text-slate-900">Ghana Public Opinion Hub</h2>

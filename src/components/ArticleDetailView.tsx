@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { NewsArticle, Comment } from '../types';
 import { Clock, Eye, ThumbsUp, Bookmark, Share2, MessageSquare, ArrowLeft, ArrowRight, Check, Send, ExternalLink } from 'lucide-react';
+import { handleSpaLinkClick } from '../utils/navigation';
 
 interface ArticleDetailViewProps {
   article: NewsArticle;
@@ -25,41 +26,6 @@ export const ArticleDetailView: React.FC<ArticleDetailViewProps> = ({
   React.useEffect(() => {
     setLikes(article.likes);
     setHasLiked(false);
-
-    const previousTitle = document.title;
-    document.title = `${article.title} — GhPulse`;
-
-    const structuredData = {
-      '@context': 'https://schema.org',
-      '@type': 'NewsArticle',
-      headline: article.title,
-      description: article.summary,
-      image: [article.imageUrl],
-      articleSection: article.category,
-      author: {
-        '@type': 'Person',
-        name: article.author,
-      },
-      publisher: {
-        '@type': 'NewsMediaOrganization',
-        name: 'GhPulse',
-      },
-      url: window.location.href,
-    };
-
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.id = 'ghpulse-article-jsonld';
-    script.text = JSON.stringify(structuredData);
-    document.head.appendChild(script);
-
-    return () => {
-      document.title = previousTitle;
-      const existing = document.getElementById('ghpulse-article-jsonld');
-      if (existing) {
-        existing.remove();
-      }
-    };
   }, [article]);
   const [comments, setComments] = useState<Comment[]>([
     { id: '1', author: 'Kofi Mensah', avatar: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=100&q=80', content: 'Plexlink is such a needed innovation in Ghana! Paper cards always get lost. Big congrats to Mr Martei.', timestamp: '45 mins ago', likes: 22 },
@@ -113,12 +79,17 @@ export const ArticleDetailView: React.FC<ArticleDetailViewProps> = ({
         elements.push(paragraph.substring(lastIndex, matchIndex));
       }
       const anchorText = match[1];
-      const href = match[2];
+      const rawHref = match[2];
+      const href = rawHref.startsWith('#/') ? rawHref.slice(1) : rawHref;
+      const isInternal = href.startsWith('/');
 
       elements.push(
         <a
           key={`link-${pIndex}-${matchIndex}`}
           href={href}
+          onClick={isInternal ? (e) => handleSpaLinkClick(e, href) : undefined}
+          target={isInternal ? undefined : '_blank'}
+          rel={isInternal ? undefined : 'noopener noreferrer'}
           className="text-red-700 font-bold underline hover:text-red-800 transition inline-flex items-center space-x-0.5 bg-red-50 px-1 py-0.5 rounded border border-red-200/60"
         >
           <span>{anchorText}</span>
@@ -143,13 +114,19 @@ export const ArticleDetailView: React.FC<ArticleDetailViewProps> = ({
     <div className="max-w-4xl mx-auto py-8 space-y-8 animate-in fade-in duration-200">
       {/* Back button and action bar */}
       <div className="flex items-center justify-between">
-        <button
-          onClick={onBack}
+        <a
+          href="/"
+          onClick={(e) => {
+            handleSpaLinkClick(e, '/');
+            if (!e.metaKey && !e.ctrlKey && !e.shiftKey && !e.altKey && e.button === 0) {
+              onBack();
+            }
+          }}
           className="inline-flex items-center space-x-2 text-sm font-bold text-slate-700 hover:text-red-700 bg-white border border-slate-200 px-4 py-2 rounded shadow-sm transition"
         >
           <ArrowLeft className="w-4 h-4" />
           <span>Back to News Feed</span>
-        </button>
+        </a>
 
         <div className="flex items-center space-x-2">
           <button
@@ -229,7 +206,8 @@ export const ArticleDetailView: React.FC<ArticleDetailViewProps> = ({
               </div>
             </div>
             <a
-              href="#/creator/mr-martei"
+              href="/creator/mr-martei"
+              onClick={(e) => handleSpaLinkClick(e, '/creator/mr-martei')}
               className="bg-red-700 hover:bg-red-800 text-white text-xs font-bold px-4 py-2.5 rounded transition shadow-sm inline-flex items-center space-x-1.5 whitespace-nowrap self-stretch sm:self-auto justify-center"
             >
               <span>View Mr Martei's Profile</span>
@@ -338,9 +316,15 @@ export const ArticleDetailView: React.FC<ArticleDetailViewProps> = ({
           <h3 className="font-serif font-bold text-xl text-slate-900">Related Tech Stories</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {relatedArticles.map(rel => (
-              <div
+              <a
                 key={rel.id}
-                onClick={() => onSelectArticle(rel)}
+                href={`/article/${rel.id}`}
+                onClick={(e) => {
+                  handleSpaLinkClick(e, `/article/${rel.id}`);
+                  if (!e.metaKey && !e.ctrlKey && !e.shiftKey && !e.altKey && e.button === 0) {
+                    onSelectArticle(rel);
+                  }
+                }}
                 className="bg-white rounded-lg p-4 border border-slate-200 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group"
               >
                 <div className="space-y-2">
@@ -350,7 +334,7 @@ export const ArticleDetailView: React.FC<ArticleDetailViewProps> = ({
                   </h4>
                 </div>
                 <span className="text-xs text-slate-400 pt-3 mt-3 border-t border-slate-100">{rel.publishedAt}</span>
-              </div>
+              </a>
             ))}
           </div>
         </div>

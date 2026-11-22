@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { NewsArticle, Category } from '../types';
 import { Clock, Eye, ThumbsUp, Bookmark, ArrowRight } from 'lucide-react';
+import { handleSpaLinkClick } from '../utils/navigation';
 
 interface NewsFeedProps {
   articles: NewsArticle[];
@@ -92,7 +93,11 @@ export const NewsFeed: React.FC<NewsFeedProps> = ({
               onClick={() => onSelectArticle(featuredArticle)}
               className="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-md hover:shadow-xl transition cursor-pointer grid grid-cols-1 lg:grid-cols-12 group"
             >
-              <div className="lg:col-span-7 relative aspect-video lg:aspect-auto overflow-hidden bg-slate-100">
+              <a
+                href={`/article/${featuredArticle.id}`}
+                onClick={(e) => { e.stopPropagation(); handleSpaLinkClick(e, `/article/${featuredArticle.id}`); }}
+                className="lg:col-span-7 relative aspect-video lg:aspect-auto overflow-hidden bg-slate-100 block"
+              >
                 <img
                   src={featuredArticle.imageUrl}
                   alt={featuredArticle.title}
@@ -101,7 +106,7 @@ export const NewsFeed: React.FC<NewsFeedProps> = ({
                 <div className="absolute top-4 left-4 bg-red-600 text-white px-3 py-1 rounded-full text-xs font-extrabold uppercase tracking-wider shadow">
                   {featuredArticle.category}
                 </div>
-              </div>
+              </a>
               <div className="lg:col-span-5 p-6 md:p-8 flex flex-col justify-between">
                 <div className="space-y-3">
                   <div className="flex items-center justify-between text-xs text-slate-500 font-medium">
@@ -109,7 +114,12 @@ export const NewsFeed: React.FC<NewsFeedProps> = ({
                     <span>{featuredArticle.publishedAt}</span>
                   </div>
                   <h2 className="text-xl md:text-2xl font-black text-slate-900 group-hover:text-red-600 transition leading-tight">
-                    {featuredArticle.title}
+                    <a
+                      href={`/article/${featuredArticle.id}`}
+                      onClick={(e) => { e.stopPropagation(); handleSpaLinkClick(e, `/article/${featuredArticle.id}`); }}
+                    >
+                      {featuredArticle.title}
+                    </a>
                   </h2>
                   <p className="text-slate-600 text-sm line-clamp-3 leading-relaxed">
                     {featuredArticle.summary}
@@ -129,10 +139,14 @@ export const NewsFeed: React.FC<NewsFeedProps> = ({
                     >
                       <Bookmark className="w-4 h-4" />
                     </button>
-                    <span className="text-xs font-bold text-red-600 flex items-center space-x-1 group-hover:translate-x-1 transition">
+                    <a
+                      href={`/article/${featuredArticle.id}`}
+                      onClick={(e) => { e.stopPropagation(); handleSpaLinkClick(e, `/article/${featuredArticle.id}`); }}
+                      className="text-xs font-bold text-red-600 flex items-center space-x-1 group-hover:translate-x-1 transition"
+                    >
                       <span>Read Story</span>
                       <ArrowRight className="w-4 h-4" />
-                    </span>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -142,13 +156,17 @@ export const NewsFeed: React.FC<NewsFeedProps> = ({
           {/* Grid of Articles */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {(selectedCategory === 'All' && selectedChannel === 'All' && !searchQuery ? remainingArticles : filteredArticles).map(article => (
-              <div
+              <article
                 key={article.id}
                 onClick={() => onSelectArticle(article)}
                 className="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition cursor-pointer flex flex-col justify-between group"
               >
                 <div>
-                  <div className="relative aspect-video overflow-hidden bg-slate-100">
+                  <a
+                    href={`/article/${article.id}`}
+                    onClick={(e) => { e.stopPropagation(); handleSpaLinkClick(e, `/article/${article.id}`); }}
+                    className="relative aspect-video overflow-hidden bg-slate-100 block"
+                  >
                     <img
                       src={article.imageUrl}
                       alt={article.title}
@@ -157,14 +175,19 @@ export const NewsFeed: React.FC<NewsFeedProps> = ({
                     <div className="absolute top-3 left-3 bg-slate-900/90 backdrop-blur-sm text-white px-2.5 py-0.5 rounded-full text-[11px] font-bold uppercase tracking-wide">
                       {article.category}
                     </div>
-                  </div>
+                  </a>
                   <div className="p-5 space-y-2.5">
                     <div className="flex items-center justify-between text-xs text-slate-500">
                       <span className="font-semibold text-red-600">{article.channel}</span>
                       <span>{article.publishedAt}</span>
                     </div>
                     <h3 className="font-bold text-base text-slate-900 group-hover:text-red-600 transition leading-snug line-clamp-2">
-                      {article.title}
+                      <a
+                        href={`/article/${article.id}`}
+                        onClick={(e) => { e.stopPropagation(); handleSpaLinkClick(e, `/article/${article.id}`); }}
+                      >
+                        {article.title}
+                      </a>
                     </h3>
                     <p className="text-slate-600 text-xs line-clamp-2 leading-relaxed">
                       {article.summary}
@@ -184,7 +207,7 @@ export const NewsFeed: React.FC<NewsFeedProps> = ({
                     <Bookmark className="w-3.5 h-3.5" />
                   </button>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
         </>

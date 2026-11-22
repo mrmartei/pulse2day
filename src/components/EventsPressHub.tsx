@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { EventPressItem } from '../types';
 import { Calendar, MapPin, Mic, ArrowRight, Radio, Sparkles } from 'lucide-react';
+import { handleSpaLinkClick } from '../utils/navigation';
 
 interface EventsPressHubProps {
   events: EventPressItem[];
@@ -49,9 +50,9 @@ export const EventsPressHub: React.FC<EventsPressHubProps> = ({
         <span className="text-xs font-bold text-red-700 uppercase tracking-widest">
           Speaking Engagements, Media & Summits
         </span>
-        <h2 className="text-3xl font-serif font-bold text-slate-900 mt-1">
+        <h1 className="text-3xl font-serif font-bold text-slate-900 mt-1">
           Events & Press Coverage
-        </h2>
+        </h1>
         <p className="text-slate-600 text-sm mt-2 max-w-3xl leading-relaxed">
           Dedicated coverage of Ghanaian creators and tech founders on national radio, industry panels, and digital wealth summits. Select any appearance to open its standalone press page.
         </p>
@@ -97,9 +98,15 @@ export const EventsPressHub: React.FC<EventsPressHubProps> = ({
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {filteredEvents.map((item) => (
-            <div
+            <a
               key={item.id}
-              onClick={() => onSelectEvent(item)}
+              href={`/event/${item.id}`}
+              onClick={(e) => {
+                handleSpaLinkClick(e, `/event/${item.id}`);
+                if (!e.metaKey && !e.ctrlKey && !e.shiftKey && !e.altKey && e.button === 0) {
+                  onSelectEvent(item);
+                }
+              }}
               className="bg-white rounded-lg overflow-hidden border border-slate-200 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group"
             >
               <div>
@@ -138,9 +145,9 @@ export const EventsPressHub: React.FC<EventsPressHubProps> = ({
                     </span>
                   </div>
 
-                  <h3 className="font-serif font-bold text-xl text-slate-900 group-hover:text-red-700 transition leading-snug">
+                  <h2 className="font-serif font-bold text-xl text-slate-900 group-hover:text-red-700 transition leading-snug">
                     {item.title}
-                  </h3>
+                  </h2>
 
                   {item.episodeOrSession && (
                     <p className="text-xs font-semibold text-amber-800 bg-amber-50 border border-amber-200/80 px-3 py-1.5 rounded">
@@ -174,7 +181,7 @@ export const EventsPressHub: React.FC<EventsPressHubProps> = ({
                   <ArrowRight className="w-3.5 h-3.5" />
                 </span>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       )}
