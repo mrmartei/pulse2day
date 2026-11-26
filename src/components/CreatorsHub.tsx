@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ContentCreator } from '../types';
 import { Users, Award } from 'lucide-react';
 import { handleSpaLinkClick } from '../utils/navigation';
+import { SafeImage } from './SafeImage';
 
 interface CreatorsHubProps {
   creators: ContentCreator[];
@@ -107,13 +108,13 @@ export const CreatorsHub: React.FC<CreatorsHubProps> = ({ creators, onSelectCrea
             >
               <div>
                 {/* Banner Image & Avatar */}
-                <div className="relative h-40 bg-slate-900 overflow-hidden">
-                  <img
+                <div className="relative h-44 bg-slate-900 overflow-hidden">
+                  <SafeImage
                     src={creator.bannerImage || creator.coverImage}
                     alt={`${creator.name} banner`}
                     className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-900/40 to-black/30"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-900/45 to-black/30"></div>
                   <div className="absolute top-3 right-3 flex items-center space-x-1.5 z-10">
                     <span className={`px-2 py-0.5 rounded text-[10px] font-bold uppercase ${creator.status === 'Breakthrough' ? 'bg-amber-500 text-white' : 'bg-slate-900 text-white border border-slate-700'}`}>
                       {creator.status}
@@ -123,35 +124,37 @@ export const CreatorsHub: React.FC<CreatorsHubProps> = ({ creators, onSelectCrea
                     </span>
                   </div>
                   <div className="absolute bottom-3 left-4 right-4 flex items-center space-x-3 z-10">
-                    <img
+                    <SafeImage
                       src={creator.avatar}
                       alt={creator.name}
+                      isAvatar
+                      fallbackLabel={creator.name}
                       className="w-14 h-14 rounded-full border-2 border-white object-cover shadow-md shrink-0 bg-slate-800"
                     />
-                    <div className="min-w-0">
-                      <h2 className="font-bold text-white text-base truncate">
+                    <div className="min-w-0 flex-1">
+                      <h2 className="font-bold text-white text-sm sm:text-base leading-snug line-clamp-2">
                         {creator.name}
                       </h2>
-                      <p className="text-xs text-slate-200 font-medium truncate">{creator.handle}</p>
+                      <p className="text-xs text-slate-200 font-medium truncate mt-0.5">{creator.handle}</p>
                     </div>
                   </div>
                 </div>
 
                 <div className="p-5 space-y-4">
-                  <div className="flex items-center justify-between text-xs">
-                    <span className="bg-slate-100 text-slate-700 font-semibold px-2.5 py-1 rounded border border-slate-200">
+                  <div className="flex items-center justify-between gap-2 text-xs">
+                    <span className="bg-slate-100 text-slate-700 font-semibold px-2.5 py-1 rounded border border-slate-200 shrink-0">
                       {creator.category}
                     </span>
-                    <span className="text-slate-500 font-semibold flex items-center space-x-1">
-                      <Users className="w-3.5 h-3.5 text-slate-400" />
-                      <span>{creator.subscribers}</span>
+                    <span className="text-slate-500 font-semibold flex items-center space-x-1 min-w-0">
+                      <Users className="w-3.5 h-3.5 text-slate-400 shrink-0" />
+                      <span className="truncate">{creator.subscribers}</span>
                     </span>
                   </div>
 
                   {/* Award Badge preview */}
-                  <div className="bg-amber-50 border border-amber-200 p-2.5 rounded flex items-center space-x-2">
-                    <Award className="w-4 h-4 text-amber-600 shrink-0" />
-                    <span className="text-xs font-serif font-bold text-amber-900 truncate">
+                  <div className="bg-amber-50 border border-amber-200 p-2.5 rounded flex items-start space-x-2">
+                    <Award className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
+                    <span className="text-xs font-serif font-bold text-amber-900 leading-snug line-clamp-2">
                       {creator.award.title} ({creator.award.year})
                     </span>
                   </div>

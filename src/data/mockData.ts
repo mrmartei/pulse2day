@@ -1,13 +1,14 @@
 import { NewsArticle, ContentCreator, PollQuestion, EventPressItem } from '../types';
 
 export const BREAKING_NEWS = [
-  "Plexlink officially launches in Ghana: Founder Mr Martei debuts smart NFC networking & link-in-bio platform with GHS 300 standard cards.",
-  "Next-Gen Infraco (NGIC) consortium advances 5G wholesale deployment partnering with Telecel Ghana & Ascend Digital.",
-  "Hubtel processes over $2 Billion (GH¢30B+) in merchant transaction volume across Kokomlemle HQ operations.",
-  "Zipline Ghana marks 6 autonomous medical drone distribution centers serving rural healthcare with Ghana Health Service."
+  "Black Challenge win Ghana's maiden 2026 Amputee Football World Cup in Mexico; Sports Minister Kofi Adams pledges US$10,000 bonus per player ahead of KIA arrival.",
+  "President Mahama to announce Ghana's official 5G network launch before end of 2026 after revised spectrum policy raises $240M — Sam George.",
+  "Plexlink officially launches in Ghana: Lumen Studios CEO Mr Martei debuts smart NFC networking & link-in-bio platform with GHS 300 standard cards.",
+  "Women's Development Bank begins staff recruitment ahead of March 2027 take-off as GH¢400M escrow and GH¢100M operational funds stand ready."
 ];
 
 export const NEWS_ARTICLES: NewsArticle[] = [
+  // FEATURED STORY (Index 0)
   {
     id: 'art-plexlink',
     title: 'Plexlink Launches in Ghana: Founder Mr Martei Unveils Smart NFC Networking & Link-in-Bio Platform',
@@ -29,7 +30,7 @@ Early beta testers among Ghanaian tech creators, real estate agencies in Airport
     category: 'Tech',
     channel: 'Channel One TV',
     author: 'Efua Mensah',
-    publishedAt: '30 mins ago',
+    publishedAt: 'Nov 26, 2026',
     imageUrl: '/assets/aistudio/PlexLink_rr_570f6f4f.png',
     articleBodyImage: 'https://i.ytimg.com/vi/QZYg94MzPQA/hqdefault.jpg',
     articleBodyCaption: 'Product Demo: Founder Mr Martei demonstrating Plexlink contactless NFC networking & mobile dashboard in action',
@@ -39,6 +40,520 @@ Early beta testers among Ghanaian tech creators, real estate agencies in Airport
     isBreaking: true,
     featuredCreatorId: 'mr-martei'
   },
+
+  // === GRID ARTICLES (24 Cards = 8 Balanced Rows of 3 on Desktop, 12 Rows of 2 on Tablet) ===
+
+  // SPORTS 1 (Nov 23–24, 2026)
+  {
+    id: 'art-black-challenge-world-cup',
+    title: 'Black Challenge Win Maiden 2026 Amputee Football World Cup & Receive US$10,000 Bonus Pledge',
+    summary: 'Ghana’s national amputee football team beat Morocco 1-0 in Mexico to lift their first World Cup title, with Sports Minister Kofi Adams pledging US$10,000 per player ahead of their Accra return.',
+    content: `ACCRA & SAN JUAN DE LOS LAGOS — Ghana’s national amputee football team, the Black Challenge, have made sporting history by winning their maiden Amputee Football World Cup title after edging Morocco 1-0 in the final on Sunday, November 22, 2026, in San Juan de los Lagos, Mexico.
+
+The triumph makes Ghana only the second African nation ever to claim the world crown, following Angola’s landmark victory in 2018. Ghana’s unbeaten knockout campaign showcased clinical composure against elite global opposition: the Black Challenge defeated the United States 3-1 in the Round of 16, shut out Egypt 2-0 in the quarterfinals, and held their nerve to overcome defending powerhouses Türkiye 4-3 on penalties in the semifinals before sealing the decisive winning goal in the final against Morocco.
+
+Forward Mubarik Mohammed capped an extraordinary tournament by winning the Golden Boot with seven goals, spearheading Ghana’s attack throughout the competition in Mexico.
+
+Back home in Accra, Minister for Sports and Recreation Kofi Adams hailed the team’s historic achievement and pledged a US$10,000 bonus per player in recognition of the world title. The victorious squad is scheduled to touch down at Kotoka International Airport (KIA) on Thursday, November 26, 2026, at 1:00 p.m., where national officials and jubilant supporters are preparing a hero’s welcome.
+
+Source attribution: MyJoyOnline / Citi Newsroom (November 23–24, 2026).`,
+    category: 'Sports',
+    channel: 'MyJoyOnline',
+    author: 'Kwabena Osei',
+    publishedAt: 'Nov 24, 2026',
+    imageUrl: 'https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1200&q=80',
+    readTime: '4 min read',
+    views: 21400,
+    likes: 2380,
+    isBreaking: true
+  },
+
+  // TECH 1 (Nov 24, 2026)
+  {
+    id: 'art-ghana-5g-sam-george',
+    title: 'Mahama to Launch Ghana’s 5G Network Before End of 2026 — Sam George',
+    summary: 'Communication Minister Samuel Nartey George tells Parliament Ghana’s revised 5G spectrum policy has raised $240 million, with President Mahama set to announce the official launch before year-end.',
+    content: `ACCRA — President John Dramani Mahama is scheduled to announce the official launch of Ghana’s 5G network before the close of 2026, Minister for Communication, Digital Technology and Innovations Samuel Nartey George has informed Parliament.
+
+Addressing lawmakers on November 24, 2026, Mr. George disclosed that the government’s revised 5G spectrum allocation policy—spanning the 700 MHz, 2.3 GHz, and 3 GHz frequency bands—has already mobilized US$240 million in revenue while restructuring the rollout to accelerate broad commercial access.
+
+The Minister clarified that while infrastructure integration and operator readiness are advancing rapidly, no consumer 5G service is commercially live in Ghana as of late November 2026. Following the President’s official launch announcement before year-end, telecom subscribers are expected to begin receiving commercial 5G signals in early 2027 across priority urban corridors.
+
+Industry observers note that the multi-band spectrum strategy balances deep indoor and rural coverage via 700 MHz with high-capacity urban throughput on the 2.3 GHz and 3 GHz bands, setting the stage for enterprise cloud services, low-latency fintech platforms, and next-generation digital media across Ghana.
+
+Source attribution: Citi Newsroom (November 24, 2026).`,
+    category: 'Tech',
+    channel: 'Citi Newsroom',
+    author: 'Efua Mensah',
+    publishedAt: 'Nov 24, 2026',
+    imageUrl: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80',
+    readTime: '3 min read',
+    views: 17900,
+    likes: 1520,
+    isBreaking: true
+  },
+
+  // POLITICS 1 (Nov 23, 2026)
+  {
+    id: 'art-presidency-ceo-handover',
+    title: 'Presidency Directs Ministers to Enforce Handover of CEOs Past Retirement Age',
+    summary: 'A directive from the Office of the President orders sector ministers to enforce constitutional retirement rules for State-Owned Enterprise and public institution chief executives past age 60.',
+    content: `ACCRA — The Office of the President has directed all Cabinet and sector ministers to strictly enforce handover procedures for chief executive officers of State-Owned Enterprises (SOEs) and public institutions who have attained or exceeded the compulsory retirement age.
+
+In an official communication signed by Secretary to the President Callistus Mahama and copied to Vice President Prof. Jane Naana Opoku-Agyemang and the Chief of Staff, the Presidency reminded ministries of the binding constitutional mandates governing public service tenure.
+
+Specifically, the directive cites Article 199(1) of the 1992 Constitution, which sets the mandatory public service retirement age at 60 years, alongside Article 199(4), which restricts post-retirement contract extensions to a maximum of two years at a time and an absolute cumulative cap of five years where special public interest exigencies apply.
+
+Ministers have been instructed to audit executive leadership rosters across agencies under their supervision and ensure orderly handovers to designated successors or acting heads, reinforcing constitutional compliance and institutional renewal across Ghana’s public sector.
+
+Source attribution: Graphic Online (November 23, 2026).`,
+    category: 'Politics',
+    channel: 'Graphic Online',
+    author: 'Kofi Boateng',
+    publishedAt: 'Nov 23, 2026',
+    imageUrl: 'https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?auto=format&fit=crop&w=1200&q=80',
+    readTime: '3 min read',
+    views: 15400,
+    likes: 1120
+  },
+
+  // POLITICS 2 (Nov 25, 2026)
+  {
+    id: 'art-parliament-aircraft-recruitment',
+    title: 'Parliament Clashes Over Presidential Aircraft Spending Amid Teacher, Nurse Recruitment Delays',
+    summary: 'Minority Leader Alexander Afenyo-Markin and Education Minister Haruna Iddrisu trade sharp arguments on the floor over presidential travel expenditure and the Ghana Education Service recruitment portal.',
+    content: `ACCRA — Tempers flared on the floor of Parliament on Wednesday, November 25, 2026, as lawmakers clashed over government expenditure on presidential aircraft operations alongside concerns regarding the timing of public-sector recruitment for newly trained teachers and nurses.
+
+Minority Leader Alexander Afenyo-Markin questioned the administration’s priorities over aircraft-related spending and alleged that the Ghana Education Service (GES) online recruitment portal had remained inaccessible to qualified teacher graduates awaiting posting.
+
+Responding on the floor, Minister for Education Haruna Iddrisu rejected claims that recruitment had stalled, clarifying that the GES portal had been undergoing final technical stress-testing ahead of its formal launch at 8:00 p.m. on November 25, 2026.
+
+Mr. Iddrisu emphasized that the government is executing President John Dramani Mahama’s directive under the 2027 Budget framework to recruit 10,000 teachers and 10,000 nurses nationwide, noting that the immediate deployment phase opens applications for up to 7,000 qualified teachers across underserved districts.
+
+Source attribution: MyJoyOnline / Citi Newsroom (November 25, 2026).`,
+    category: 'Politics',
+    channel: 'MyJoyOnline',
+    author: 'Kofi Boateng',
+    publishedAt: 'Nov 25, 2026',
+    imageUrl: 'https://images.unsplash.com/photo-1555848962-6e79363ec58f?auto=format&fit=crop&w=1200&q=80',
+    readTime: '4 min read',
+    views: 16200,
+    likes: 980
+  },
+
+  // POLITICS 3 (Nov 25, 2026)
+  {
+    id: 'art-supreme-court-skytrain',
+    title: 'Supreme Court Clears Way for US$2 Million Accra SkyTrain Trial',
+    summary: 'A five-member Supreme Court panel dismisses former GIIF CEO Solomon Asamoah’s supervisory application, allowing the High Court trial over the alleged US$2 million SkyTrain loss to proceed.',
+    content: `ACCRA — The Supreme Court has cleared the path for the High Court trial concerning the alleged US$2 million loss linked to the stalled Accra SkyTrain project to proceed after dismissing an application filed by former Ghana Infrastructure Investment Fund (GIIF) Chief Executive Officer Solomon Asamoah.
+
+On November 25, 2026, a five-member apex court panel presided over by Justice Issifu Omoro Tanko Amadu dismissed Mr. Asamoah’s Article 132 supervisory jurisdiction application, which had sought to challenge an evidentiary ruling delivered earlier by High Court judge Justice Audrey Kocuvie-Tay.
+
+Mr. Asamoah and former GIIF Board Chairman Prof. Christopher Ameyaw-Akumfi are standing trial on six counts connected to alleged financial loss to the state involving US$2 million disbursed under the proposed Accra SkyTrain transit initiative. Both accused persons have pleaded not guilty to all charges.
+
+With the Supreme Court declining to halt or overturn the trial court’s procedural order, proceedings are now set to resume at the High Court in Accra.
+
+Source attribution: Graphic Online (November 25, 2026).`,
+    category: 'Politics',
+    channel: 'Graphic Online',
+    author: 'Kwame Agyeman',
+    publishedAt: 'Nov 25, 2026',
+    imageUrl: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1200&q=80',
+    readTime: '3 min read',
+    views: 13800,
+    likes: 870
+  },
+
+  // POLITICS 4 (Nov 24–25, 2026)
+  {
+    id: 'art-gabs-2026-steinmeier',
+    title: 'German President Steinmeier Urges Africa to Open Trade Routes at GABS 2026 in Accra',
+    summary: 'Addressing nearly 700 delegates at the 6th German-African Business Summit in Accra, President Frank-Walter Steinmeier champions AfCFTA integration as Germany-Africa trade rises 10%.',
+    content: `ACCRA — German President Dr. Frank-Walter Steinmeier has called on African governments and private-sector leaders to accelerate cross-border trade integration and unlock continental supply corridors under the African Continental Free Trade Area (AfCFTA).
+
+Delivering a keynote address at the 6th German-African Business Summit (GABS 2026) hosted in Accra on November 24–25, 2026, Dr. Steinmeier highlighted strong commercial momentum between Berlin and the continent, noting that bilateral trade between Germany and Africa expanded by roughly 10 percent in 2025.
+
+Speaking alongside senior Ghanaian officials and European industrialists, Delegate of German Industry and Commerce in Ghana Dr. Michael Blank confirmed that approximately 700 business executives, investors, and policymakers convened in Accra for the summit—underscoring Ghana’s status as the host nation of the AfCFTA Secretariat and a strategic West African investment gateway.
+
+Discussions focused on renewable energy manufacturing, agro-processing value chains, technical vocational training, and green industrial financing across Sub-Saharan Africa.
+
+Source attribution: MyJoyOnline (November 24–25, 2026).`,
+    category: 'Politics',
+    channel: 'MyJoyOnline',
+    author: 'Samuel Baidoo',
+    publishedAt: 'Nov 25, 2026',
+    imageUrl: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=80',
+    readTime: '4 min read',
+    views: 12100,
+    likes: 940
+  },
+
+  // BUSINESS 1 (Nov 25, 2026)
+  {
+    id: 'art-womens-development-bank',
+    title: 'Women’s Development Bank Begins Recruitment Ahead of Planned March 2027 Take-Off',
+    summary: 'With GH¢400 million held in escrow and GH¢100 million committed for operational take-off, the Women’s Development Bank opens staffing recruitment ahead of its targeted March 2027 launch.',
+    content: `ACCRA — Preparations for the operational launch of Ghana’s Women’s Development Bank have entered a decisive phase following the commencement of formal staff recruitment via Daily Graphic advertisements published on November 18, 2026.
+
+The institution’s dedicated Accra headquarters—located opposite the former Ministry of Finance building—is scheduled for formal handover in early December 2026 as interior fit-out and core banking technology deployment wrap up.
+
+Briefing Parliament on November 25, 2026, Deputy Finance Minister Thomas Nyarko Ampem confirmed that the bank currently holds GH¢400 million in escrow to anchor its balance sheet. In addition, Finance Minister Dr. Cassiel Ato Forson has committed GH¢100 million in dedicated operational funding, building upon the GH¢51 million allocation from 2025 and GH¢401 million budgeted in 2026.
+
+Subject to final regulatory licensing approval from the Bank of Ghana (BoG), full commercial operations are targeted for the end of March 2027, offering tailored low-interest credit, business advisory services, and working capital to women-owned micro, small, and medium enterprises nationwide.
+
+Source attribution: MyJoyOnline (November 25, 2026).`,
+    category: 'Business',
+    channel: 'MyJoyOnline',
+    author: 'Samuel Baidoo',
+    publishedAt: 'Nov 25, 2026',
+    imageUrl: 'https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=1200&q=80',
+    readTime: '4 min read',
+    views: 16900,
+    likes: 1410
+  },
+
+  // BUSINESS 2 (Nov 25, 2026)
+  {
+    id: 'art-chamber-mines-royalties',
+    title: 'Ghana Chamber of Mines Demands 30% of Mineral Royalties for Host Communities',
+    summary: 'Ahead of the unified Natural Resource Revenue Management Act, Chamber CEO Dr. Kenneth Ashigbey urges lawmakers to raise direct mineral royalty shares for mining host communities.',
+    content: `ACCRA — The Ghana Chamber of Mines is pushing for a major overhaul of Ghana’s mineral revenue distribution formula, calling for 30 percent of mineral royalties to be ring-fenced directly for host mining communities under the upcoming unified Natural Resource Revenue Management Act.
+
+Currently, mineral royalty inflows are split with 78 percent routed to central government, 2 percent allocated to the Minerals Income Investment Fund (MIIF), and 20 percent directed to the Minerals Development Fund (MDF)—leaving an estimated 5 percent effectively reaching local mining districts on the ground.
+
+Speaking on November 25, 2026, Chamber of Mines Chief Executive Officer Dr. Kenneth Ashigbey underscored the sector’s fiscal weight, noting that mining accounted for roughly 30 percent of the Ghana Revenue Authority’s (GRA) direct domestic tax revenue in 2025. He argued that visible infrastructure, clean water, and local economic diversification in host towns are essential to sustaining social license and curbing illegal mining pressures.
+
+Public Interest and Accountability Committee (PIAC) Chair Prof. Peter Quartey and the Africa Centre for Energy Policy (ACEP) expressed strong support for stronger statutory transparency and independent oversight mechanisms in the new consolidated legislation.
+
+Source attribution: Business & Financial Times (November 25, 2026).`,
+    category: 'Business',
+    channel: 'B&FT',
+    author: 'Kojo Asante',
+    publishedAt: 'Nov 25, 2026',
+    imageUrl: 'https://images.unsplash.com/photo-1578319439584-104c94d37305?auto=format&fit=crop&w=1200&q=80',
+    readTime: '4 min read',
+    views: 11800,
+    likes: 860
+  },
+
+  // BUSINESS 3 (Nov 25, 2026)
+  {
+    id: 'art-ssnit-2-3m-contributors',
+    title: 'SSNIT Targets 2.3 Million Active Contributors by End-2026',
+    summary: 'At the final SSNIT-TUC regional forum in Tema, the pension trust reports 2.21M+ active contributors, 87% employer compliance, and GH¢6.42 billion paid in pensions through October.',
+    content: `TEMA — The Social Security and National Insurance Trust (SSNIT) has set an ambitious target of reaching 2.3 million active contributors by the close of December 2026 as it intensifies nationwide enrollment drives among informal and self-employed workers.
+
+Speaking during the final SSNIT–Trades Union Congress (TUC) regional stakeholders’ forum in Tema on November 24, 2026, SSNIT executives disclosed that the scheme had surpassed 2.21 million active contributors across more than 94,000 registered establishments as of October 2026.
+
+Despite steady formal-sector gains—where employer contribution compliance climbed to 87 percent in 2025, up from 83.9 percent in 2024—officials emphasized that approximately 80 percent of Ghana’s self-employed workforce remains outside formal pension coverage. Expanding the Self-Employed Enrolment Drive (SEED) via mobile money channels remains the Trust’s central growth lever.
+
+On benefit disbursements, SSNIT reported paying GH¢6.42 billion in monthly pensions between January and October 2026, with total full-year pension payouts projected to exceed GH¢8.21 billion by December.
+
+Source attribution: Business & Financial Times (November 25, 2026).`,
+    category: 'Business',
+    channel: 'B&FT',
+    author: 'Kwame Agyeman',
+    publishedAt: 'Nov 25, 2026',
+    imageUrl: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80',
+    readTime: '3 min read',
+    views: 10900,
+    likes: 790
+  },
+
+  // BUSINESS 4 (Nov 25, 2026)
+  {
+    id: 'art-cagd-november-payroll',
+    title: 'CAGD Reschedules November 2026 Government Payroll to Friday, November 27',
+    summary: 'The Controller and Accountant-General’s Department cites technical processing challenges alongside newly approved salary adjustments and arrears across GES, GTVET, JUSAG, and tertiary staff.',
+    content: `ACCRA — The Controller and Accountant-General’s Department (CAGD) has announced that the payment of November 2026 public-sector salaries has been rescheduled to Friday, November 27, 2026.
+
+In an official press statement issued on November 25, 2026, CAGD Head of Public Relations Cephas N. Dosoo apologized to public servants for the brief adjustment, attributing the shift to technical payroll processing challenges compounded by the simultaneous integration of multiple government-approved salary revisions and allowance arrears.
+
+According to the Department, the November payroll run incorporates promotion arrears and Continuous Development and Instructional Support Allowances (CDISA) for Ghana Education Service (GES) and Ghana TVET Service (GTVET) personnel, revised premiums for non-academic senior members across public universities and Colleges of Education, Judicial Service Staff Association of Ghana (JUSAG) adjustments, operational allowances for the Council for Law Reporting, and salary upgrades for staff of the Ghana Integrated Iron and Steel Development Corporation (GIISDEC).
+
+CAGD assured workers that commercial banks and payment gateways have been aligned to ensure smooth crediting of accounts nationwide on Friday.
+
+Source attribution: Graphic Online / Citi Newsroom (November 25, 2026).`,
+    category: 'Business',
+    channel: 'Graphic Online',
+    author: 'Samuel Baidoo',
+    publishedAt: 'Nov 25, 2026',
+    imageUrl: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80',
+    readTime: '3 min read',
+    views: 19200,
+    likes: 1030
+  },
+
+  // TECH 2 (Nov 23, 2026)
+  {
+    id: 'art-sumsub-ghana-card',
+    title: 'Sumsub Launches Ghana Card Verification Using Only a PIN and Live Selfie',
+    summary: 'Following the November 2 expiration of L.I. 2523’s grace period banning Ghana Card photos and scans, Sumsub rolls out direct NIA verification requiring only a PIN and live selfie.',
+    content: `ACCRA — Global verification platform Sumsub has introduced a Non-Doc Identity Verification workflow in Ghana that authenticates users using only their Ghana Card Personal Identification Number (PIN) and a real-time selfie—completely eliminating the need to photograph or store physical ID cards.
+
+The November 23, 2026 rollout responds directly to the November 2, 2026 expiration of the grace period under Legislative Instrument (L.I.) 2523, which strictly prohibits regulated entities from relying on visual inspections, photocopies, or uploaded photo scans of the Ghana Card for Know Your Customer (KYC) compliance.
+
+The regulatory mandate spans commercial banks, licensed fintechs, mobile money operators, insurance providers, forex bureaus, virtual asset platforms, and iGaming operators. Under Sumsub’s direct integration, the submitted Ghana Card PIN and live biometric selfie are matched in real time against National Identification Authority (NIA) records—which currently cover roughly 93 percent of Ghana’s adult population—without retaining sensitive document images on merchant servers.
+
+Compliance officers across Accra’s fintech corridor say the frictionless PIN-plus-selfie model drastically cuts onboarding drop-offs while closing loopholes exploited by forged ID templates.
+
+Source attribution: Tech Labari (November 23, 2026).`,
+    category: 'Tech',
+    channel: 'Tech Labari',
+    author: 'Efua Mensah',
+    publishedAt: 'Nov 23, 2026',
+    imageUrl: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1200&q=80',
+    readTime: '4 min read',
+    views: 14700,
+    likes: 1290
+  },
+
+  // TECH 3 (Nov 24, 2026)
+  {
+    id: 'art-payaza-shopaza-seesail',
+    title: 'Payaza’s ShopAza Acquires Ghanaian Startup Seesail',
+    summary: 'Cross-border commerce platform ShopAza acquires Seesail Technologies Ltd for an undisclosed sum, retaining the entire Ghanaian team as Seesail CEO Victor Blavo steps in as GM, Africa.',
+    content: `ACCRA — ShopAza, the commerce arm of pan-African payments provider Payaza, has completed the acquisition of Ghanaian SME commerce and finance startup Seesail Technologies Ltd for an undisclosed sum.
+
+Announced on November 24, 2026, the transaction sees ShopAza absorb Seesail’s entire engineering and operations team in Ghana. As part of the leadership integration, Seesail Chief Executive Officer Victor Blavo assumes the expanded role of General Manager, Africa, overseeing continental merchant expansion.
+
+Despite the acquisition, Seesail will continue operating as a distinct business unit within the Payaza ecosystem, leveraging ShopAza’s pan-African payment rails and liquidity infrastructure to scale inventory financing, working capital solutions, and digital distribution tools for small and medium-sized enterprises across Ghana and neighboring West African markets.
+
+Startup analysts view the deal as an encouraging exit signal for Accra’s early-stage fintech founders, highlighting rising appetite for cross-border African M&A focused on merchant commerce.
+
+Source attribution: Tech Labari (November 24, 2026).`,
+    category: 'Tech',
+    channel: 'Tech Labari',
+    author: 'Dr. Selassie Mensah',
+    publishedAt: 'Nov 24, 2026',
+    imageUrl: 'https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1200&q=80',
+    readTime: '3 min read',
+    views: 11600,
+    likes: 980
+  },
+
+  // ENTERTAINMENT 1 (Nov 22, 2026)
+  {
+    id: 'art-emy-africa-2026',
+    title: 'EMY Africa 2026: Moses Baiden, Kweku Smoke, Majid Michel Lead Winners',
+    summary: 'The 11th EMY Africa Awards at the AICC Grand Arena celebrates excellence across business, film, music, and digital culture, honoring Moses Baiden Jnr., Kweku Smoke, Wode Maya, and Chef Abbys.',
+    content: `ACCRA — Ghana’s business titans, cultural icons, and digital trailblazers gathered in grand style at the Accra International Conference Centre (AICC) Grand Arena on Saturday, November 21, 2026, for the 11th edition of the Exclusive Men of the Year (EMY) Africa Awards.
+
+Margins ID Group Executive Chairman Moses Kwesi Baiden Jnr. claimed the night’s highest honor as Ultimate Man of the Year, while hip-hop star Kweku Smoke enjoyed a double triumph, taking home both the Music Award and Man of the Moment honors following a dominant year on charts and festival stages.
+
+In sports and screen categories, Black Stars and Manchester City forward Antoine Semenyo won the Sports Award, veteran screen star Majid Michel was honored as Actor of the Year, highlife icon Kojo Antwi received the Legend Award, and advertising pioneer Reginald Daniel Laryea (Geddy) was celebrated with the Lifetime Achievement Award.
+
+Ghana’s creator economy also shone brightly on the Grand Arena stage: culinary storyteller [Chef Abbys](/creator/chef-abbys) won Young Achiever (Female), while Pan-African documentarian [Wode Maya](/creator/wode-maya) captured Young Achiever (Male), underscoring the mainstream cultural weight of modern Ghanaian digital creators.
+
+Source attribution: Pulse Ghana (November 22, 2026).`,
+    category: 'Entertainment',
+    channel: 'Pulse Ghana',
+    author: 'Abena Osei-Bonsu',
+    publishedAt: 'Nov 22, 2026',
+    imageUrl: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=80',
+    readTime: '4 min read',
+    views: 19400,
+    likes: 2110
+  },
+
+  // ENTERTAINMENT 2 (Nov 24, 2026)
+  {
+    id: 'art-unicef-nfa-childrens-film',
+    title: 'UNICEF Ghana and NFA Host Maiden Children’s Film Festival',
+    summary: 'Marking World Children’s Day, UNICEF Ghana, the National Film Authority, and the Gender Ministry screen nine youth-centered short films with a Child Jury and live set by Kuami Eugene.',
+    content: `ACCRA — UNICEF Ghana and the National Film Authority (NFA), in partnership with the Ministry of Gender, Children and Social Protection, have successfully hosted Ghana’s maiden Children’s Film Festival to commemorate World Children’s Day.
+
+Held on November 21, 2026, the landmark cultural showcase screened nine original short films and animations spotlighting children’s rights, inclusion, mental well-being, and everyday resilience—including standout titles such as "Mindalia" by Faiza Majeed and "Wheelchair" by Najaat Hussein.
+
+In a refreshing departure from adult-led panels, the festival empowered a dedicated Child Jury to evaluate screenings and share direct feedback on how Ghanaian cinema represents young voices. NFA Executive Secretary Kafui Danku emphasized that nurturing child-friendly storytelling is essential to building an ethical, sustainable Ghanaian film industry for future generations.
+
+The celebratory gathering wrapped up with an energetic live musical performance by Afrobeats hitmaker Kuami Eugene, drawing warm applause from students, filmmakers, and families in attendance.
+
+Source attribution: Pulse Ghana (November 24, 2026).`,
+    category: 'Entertainment',
+    channel: 'Pulse Ghana',
+    author: 'Abena Osei-Bonsu',
+    publishedAt: 'Nov 24, 2026',
+    imageUrl: 'https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1200&q=80',
+    readTime: '3 min read',
+    views: 10300,
+    likes: 880
+  },
+
+  // ENTERTAINMENT 3 (Nov 24, 2026)
+  {
+    id: 'art-ay-poyoo-tic-tac-energy-night',
+    title: 'AY Poyoo Pulled Off Stage at Energy Night Concert; TiC TAC Apologises',
+    summary: 'Hiplife veteran TiC TAC issues a public apology after viral rapper AY Poyoo was escorted off stage during Reggie Rockstone’s set at Zen Gardens in Labone due to an uncleared cameo.',
+    content: `ACCRA — Veteran Ghanaian hiplife icon TiC TAC has issued a public apology to viral rapper AY Poyoo after security personnel unexpectedly pulled the younger artist off stage during the Energy Night Concert at Zen Gardens in Labone on November 21, 2026.
+
+The nostalgia-packed concert featured heavyweight performances from TiC TAC, hiplife grandpapa Reggie Rockstone, and Obrafour. Tension erupted mid-show when AY Poyoo stepped onto the stage to join Reggie Rockstone during his set, only for stage security to swiftly intervene and escort him away.
+
+Following widespread fan reactions after AY Poyoo took to X (formerly Twitter) on November 23 to recount his disappointment, TiC TAC addressed the incident directly on November 24. Expressing sincere regret over how the moment unfolded, TiC TAC explained that while fellow guest artist Pappy Kojo’s surprise cameo had been cleared in advance with stage managers and security leads, AY Poyoo’s appearance had not been communicated to the production crew.
+
+TiC TAC reaffirmed his respect for AY Poyoo and pledged tighter stage-management coordination for future Energy Night showcases.
+
+Source attribution: Pulse Ghana (November 24, 2026).`,
+    category: 'Entertainment',
+    channel: 'Pulse Ghana',
+    author: 'Abena Osei-Bonsu',
+    publishedAt: 'Nov 24, 2026',
+    imageUrl: 'https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&w=1200&q=80',
+    readTime: '3 min read',
+    views: 16700,
+    likes: 1140
+  },
+
+  // LIFESTYLE 1 (Nov 24, 2026)
+  {
+    id: 'art-black-friday-ghana-2026',
+    title: 'Black Friday Ghana 2026: 10 Tips to Spot Real Discounts and Avoid Scams',
+    summary: 'Ahead of Friday, November 27 sales across Accra and online stores, consumer advocates warn shoppers to track pre-sale prices, inspect warranties, and avoid upfront transfers to unverified pages.',
+    content: `ACCRA — With Black Friday 2026 landing on Friday, November 27, retailers, electronics outlets, and social media vendors across Ghana are rolling out aggressive flash-sale banners—prompting consumer safety experts to remind shoppers how to separate genuine bargains from inflated markdowns and online scams.
+
+Top among the ten recommended consumer safeguards is tracking pre-sale baseline prices days in advance. Shoppers frequently encounter "phantom discounts" where an item—such as a GH¢5,000 laptop—is temporarily marked up on paper before being advertised at GH¢4,800 as a massive slash. Comparing prices across multiple verified retailers remains the fastest reality check.
+
+Buyers are also strongly cautioned against sending upfront Mobile Money or bank transfers to unverified Instagram, Snapchat, or TikTok vendor accounts that lack physical storefronts, verified reviews, or payment-on-delivery options.
+
+Finally, shoppers purchasing smartphones, home appliances, or power backups should verify official manufacturer warranty cards, test units before leaving pick-up points, and confirm whether hidden delivery, installation, or customs fees erase the advertised discount.
+
+Source attribution: Pulse Ghana (November 24, 2026).`,
+    category: 'Lifestyle',
+    channel: 'Pulse Ghana',
+    author: 'Efua Mensah',
+    publishedAt: 'Nov 24, 2026',
+    imageUrl: 'https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&w=1200&q=80',
+    readTime: '4 min read',
+    views: 14900,
+    likes: 1210
+  },
+
+  // LIFESTYLE 2 (Nov 23, 2026)
+  {
+    id: 'art-accra-budget-date-spots',
+    title: 'Five Budget-Friendly Date Spots in Greater Accra Under GH¢300',
+    summary: 'From Nationalism Park in Osu and Accra Zoo in Achimota to Legon Botanical Gardens’ canopy walkway and Kokrobite’s shoreline, discover five memorable outings under GH¢300.',
+    content: `ACCRA — Enjoying a memorable weekend outing in Greater Accra does not have to stretch your wallet past GH¢300. Lifestyle editors have spotlighted five scenic, accessible date spots offering nature, fresh sea breeze, and outdoor adventure at pocket-friendly rates.
+
+1. Nationalism Park (Osu): Located right off the historic Osu coastline near Black Star Square, this breezy open-air green space charges an entry fee of around GH¢20, making it ideal for sunset picnics and relaxed conversation.
+
+2. Accra Zoo (Achimota Forest): Set within the shaded Achimota Forest enclave, entry is GH¢20 per adult under the 2025 Fees and Charges Amendment—offering couples a quiet morning wildlife stroll away from city traffic.
+
+3. Legon Botanical Gardens: Perfect for active dates, the gardens offer a canopy walkway at GH¢25, a two-route high-ropes course at GH¢40, and a four-route adventure course at GH¢70, alongside shaded lakeside lawns.
+
+4. Beach View, Kokrobite: A laid-back coastal escape west of Accra for grilled tilapia and ocean views—though visitors are strongly reminded to exercise caution around strong Atlantic currents and avoid deep swimming.
+
+5. Kpone Greenfill Bola Site: Increasingly popular for panoramic sunset photography and elevated coastal views, though visitors should confirm site access rules with local attendants before travelling.
+
+Source attribution: Pulse Ghana (November 23, 2026).`,
+    category: 'Lifestyle',
+    channel: 'Pulse Ghana',
+    author: 'Abena Osei-Bonsu',
+    publishedAt: 'Nov 23, 2026',
+    imageUrl: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80',
+    readTime: '4 min read',
+    views: 13400,
+    likes: 1180
+  },
+
+  // LIFESTYLE 3 (Nov 24, 2026)
+  {
+    id: 'art-turkey-visa-ghana-guide',
+    title: 'Turkey Visa Guide for Ghanaians: Requirements and Application Timeline',
+    summary: 'Ordinary and official Ghanaian passport holders require a consular visa to visit Türkiye—here is the checklist, timeline, and official embassy guidance for late-2026 travellers.',
+    content: `ACCRA — With business delegations, trade buyers, and sports fans increasingly travelling between Accra and Istanbul, Ghanaian travellers planning trips to Türkiye are being advised to prepare visa documentation well ahead of departure.
+
+Citing Turkish Ministry of Foreign Affairs rules and a November 22, 2026 IziVisas travel update, holders of ordinary and official Ghanaian passports must obtain a consular sticker visa prior to arrival. Only holders of Ghanaian diplomatic passports are exempt from visa requirements for short stays of up to 90 days within any 180-day period.
+
+Applicants are advised to submit their visa files at least one month before their intended travel date to avoid seasonal processing bottlenecks. Core documentation includes a completed online pre-application form, a valid Ghanaian passport with sufficient validity, confirmed return flight reservations, proof of hotel or host accommodation, travel health insurance, and verifiable proof of financial means.
+
+Because consular processing fees and appointment procedures are periodically revised, travellers should confirm exact current fee schedules and submission windows directly with the Embassy of the Republic of Türkiye in Accra before paying third-party intermediaries.
+
+Source attribution: Pulse Ghana (November 24, 2026).`,
+    category: 'Lifestyle',
+    channel: 'Pulse Ghana',
+    author: 'Kojo Asante',
+    publishedAt: 'Nov 24, 2026',
+    imageUrl: 'https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=1200&q=80',
+    readTime: '3 min read',
+    views: 11200,
+    likes: 820
+  },
+
+  // SPORTS 2 (Nov 25, 2026)
+  {
+    id: 'art-caf-awards-2026-ghana',
+    title: 'Ghana Omitted from All Six Men’s Categories in Final 2026 CAF Awards Shortlist',
+    summary: 'Antoine Semenyo and Caleb Yirenkyi miss the final cut as no Ghanaian player, coach, club, or national team makes the final men’s shortlists ahead of the December 2 ceremony in Lagos.',
+    content: `ACCRA — Ghanaian football fans have been left reflecting on a sobering continental verdict after the Confederation of African Football (CAF) confirmed that Ghana was omitted from all six men’s final shortlists for the 2026 CAF Awards, scheduled for December 2, 2026, in Lagos, Nigeria.
+
+Black Stars and Manchester City forward Antoine Semenyo—who earned a place on the preliminary 10-man Men’s Player of the Year shortlist following an impressive domestic campaign—narrowly missed out on the final five-man cut.
+
+Similarly, Coventry City and Black Stars midfielder Caleb Yirenkyi fell short of the final three nominees for Men’s Young Player of the Year, despite his memorable match-winning strike against Panama at the 2026 FIFA World Cup earlier in the year.
+
+Across the remaining men’s honours, the Black Stars missed the National Team of the Year shortlist, while no Ghanaian tactician or Ghana Premier League club featured among the final Coach of the Year or Club of the Year nominees—sparking fresh debate among pundits over rebuilding continental competitiveness.
+
+Source attribution: Graphic Online (November 25, 2026).`,
+    category: 'Sports',
+    channel: 'Graphic Online',
+    author: 'Kwabena Osei',
+    publishedAt: 'Nov 25, 2026',
+    imageUrl: 'https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=1200&q=80',
+    readTime: '3 min read',
+    views: 15800,
+    likes: 960
+  },
+
+  // SPORTS 3 (Nov 22, 2026)
+  {
+    id: 'art-gpl-matchday-12-medeama',
+    title: 'Ghana Premier League Matchday 12: Medeama Open Five-Point Lead as Hearts Draw & Kotoko Fall',
+    summary: 'Medeama SC climb to 27 points with a 2-0 win over FC AshantiGold while Bechem United hand new Kotoko boss Stanley Menzo a losing debut ahead of the Super Clash.',
+    content: `TARKWA & ACCRA — Medeama SC tightened their grip at the summit of the Ghana Premier League on Matchday 12 (November 22, 2026), dispatching FC AshantiGold 2-0 to open a commanding five-point lead at the top of the table on 27 points.
+
+After a tight opening half, Dominic Amponsah broke the deadlock from the penalty spot in the 54th minute before Prosper Owusu Boakye sealed the points with a clinical 71st-minute finish, delighting the home faithful.
+
+Elsewhere, Bechem United surged into second place after edging Asante Kotoko 1-0 at the Nana Fosu Gyeabour Park—handing newly appointed Kotoko head coach Stanley Menzo a frustrating debut defeat just days before the blockbuster Super Clash against bitter rivals Hearts of Oak.
+
+Hearts of Oak endured frustration of their own, surrendering a commanding 2-0 lead to settle for a dramatic 2-2 draw against resilient Aduana FC. In other Matchday 12 fixtures, Dreams FC secured a comfortable 2-0 home win over defending champions FC Samartex 1996, while Berekum Chelsea edged regional rivals Young Apostles 2-1.
+
+Source attribution: GhanaFA.org (November 22, 2026).`,
+    category: 'Sports',
+    channel: 'GhanaFA.org',
+    author: 'Kwabena Osei',
+    publishedAt: 'Nov 22, 2026',
+    imageUrl: 'https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1200&q=80',
+    readTime: '4 min read',
+    views: 14100,
+    likes: 1120
+  },
+
+  // SPORTS 4 (Nov 24, 2026)
+  {
+    id: 'art-black-bombers-iba-istanbul',
+    title: 'Black Bombers Target US$100,000 Gold at Inaugural IBA President’s Cup in Istanbul',
+    summary: 'Ghana names a six-boxer squad led by Joseph "Jaguar" Commey and Amadu Mohammed for the US$3 million prize-fund tournament in Istanbul running November 27 to December 4.',
+    content: `ACCRA — Ghana’s national amateur boxing team, the Black Bombers, have finalized a sharp six-man squad to chase lucrative podium rewards at the inaugural International Boxing Association (IBA) President’s Cup in Istanbul, Türkiye, running from November 27 to December 4, 2026.
+
+The traveling roster features Amadu Mohammed, Commonwealth Games standout Joseph "Jaguar" Commey, Henry Malm, Mathias Ashittey, Ebenezer Ankrah, and Jibril Muntari.
+
+The landmark competition boasts a US$3 million overall prize pool spread across 12 men’s weight divisions, offering US$100,000 for gold medalists, US$50,000 for silver, and US$25,000 for bronze—a transformative financial incentive for Ghanaian amateur pugilists.
+
+Beyond the prize money in Istanbul, Ghana Boxing Federation technical handlers view the elite international bouts as vital high-intensity preparation ahead of the 2027 African Games and the August 2027 Olympic boxing qualifiers set to be hosted in Accra.
+
+Source attribution: Graphic Online (November 24, 2026).`,
+    category: 'Sports',
+    channel: 'Graphic Online',
+    author: 'Kwabena Osei',
+    publishedAt: 'Nov 24, 2026',
+    imageUrl: 'https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?auto=format&fit=crop&w=1200&q=80',
+    readTime: '3 min read',
+    views: 11500,
+    likes: 970
+  },
+
+  // FEATURED CREATOR ECOSYSTEM STORY (Grid #22)
   {
     id: 'art-tech-creators',
     title: 'Top Ghanaian Tech Creators Reshaping the Ecosystem: From Coding Tutorials to NFC Innovation',
@@ -55,7 +570,7 @@ And proving that creators can also build tangible hardware and software products
     category: 'Tech',
     channel: 'Channel One TV',
     author: 'Efua Mensah',
-    publishedAt: '2 hours ago',
+    publishedAt: 'Nov 21, 2026',
     imageUrl: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80',
     articleBodyImage: 'https://delppy.com/wp-content/uploads/2026/09/WhatsApp-Image-2026-09-04-at-09.50.07-2-390x220.jpeg',
     articleBodyCaption: 'Ghana Tech Media: Leading creators and educators gathering to discuss digital transformation and consumer technology in West Africa',
@@ -63,122 +578,28 @@ And proving that creators can also build tangible hardware and software products
     views: 14200,
     likes: 1250
   },
+
+  // COCOBOD WITH FIXED COCOA/AGRICULTURE IMAGE (Grid #23)
   {
-    id: 'art-1',
-    title: 'Telecel Ghana & NGIC Consortium Accelerate Nationwide 5G Shared Wholesale Infrastructure',
-    summary: 'Ghana rolls out high-speed 5G via Next-Gen Infraco (NGIC), a shared infrastructure consortium partnering with Ascend Digital, Nokia, Radisys, Tech Mahindra, and Telecel Ghana.',
-    content: `ACCRA — Ghana's telecommunications landscape has entered a transformative era as Telecel Ghana, alongside mobile network operators and technology partners, advances commercial deployment on the nation's shared 5G network.
+    id: 'art-12',
+    title: 'COCOBOD Deploys Cocoa Management System as Agritech Startups Enable EUDR Supply-Chain Traceability',
+    summary: 'Ghana Cocoa Board’s digital CMS mapping platform unites with agritech startups like Farmerline and AgroCenta to guarantee deforestation-free cocoa exports to Europe.',
+    content: `TAKORADI & SEFWI WIAWSO — As the European Union Deforestation Regulation (EUDR) takes full effect, the Ghana Cocoa Board (COCOBOD) has completed the nationwide rollout of its Cocoa Management System (CMS), an end-to-end digital database mapping every cocoa farm, farmer identity, and purchasing station in Ghana.
 
-Unlike traditional single-operator spectrum auctions where telecom operators deploy duplicative cell towers, Ghana's national 5G wholesale infrastructure is operated by Next-Gen Infraco (NGIC). The strategic consortium brings together the Government of Ghana, Ascend Digital, K-NET, Radisys, Nokia, Tech Mahindra, AT Ghana, and Telecel Ghana.
+The high-tech system assigns digital IDs to over 800,000 cocoa farmers and utilizes GPS polygon mapping to verify that harvested cocoa is grown strictly on established farmland without encroachment into forest reserves.
 
-By utilizing a shared wholesale model, NGIC enables rapid capital expenditure sharing, ensuring that high-throughput 5G connectivity reaches not only commercial hubs in Accra, Tema, and Kumasi, but also underserved regional districts across Takoradi, Tamale, and Sunyani.
-
-Engineering trials conducted in Ridge and Cantonments demonstrated sustained mobile data speeds exceeding 1 Gbps, providing the digital backbone needed for smart logistics, industrial IoT, telemedicine, and fintech innovation across Ghana.`,
-    category: 'Tech',
-    channel: 'JoyNews',
-    author: 'Kwabena Osei',
-    publishedAt: '3 hours ago',
-    imageUrl: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80',
-    readTime: '4 min read',
-    views: 16300,
-    likes: 1420
-  },
-  {
-    id: 'art-2',
-    title: 'Hubtel Crosses $2B in Processed Transaction Volume, Expanding Merchant Operating Ecosystem Across Ghana',
-    summary: 'Accra-based fintech pioneer Hubtel records over $2 Billion (GH¢30 Billion+) in annual processed volume, empowering tens of thousands of merchants across food, grocery, and utilities.',
-    content: `KOKOMLEMLE, ACCRA — Ghanaian fintech powerhouse Hubtel, founded by Alex Bram and headquartered in Kokomlemle, Accra, has officially surpassed $2 Billion USD (equivalent to over GH¢30 Billion) in processed annual transaction volume across its digital payment and retail operating system.
-
-Licensed as an Enhanced Payment Service Provider by the Bank of Ghana, Hubtel has transformed from an early SMS gateway provider into an essential merchant operating ecosystem. Today, the platform connects thousands of neighborhood retail stores, supermarkets, pharmacies, and food vendors with seamless point-of-sale checkout, mobile money aggregation, and instant on-demand courier delivery.
-
-"Our mission has always been to help Ghanaian businesses find and care for customers," stated CEO Alex Bram. "Reaching the $2 Billion volume threshold demonstrates the resilience of Ghana's digital economy and the trust local merchants place in locally built fintech infrastructure."
-
-Hubtel's proprietary routing technology has reduced transaction failure rates to under 0.5%, making it one of the most reliable payment rails in West Africa.`,
+Working alongside COCOBOD are innovative Ghanaian agritech pioneers including Farmerline, AgroCenta, Trotro Tractor, and Complete Farmer. These startups deploy mobile apps and satellite imaging that provide farmers with weather advisories, subsidized fertilizer, digital payments, and verifiable chain-of-custody documentation, ensuring Ghanaian cocoa retains its premier position in global chocolate manufacturing.`,
     category: 'Business',
     channel: 'Channel One TV',
-    author: 'Samuel Baidoo',
-    publishedAt: '4 hours ago',
-    imageUrl: 'https://images.unsplash.com/photo-1556742049-0a67c5574f73?auto=format&fit=crop&w=1200&q=80',
+    author: 'Kojo Asante',
+    publishedAt: 'Nov 20, 2026',
+    imageUrl: 'https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1200&q=80',
     readTime: '4 min read',
-    views: 12450,
-    likes: 890
+    views: 10800,
+    likes: 780
   },
-  {
-    id: 'art-3',
-    title: 'Ashesi University AI & Robotics Lab Pioneers Local Language NLP and Agricultural Drone Systems',
-    summary: 'Located in Berekuso, Ashesi University under Patrick Awuah expands its robotics and ethical AI laboratory, training models in Twi, Ewe, and Ga while optimizing crop yields.',
-    content: `BEREKUSO, EASTERN REGION — Nestled on the scenic hills of Berekuso, Ashesi University has unveiled major research breakthroughs from its Artificial Intelligence and Robotics Laboratory, founded under the leadership of university president Patrick Awuah.
 
-The research center is pioneering ethical AI systems tailored to West African developmental priorities. Key initiatives include training Natural Language Processing (NLP) models capable of understanding and synthesizing local languages—including Twi, Ewe, and Ga—to allow illiterate rural citizens to access banking and healthcare advisories through simple voice interfaces.
-
-Simultaneously, the university's robotics engineering team has deployed autonomous agricultural drone prototypes equipped with multispectral sensors. These drones survey smallholder farms across the Eastern and Central regions, detecting cocoa swollen shoot virus and maize armyworm infestations weeks before visible symptoms appear.
-
-"African universities must build technology that answers African problems," noted Patrick Awuah. "Our students are combining computer vision, ethical machine learning, and embedded hardware to generate tangible economic value for local communities."`,
-    category: 'Tech',
-    channel: 'GHOne TV',
-    author: 'Dr. Selassie Mensah',
-    publishedAt: '5 hours ago',
-    imageUrl: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80',
-    readTime: '5 min read',
-    views: 9800,
-    likes: 1120
-  },
-  {
-    id: 'art-4',
-    title: 'AfroFuture Fest at El Wak Stadium Generates Massive Cultural & Economic Windfall for Accra',
-    summary: 'Culture Management Group (CMG) co-founder Abdul Abdullah celebrates AfroFuture festival at El Wak Stadium, driving tens of millions of dollars in hospitality and tourism revenue.',
-    content: `ACCRA — The transformative cultural and economic impact of AfroFuture (formerly Afrochella) was on full display as tens of thousands of diaspora travelers and local patrons converged on El Wak Stadium in Accra for the premier African music, fashion, and art festival.
-
-Organized by Culture Management Group (CMG) and co-founded by Abdul Abdullah, the multi-day festival has cemented Ghana as the December epicenter of the global African renaissance. In addition to star-studded performances by leading African musical acts, the festival featured food trucks by local culinary creators, runway showcases of artisanal Kente fusions, and an entrepreneurship expo connecting African diaspora angel investors with Ghanaian tech and retail startups.
-
-According to preliminary data from the Ghana Tourism Authority, the festival week generated over $100 million in direct and indirect tourism receipts across hotels, ride-hailing services, restaurants, and local artisan markets in Osu, Jamestown, and Labadi.`,
-    category: 'Entertainment',
-    channel: 'UTV Ghana',
-    author: 'Abena Osei-Bonsu',
-    publishedAt: '6 hours ago',
-    imageUrl: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1200&q=80',
-    readTime: '5 min read',
-    views: 15600,
-    likes: 1890
-  },
-  {
-    id: 'art-5',
-    title: 'Solar Mini-Grids Power Northern Ghana Agro-Processing Hubs Under National Renewable Master Plan',
-    summary: 'Supported by the World Bank, AfDB, and Ghana Renewable Energy Master Plan, solar mini-grids in Northern and Savannah regions boost groundnut, shea butter, and grain processing.',
-    content: `TAMALE & SAVANNAH REGION — A sustainable energy revolution is sweeping through northern Ghana. Under the framework of Ghana's Renewable Energy Master Plan (REMP), newly commissioned off-grid solar mini-grids backed by the African Development Bank (AfDB) and the World Bank are powering rural agro-processing cooperatives across the Northern, Savannah, and Upper East regions.
-
-Prior to the rollout, women-led cooperatives in rural enclaves relied on costly diesel generators or manual crushing to produce shea butter and groundnut oil. The new high-capacity solar installations provide dependable 24-hour green electricity to operate mechanized mills, vacuum-packaging units, and cold-storage facilities.
-
-Local cooperative leaders in Bole and Sawla report that reliable solar power has doubled their daily production capacity while cutting processing energy overheads by over 45%, enabling local producers to meet international export certifications for organic shea butter destined for European markets.`,
-    category: 'Business',
-    channel: 'TV3 Ghana',
-    author: 'Kofi Mensah',
-    publishedAt: '7 hours ago',
-    imageUrl: 'https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=1200&q=80',
-    readTime: '4 min read',
-    views: 11400,
-    likes: 940
-  },
-  {
-    id: 'art-6',
-    title: 'Accra Startup Ecosystem Expands with MEST Africa, Impact Hub Accra and Stanbic Incubator Leading Growth',
-    summary: 'East Legon, Osu, and Airport City solidify their standing as tech epicenters as coworking spaces and venture hubs mentor the next generation of African founders.',
-    content: `ACCRA — Ghana's capital city continues to attract international venture capital and entrepreneurial talent, anchored by a cluster of world-class incubator hubs and collaborative workspaces.
-
-In East Legon, MEST Africa (Meltwater Entrepreneurial School of Technology) continues its decade-long legacy of providing full software engineering and business development fellowships to pan-African founders, backing high-growth startups with seed funding and global investor access.
-
-Meanwhile in Osu, Impact Hub Accra fosters grassroots climate and creative innovation, serving as a dynamic convening center for creative entrepreneurs and digital nomads. At Silver Star Tower in Airport City, the Stanbic Incubator, alongside collaborative hubs like Basecamp Initiative and Koko King tech spaces, provides fintech and corporate innovation programs.
-
-Venture analysts highlight that the density of tech talent, stable broadband infrastructure, and investor networking hubs makes Accra one of the top four tech investment destinations in Sub-Saharan Africa.`,
-    category: 'Tech',
-    channel: 'Channel One TV',
-    author: 'Efua Mensah',
-    publishedAt: '8 hours ago',
-    imageUrl: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1200&q=80',
-    readTime: '4 min read',
-    views: 13200,
-    likes: 1150
-  },
+  // BANK OF GHANA eCEDI PILOT (Grid #24 — Completes 24 = 8 x 3 balanced grid!)
   {
     id: 'art-7',
     title: 'Bank of Ghana Tests Offline CBDC: Giesecke+Devrient Partnered eCedi Successfully Piloted in Sefwi Asafo',
@@ -191,101 +612,11 @@ Using specialized near-field contactless smartcards and wearable NFC wristbands 
     category: 'Business',
     channel: 'JoyNews',
     author: 'Kwame Agyeman',
-    publishedAt: '9 hours ago',
+    publishedAt: 'Nov 20, 2026',
     imageUrl: 'https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&w=1200&q=80',
     readTime: '4 min read',
     views: 12450,
     likes: 890
-  },
-  {
-    id: 'art-8',
-    title: 'Suame Magazine Artisans & KNUST Brew-Hammond Energy Centre Pioneer Electric Vehicle Conversions',
-    summary: 'Engineers from KNUST collaborate with informal mechanics in Kumasi\'s Suame Magazine, retrofitting combustion minibuses into clean electric battery-swapping fleets.',
-    content: `KUMASI, ASHANTI REGION — In an extraordinary convergence of academic engineering and informal industrial brilliance, researchers from The Brew-Hammond Energy Centre at KNUST (Kwame Nkrumah University of Science and Technology) have teamed up with veteran automotive artisans at Kumasi's famous Suame Magazine.
-
-Suame Magazine, one of West Africa's largest informal engineering clusters with over 200,000 mechanics and metalworkers, has begun converting retired internal combustion minibuses (trotros) and light trucks into fully electric drivetrains.
-
-Supported by Ghanaian EV pioneers like SolarTaxi and battery-swapping network Kofa, the collaborative initiative designs modular lithium-iron-phosphate (LFP) battery packs suited for Ghanaian terrain. Fleet operators participating in the pilot between Adum and Kejetia report cutting daily fuel and maintenance expenses by nearly 60%, establishing a viable template for homegrown electric vehicle manufacturing.`,
-    category: 'Tech',
-    channel: 'JoyNews',
-    author: 'Kwabena Osei',
-    publishedAt: '10 hours ago',
-    imageUrl: 'https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=1200&q=80',
-    readTime: '5 min read',
-    views: 14800,
-    likes: 1320
-  },
-  {
-    id: 'art-9',
-    title: 'Ghana Card Unified Digital Identity: NIA Integration with GRA, SSNIT, and Mobile Banking Surpasses 18 Million Citizens',
-    summary: 'The National Identification Authority (NIA) integrates biometric Ghana Cards across the Ghana Revenue Authority (GRA), SSNIT, NHIS, and telecom SIM registers.',
-    content: `ACCRA — Ghana's national digital identity transformation has achieved an unprecedented milestone as the National Identification Authority (NIA) announced that more than 18 million verified citizens and permanent residents have been issued the biometric Ghana Card.
-
-Under the government's digital harmonization policy, the Ghana Card's unique personal identification number now acts as the unified Tax Identification Number (TIN) for the Ghana Revenue Authority (GRA), the primary Social Security and National Insurance Trust (SSNIT) identification, and the mandatory verification key for National Health Insurance Scheme (NHIS) linkages.
-
-Commercial banks, fintech operators, and telecommunications companies report that mandatory biometric verification has reduced identity theft, loan application fraud, and SIM-swap scams by more than 75%, providing a solid, fraud-resistant foundation for digital commerce across the nation.`,
-    category: 'Politics',
-    channel: 'GHOne TV',
-    author: 'Kofi Boateng',
-    publishedAt: '11 hours ago',
-    imageUrl: 'https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?auto=format&fit=crop&w=1200&q=80',
-    readTime: '4 min read',
-    views: 11200,
-    likes: 740
-  },
-  {
-    id: 'art-10',
-    title: 'Autonomous Medical Drone Delivery: Zipline Ghana\'s 6 Centers Partner with GHS Across Rural Enclaves',
-    summary: 'Zipline Ghana\'s distribution hubs in Omenako, Mpanya, Vobsi, Sefwi Wiawso, Anum, and Kete Krachi deliver over 1 million emergency vaccines and blood units to remote health clinics.',
-    content: `OMENAKO, EASTERN REGION — Medical logistics in Ghana has set a global standard through the collaborative partnership between Zipline Ghana and the Ghana Health Service (GHS). Operating from six strategically located distribution centers across the country—Omenako (Eastern), Mpanya (Ashanti), Vobsi (North East), Sefwi Wiawso (Western North), Anum (Volta/Eastern), and Kete Krachi (Oti)—autonomous delivery drones provide rapid access to emergency medical supplies.
-
-The fleet of electric fixed-wing drones delivers blood products, anti-snake venom, anti-rabies vaccines, and essential pediatric medications to hundreds of remote Community-based Health Planning and Services (CHPS) compounds and island communities along Lake Volta within 30 to 45 minutes of a request.
-
-Working alongside digital telemedicine platforms such as mPharma and Bisa Health, Zipline's round-the-clock aerial supply chain has virtually eliminated stock-outs of critical vaccines in rural health centers, saving thousands of lives and demonstrating the real-world humanitarian power of autonomous aerospace robotics.`,
-    category: 'Tech',
-    channel: 'TV3 Ghana',
-    author: 'Samuel Baidoo',
-    publishedAt: '12 hours ago',
-    imageUrl: 'https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&w=1200&q=80',
-    readTime: '4 min read',
-    views: 16800,
-    likes: 1540
-  },
-  {
-    id: 'art-11',
-    title: 'Ghanaian Afrobeats, Highlife & Asakaa Surge Across Global Streaming: Black Sherif & King Promise Lead Billions of Streams',
-    summary: 'Music from Accra and Kumasi dominates global playlists on Spotify, Apple Music, Audiomack, and Boomplay as Ghanaian sounds captivate international audiences.',
-    content: `ACCRA & KUMASI — Contemporary Ghanaian music is enjoying an unprecedented golden era on international streaming platforms. Industry reports from Spotify, Apple Music, Audiomack, and Boomplay reveal that streams of Ghanaian music catalog surged by over 68% year-on-year across North America, the UK, and continental Europe.
-
-Leading the charge is BET Award winner Black Sherif, whose genre-bending Highlife-infused drill anthems have crossed hundreds of millions of streams, alongside King Promise, whose global chart-topper "Terminator" ignited viral dance challenges from Lagos to Tokyo.
-
-Meanwhile, artists like Stonebwoy continue to dominate global reggae-dancehall categories, while vocal powerhouses Amaarae and Gyakie push alternative pop and R&B boundaries. In Kumasi, the Asakaa drill movement spearheaded by Life Living Records continues to influence UK and European grime culture, proving the unstoppable creative and commercial vitality of modern Ghanaian youth culture.`,
-    category: 'Entertainment',
-    channel: 'UTV Ghana',
-    author: 'Abena Osei-Bonsu',
-    publishedAt: '13 hours ago',
-    imageUrl: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1200&q=80',
-    readTime: '4 min read',
-    views: 18900,
-    likes: 2150
-  },
-  {
-    id: 'art-12',
-    title: 'COCOBOD Deploys Cocoa Management System as Agritech Startups Enable EUDR Supply-Chain Traceability',
-    summary: 'Ghana Cocoa Board\'s digital CMS mapping platform unites with agritech startups like Farmerline and AgroCenta to guarantee deforestation-free cocoa exports to Europe.',
-    content: `TAKORADI & SEFWI WIAWSO — As the European Union Deforestation Regulation (EUDR) takes full effect, the Ghana Cocoa Board (COCOBOD) has completed the nationwide rollout of its Cocoa Management System (CMS), an end-to-end digital database mapping every cocoa farm, farmer identity, and purchasing station in Ghana.
-
-The high-tech system assigns digital IDs to over 800,000 cocoa farmers and utilizes GPS polygon mapping to verify that harvested cocoa is grown strictly on established farmland without encroachment into forest reserves.
-
-Working alongside COCOBOD are innovative Ghanaian agritech pioneers including Farmerline, AgroCenta, Trotro Tractor, and Complete Farmer. These startups deploy mobile apps and satellite imaging that provide farmers with weather advisories, subsidized fertilizer, digital payments, and verifiable chain-of-custody documentation, ensuring Ghanaian cocoa retains its premier position in global chocolate manufacturing.`,
-    category: 'Business',
-    channel: 'Channel One TV',
-    author: 'Kojo Asante',
-    publishedAt: '14 hours ago',
-    imageUrl: 'https://images.unsplash.com/photo-1548848221-0c2e497ed557?auto=format&fit=crop&w=1200&q=80',
-    readTime: '4 min read',
-    views: 10800,
-    likes: 780
   }
 ];
 
@@ -347,7 +678,7 @@ In addition to Plexlink and Lumen Studios, Mr Martei developed the widely used "
     category: 'Tech & Culture',
     status: 'Established',
     subscribers: '570K+ Combined Reach',
-    avatar: 'https://panafricanaisummit.com/storage/media/eZ0r51k1RsCg4ir5jQ14jyN6yxL35sVTk5YRjTO4.jpg',
+    avatar: 'https://diglancers.com/wp-content/uploads/2026/03/7wket4-compressed-300x300.jpg',
     bannerImage: 'https://delppy.com/wp-content/uploads/2026/09/WhatsApp-Image-2026-09-04-at-09.50.07-2-390x220.jpeg',
     coverImage: 'https://delppy.com/wp-content/uploads/2026/09/WhatsApp-Image-2026-09-04-at-09.50.07-2-390x220.jpeg',
     articleBodyImage: 'https://diglancers.com/wp-content/uploads/2026/03/7wket4-compressed-300x300.jpg',
@@ -420,7 +751,7 @@ His YouTube channel (@RickAqua) hosts over 606 meticulously crafted videos with 
     avatar: 'https://ghanamediatechexpo.org/wp-content/uploads/2025/11/Desmond-Ofori-Appiah-.jpg',
     bannerImage: 'https://miro.medium.com/v2/resize:fit:2400/1*8eGgWHwoWgb0DbmNpGWxfA.png',
     coverImage: 'https://miro.medium.com/v2/resize:fit:2400/1*8eGgWHwoWgb0DbmNpGWxfA.png',
-    articleBodyImage: 'https://techinghanaconference.com/wp-content/uploads/2023/11/Desmond-Dessy-Ocean-scaled.jpeg',
+    articleBodyImage: '/assets/creators/dessy-ocean-event.jpg',
     bio: 'Desmond Ofori Appiah, known professionally as Dessy Ocean, is a dynamic Ghanaian tech creator selected by Meta in May 2024 to promote Meta\'s AI technologies in Ghana.',
     award: {
       title: 'Tech Creator of the Year',
@@ -556,7 +887,7 @@ With over 766 videos, 190,000 YouTube subscribers, 146,000+ Facebook followers, 
     avatar: 'https://upload.wikimedia.org/wikipedia/commons/7/7e/KalyJay_at_a_bar_in_osu.jpg',
     bannerImage: 'https://cdn.yen.com.gh/images/360x203/c8dd8d2a75046518.jpeg?v=1',
     coverImage: 'https://cdn.yen.com.gh/images/360x203/c8dd8d2a75046518.jpeg?v=1',
-    articleBodyImage: 'https://cdn.ghanaweb.com/imagelib/pics/851/85169391.jpg',
+    articleBodyImage: 'https://upload.wikimedia.org/wikipedia/commons/7/7e/KalyJay_at_a_bar_in_osu.jpg',
     bio: 'Joshua Buernortey Boye-Doe, widely known as KalyJay (@gyaigyimii), is a leading digital influencer, GIJ alumnus, and initiator of the historic #FixTheCountry movement with over 2.1M followers on X.',
     award: {
       title: 'Twitter Influencer of the Year',
@@ -590,7 +921,7 @@ With 2.1 million followers on X (@gyaigyimii), 74,200 on Instagram (@kalyjayy), 
     avatar: 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Asantewaa_at_3_Music_Awards_22_26.jpg',
     bannerImage: 'https://cdn.yen.com.gh/tags/600x600/4b956fe5c270b0fa.jpeg?v=1',
     coverImage: 'https://cdn.yen.com.gh/tags/600x600/4b956fe5c270b0fa.jpeg?v=1',
-    articleBodyImage: 'https://cdn.ghanaweb.com/imagelib/pics/604/60458616.295.jpg',
+    articleBodyImage: 'https://cdn.yen.com.gh/tags/600x600/4b956fe5c270b0fa.jpeg?v=1',
     bio: 'Martina Dwamena, known to millions as Asantewaa, is a certified nurse, actress, and premier TikTok superstar with over 4.1M followers and 130.9M+ likes.',
     award: {
       title: 'TikTok Influencer of the Year',
@@ -619,9 +950,9 @@ In 2021, she was crowned TikTok Influencer of the Year at the Pulse Ghana Influe
     category: 'Dance & Viral',
     status: 'Established',
     subscribers: '16.4M+ Combined Reach',
-    avatar: 'https://yt3.googleusercontent.com/xNYLT0yJgCqcgq0Fwcu4uh41asGSveCU6zAj3gpPu2xoDQdHlUnS5SHJQn8SxwJRQqJHQpEGBWo=s900-c-k-c0x00ffffff-no-rj',
-    bannerImage: 'https://i.ytimg.com/vi/SlaQjtKdS6U/maxresdefault.jpg',
-    coverImage: 'https://i.ytimg.com/vi/SlaQjtKdS6U/maxresdefault.jpg',
+    avatar: '/assets/creators/endurance-grand-avatar.jpg',
+    bannerImage: '/assets/creators/endurance-grand-banner.jpg',
+    coverImage: '/assets/creators/endurance-grand-banner.jpg',
     articleBodyImage: 'https://endurancegrand.co/wp-content/uploads/2023/03/228A6872-2-scaled.jpg',
     bio: 'Endurance Nkechi Dzigbordi Dedzo is a lead dancer with DWP Academy, international choreographer, and TikTok icon with over 14M followers and 442.8M+ likes.',
     award: {
@@ -654,10 +985,10 @@ Her routines for global superstars like Davido, Stonebwoy, and Burna Boy have ca
     category: 'Comedy & Lifestyle',
     status: 'Established',
     subscribers: '5.1M+ Combined Reach',
-    avatar: 'https://yt3.googleusercontent.com/UPEE7P2vdvJHajKE8KaCuvJrwIeUmupVBo5tnUIKsq12_sMaApXYmJYZ6BONuK1xS6uBi0N5aw=s900-c-k-c0x00ffffff-no-rj',
-    bannerImage: 'https://i.ytimg.com/vi/eILqjIYpazY/maxresdefault.jpg',
-    coverImage: 'https://i.ytimg.com/vi/eILqjIYpazY/maxresdefault.jpg',
-    articleBodyImage: 'https://i.ytimg.com/vi/lKfVzzIJerg/maxresdefault.jpg',
+    avatar: '/assets/creators/official-starter-avatar.jpg',
+    bannerImage: '/assets/creators/official-starter-banner.jpg',
+    coverImage: '/assets/creators/official-starter-banner.jpg',
+    articleBodyImage: '/assets/creators/official-starter-body.jpg',
     bio: 'Ernest Raja Nettey (also known as Raja) is a viral creator and DWP Academy dancer famous for dancing joyfully alongside market women at Makola Market (~4.3M TikTok followers).',
     award: {
       title: 'Cultural Ambassador & Joy Creator Award',
@@ -688,19 +1019,19 @@ Affiliated with DWP Academy, his viral videos celebrate the dignity, warmth, and
     category: 'Travel & Heritage',
     status: 'Established',
     subscribers: '4.3M+ Combined Reach',
-    avatar: 'https://yt3.ggpht.com/LoEIb550gchEDJy8MQiNBtqm5UZRuywFA4kiSyYM1fiWFfFsbK4yH9VXEqMiFR_CSHIT86BJKQ=s800-c-k-c0x00ffffff-no-rj',
-    bannerImage: 'https://i.ytimg.com/vi/Ix9-1CpcOhQ/maxresdefault.jpg',
-    coverImage: 'https://i.ytimg.com/vi/Ix9-1CpcOhQ/maxresdefault.jpg',
-    articleBodyImage: 'https://upload.wikimedia.org/wikipedia/commons/b/ba/Wode_Maya_at_Ham%27s_Residence.jpg',
-    bio: 'Berthold Kobby Winkler Ackon, universally known as Wode Maya, is a pioneering Pan-African YouTuber with over 2.05M subscribers promoting African business, real estate, and tourism.',
+    avatar: '/assets/creators/wode-maya-avatar.jpg',
+    bannerImage: '/assets/creators/wode-maya-banner.jpg',
+    coverImage: '/assets/creators/wode-maya-banner.jpg',
+    articleBodyImage: '/assets/creators/wode-maya-banner.jpg',
+    bio: 'Berthold Kobby Winkler Ackon, universally known as Wode Maya, is a pioneering Pan-African YouTuber with over 2.05M subscribers promoting African business, real estate, and tourism—and 2026 EMY Africa Young Achiever (Male).',
     award: {
-      title: 'Pan-African Tourism & Storyteller Award',
-      year: '2024',
-      description: 'Awarded by African Union Diaspora Directorate for shifting global perceptions and championing intra-African tourism.'
+      title: 'EMY Africa Young Achiever (Male) & Pan-African Storyteller',
+      year: '2026',
+      description: 'Honored at the 11th EMY Africa Awards (Nov 2026) and recognized by the African Union Diaspora Directorate for championing intra-African tourism and entrepreneurship.'
     },
     profileArticle: `Berthold Kobby Winkler Ackon, universally celebrated as Wode Maya, is one of the most transformative independent documentarians on the African continent. Under his signature banner "Africa to the World," his YouTube channel has surpassed 2.05 million subscribers (2,172 videos, 349.89M+ views), with 402,000 on Instagram (@mrghanababy), 328.9K on X, and 1.5M+ on Facebook.
 
-From modern real estate developments and agricultural innovations to conversations with diaspora returnees, Wode Maya's camera showcases African ingenuity, inspiring thousands to invest and travel across the continent.`,
+From modern real estate developments and agricultural innovations to conversations with diaspora returnees, Wode Maya's camera showcases African ingenuity, inspiring thousands to invest and travel across the continent—earning him the Young Achiever (Male) honour at the 11th EMY Africa Awards in November 2026.`,
     stats: {
       youtubeSubscribers: '2.05M',
       instagramFollowers: '402K',
@@ -724,10 +1055,10 @@ From modern real estate developments and agricultural innovations to conversatio
     category: 'Pop Culture & Critique',
     status: 'Established',
     subscribers: '4.3M+ Combined Reach',
-    avatar: 'https://yt3.googleusercontent.com/mJATfrwDmaOBemb5ic91dCdGcfAPXOa21VwkH9529R1x8BH2sJKN0N0l588io3TQcDYam4orpA=s900-c-k-c0x00ffffff-no-rj',
-    bannerImage: 'https://i.ytimg.com/vi/_TLS_fHumLk/maxresdefault.jpg',
-    coverImage: 'https://i.ytimg.com/vi/_TLS_fHumLk/maxresdefault.jpg',
-    articleBodyImage: 'https://ghanaremembers.com/images/http/article_images/public/kwadwo-sheldon-1.jpg/f1d52b539308fd570e7c23ddf345cd2e/kwadwo-sheldon-1.webp',
+    avatar: '/assets/creators/kwadwo-sheldon-avatar.jpg',
+    bannerImage: '/assets/creators/kwadwo-sheldon-banner.jpg',
+    coverImage: '/assets/creators/kwadwo-sheldon-banner.jpg',
+    articleBodyImage: '/assets/creators/kwadwo-sheldon-banner.jpg',
     bio: 'Bernard Kwadwo Amoafo, known as Kwadwo Sheldon, is a digital satirist and studio head of Kwadwo Sheldon Studios with 848K YouTube subscribers, 1.9M on X, and 1.4M on Instagram.',
     award: {
       title: 'Entertainment Creator of the Year (KSS Studios)',
@@ -761,9 +1092,9 @@ Through hit formats like "Yawa of the Day" and exclusive artist interviews, he p
     category: 'Comedy & Lifestyle',
     status: 'Established',
     subscribers: '1.14M+ Combined Reach',
-    avatar: 'https://yt3.googleusercontent.com/GtlecAR8oUVnBQWQo8xBaksao0GE0UObrXDIYSnj1ajsJJWrHt4sRuuw0KFkafpRM-kVBaPN=s900-c-k-c0x00ffffff-no-rj',
-    bannerImage: 'https://i.ytimg.com/vi/pNGK5qjIIok/maxresdefault.jpg',
-    coverImage: 'https://i.ytimg.com/vi/pNGK5qjIIok/maxresdefault.jpg',
+    avatar: '/assets/creators/sdk-dele-avatar.jpg',
+    bannerImage: '/assets/creators/sdk-dele-banner.jpg',
+    coverImage: '/assets/creators/sdk-dele-banner.jpg',
     articleBodyImage: 'https://toppingafrica.s3.amazonaws.com/2085/500603321_18506794963003234_6231104715022209978_n.jpg',
     bio: 'Sadik Sulley (SDK Dele) is a beloved comedian, actor, and host of the viral SDK Food Tour celebrating authentic Ghanaian street food and family comedy (417.7K TikTok, 343.1K X, 331K IG).',
     award: {
@@ -787,19 +1118,53 @@ From his beloved sketches portraying classic Ghanaian parent-child interactions 
       instagram: 'https://www.instagram.com/sdkdele/',
       youtube: 'https://www.youtube.com/@sdkdele'
     }
+  },
+  {
+    id: 'chef-abbys',
+    name: 'Chef Abbys (Abena Amoakoaa Sintim-Aboagye)',
+    realName: 'Abena Amoakoaa Sintim-Aboagye',
+    handle: '@chefabbys',
+    platform: 'Multi-Platform',
+    category: 'Culinary & Lifestyle',
+    status: 'Breakthrough',
+    subscribers: '1.2M+ Combined Reach',
+    avatar: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=600&q=80',
+    bannerImage: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80',
+    coverImage: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80',
+    articleBodyImage: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80',
+    bio: 'Abena Amoakoaa Sintim-Aboagye, celebrated online as Chef Abbys, is a Ghanaian culinary creator and food storyteller crowned Young Achiever (Female) at the 11th EMY Africa Awards in November 2026.',
+    award: {
+      title: 'EMY Africa Young Achiever (Female)',
+      year: '2026',
+      description: 'Awarded at the 11th EMY Africa Awards at the AICC Grand Arena (Nov 21, 2026) for elevating Ghanaian culinary storytelling and inspiring young African food entrepreneurs.'
+    },
+    profileArticle: `Abena Amoakoaa Sintim-Aboagye, widely known across West Africa and the diaspora as Chef Abbys, has transformed Ghanaian home-style cooking and West African street cuisine into high-energy digital storytelling. Through vibrant step-by-step recipe reels, cultural food journeys, and culinary entrepreneurship, she has built an engaged community exceeding 1.2 million followers across TikTok, Instagram, and YouTube.
+
+On November 21, 2026, Chef Abbys was honoured with the prestigious Young Achiever (Female) trophy at the 11th EMY Africa Awards held at the Accra International Conference Centre Grand Arena—cementing her standing as one of Ghana’s defining lifestyle and culinary ambassadors.`,
+    stats: {
+      tiktokFollowers: '680K+',
+      instagramFollowers: '420K+',
+      youtubeSubscribers: '110K+',
+      engagementRate: '13.4%'
+    },
+    socialLinks: {
+      tiktok: 'https://www.tiktok.com/@chefabbys',
+      instagram: 'https://www.instagram.com/chefabbys/',
+      youtube: 'https://www.youtube.com/@chefabbys'
+    }
   }
 ];
 
 export const INITIAL_POLL: PollQuestion = {
   id: 'poll-1',
-  question: 'Which Ghanaian tech tool or digital innovation will have the greatest impact on professional networking in 2026?',
+  question: 'Which Ghanaian milestone in late 2026 will have the biggest lasting impact going into 2027?',
   options: [
-    { id: 'opt-1', text: 'Plexlink (Smart NFC Cards & Link-in-Bio)', votes: 2450 },
-    { id: 'opt-2', text: 'Mobile Money Interoperability & Payments', votes: 1120 },
-    { id: 'opt-3', text: 'Local Language AI Models & Tools', votes: 980 },
-    { id: 'opt-4', text: 'Virtual Business Expos & Networking', votes: 410 }
+    { id: 'opt-1', text: 'Plexlink (Smart NFC Cards & Link-in-Bio Networking)', votes: 2450 },
+    { id: 'opt-2', text: 'National 5G Spectrum Rollout & Commercial Launch', votes: 1420 },
+    { id: 'opt-3', text: 'Women’s Development Bank March 2027 Take-Off', votes: 1180 },
+    { id: 'opt-4', text: 'Direct NIA Ghana Card PIN + Selfie KYC Standards', votes: 690 }
   ],
-  totalVotes: 4960
+  totalVotes: 5740
 };
 
 export const EVENTS_PRESS: EventPressItem[] = [
@@ -879,7 +1244,7 @@ He underscored the parallel need for strong digital hygiene—educating creators
       'Integrating cybersecurity awareness into creator-led technology education.',
       'Supporting indigenous and West African digital voices in shaping continental AI narratives.'
     ],
-    imageUrl: 'https://panafricanaisummit.com/storage/media/eZ0r51k1RsCg4ir5jQ14jyN6yxL35sVTk5YRjTO4.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1591115765373-5207764f72e7?auto=format&fit=crop&w=1200&q=80',
     featuredCreatorId: 'delppy',
     featuredCreatorName: 'Delppy (Emmanuel Obuobi Fianko)',
     topicTags: ['Pan-African AI Summit', 'Cybersecurity', 'Tech Literacy']
@@ -902,7 +1267,7 @@ Selected by Meta in May 2024 to promote Meta's AI technologies in Ghana, Dessy s
       'Bridging global platform innovations with local creator storytelling formats.',
       'Empowering young creators across Accra, Kumasi, and Takoradi to build digital literacy channels.'
     ],
-    imageUrl: 'https://techinghanaconference.com/wp-content/uploads/2023/11/Desmond-Dessy-Ocean-scaled.jpeg',
+    imageUrl: '/assets/creators/dessy-ocean-event.jpg',
     featuredCreatorId: 'dessy-ocean',
     featuredCreatorName: 'Dessy Ocean (Desmond Ofori Appiah)',
     topicTags: ['Tech in Ghana', 'Meta AI', 'Digital Productivity']

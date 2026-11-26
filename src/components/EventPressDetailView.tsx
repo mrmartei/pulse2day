@@ -14,6 +14,7 @@ import {
   Sparkles,
 } from 'lucide-react';
 import { handleSpaLinkClick } from '../utils/navigation';
+import { SafeImage } from './SafeImage';
 
 interface EventPressDetailViewProps {
   item: EventPressItem;
@@ -158,13 +159,13 @@ export const EventPressDetailView: React.FC<EventPressDetailViewProps> = ({
 
         {/* Hero Photo */}
         <div className="aspect-video rounded-lg overflow-hidden bg-slate-900 border border-slate-200 relative">
-          <img
+          <SafeImage
             src={item.imageUrl}
             alt={item.title}
-            referrerPolicy="no-referrer"
+            loading="eager"
             className="w-full h-full object-cover"
           />
-          <div className="absolute bottom-3 left-3 bg-slate-900/80 text-white text-[11px] font-sans px-3 py-1 rounded backdrop-blur-sm">
+          <div className="absolute bottom-3 left-3 z-10 bg-slate-900/80 text-white text-[11px] font-sans px-3 py-1 rounded backdrop-blur-sm">
             {item.outletOrEvent} • {item.dateLabel}
           </div>
         </div>
@@ -173,10 +174,11 @@ export const EventPressDetailView: React.FC<EventPressDetailViewProps> = ({
         {featuredCreator && (
           <div className="bg-gradient-to-r from-red-50 to-amber-50 border border-red-200 rounded-lg p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 font-sans">
             <div className="flex items-center space-x-4">
-              <img
+              <SafeImage
                 src={featuredCreator.avatar}
                 alt={featuredCreator.name}
-                referrerPolicy="no-referrer"
+                isAvatar
+                fallbackLabel={featuredCreator.name}
                 className="w-14 h-14 rounded-full border-2 border-red-600 object-cover shadow shrink-0"
               />
               <div>

@@ -26,7 +26,7 @@ export interface ContentCreator {
   realName: string;
   handle: string;
   platform: 'TikTok' | 'Instagram' | 'YouTube' | 'Multi-Platform';
-  category: 'Tech & Culture' | 'Pop Culture & Critique' | 'Celebrity & Entertainment' | 'Travel & Heritage' | 'Music & Radio' | 'Comedy & Lifestyle' | 'Dance & Viral';
+  category: 'Tech & Culture' | 'Pop Culture & Critique' | 'Celebrity & Entertainment' | 'Travel & Heritage' | 'Music & Radio' | 'Comedy & Lifestyle' | 'Dance & Viral' | 'Culinary & Lifestyle';
   status: 'Established' | 'Breakthrough';
   subscribers: string;
   avatar: string;

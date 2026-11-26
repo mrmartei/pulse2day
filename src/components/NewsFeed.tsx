@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { NewsArticle, Category } from '../types';
 import { Clock, Eye, ThumbsUp, Bookmark, ArrowRight } from 'lucide-react';
 import { handleSpaLinkClick } from '../utils/navigation';
+import { SafeImage } from './SafeImage';
 
 interface NewsFeedProps {
   articles: NewsArticle[];
@@ -96,14 +97,15 @@ export const NewsFeed: React.FC<NewsFeedProps> = ({
               <a
                 href={`/article/${featuredArticle.id}`}
                 onClick={(e) => { e.stopPropagation(); handleSpaLinkClick(e, `/article/${featuredArticle.id}`); }}
-                className="lg:col-span-7 relative aspect-video lg:aspect-auto overflow-hidden bg-slate-100 block"
+                className="lg:col-span-7 relative aspect-video lg:aspect-auto lg:min-h-[340px] overflow-hidden bg-slate-950 block"
               >
-                <img
+                <SafeImage
                   src={featuredArticle.imageUrl}
                   alt={featuredArticle.title}
+                  loading="eager"
                   className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
                 />
-                <div className="absolute top-4 left-4 bg-red-600 text-white px-3 py-1 rounded-full text-xs font-extrabold uppercase tracking-wider shadow">
+                <div className="absolute top-4 left-4 z-10 bg-red-600 text-white px-3 py-1 rounded-full text-xs font-extrabold uppercase tracking-wider shadow">
                   {featuredArticle.category}
                 </div>
               </a>
@@ -165,14 +167,14 @@ export const NewsFeed: React.FC<NewsFeedProps> = ({
                   <a
                     href={`/article/${article.id}`}
                     onClick={(e) => { e.stopPropagation(); handleSpaLinkClick(e, `/article/${article.id}`); }}
-                    className="relative aspect-video overflow-hidden bg-slate-100 block"
+                    className="relative aspect-video overflow-hidden bg-slate-900 block"
                   >
-                    <img
+                    <SafeImage
                       src={article.imageUrl}
                       alt={article.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
                     />
-                    <div className="absolute top-3 left-3 bg-slate-900/90 backdrop-blur-sm text-white px-2.5 py-0.5 rounded-full text-[11px] font-bold uppercase tracking-wide">
+                    <div className="absolute top-3 left-3 z-10 bg-slate-900/90 backdrop-blur-sm text-white px-2.5 py-0.5 rounded-full text-[11px] font-bold uppercase tracking-wide">
                       {article.category}
                     </div>
                   </a>

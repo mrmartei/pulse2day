@@ -1,7 +1,7 @@
 import { NEWS_ARTICLES, CONTENT_CREATORS, EVENTS_PRESS, INITIAL_POLL } from '../data/mockData';
 import { ContentCreator, NewsArticle, EventPressItem } from '../types';
 
-export const DEFAULT_SITE_URL = 'https://pulse2day.vercel.app';
+export const DEFAULT_SITE_URL = 'https://ghpulse.space';
 const SITE_NAME = 'GhPulse';
 const DEFAULT_TITLE = "GhPulse - Ghana's Tech, Creator & Cultural Heartbeat";
 const DEFAULT_DESCRIPTION =
@@ -614,6 +614,64 @@ function buildPollsSeo(baseUrl: string): RouteSeoData {
   };
 }
 
+function buildLegalSeo(
+  path: '/privacy' | '/terms' | '/editorial-guidelines',
+  baseUrl: string
+): RouteSeoData {
+  const cleanBase = stripTrailingSlash(baseUrl);
+  const canonicalUrl = `${cleanBase}${path}`;
+  const metaMap = {
+    '/privacy': {
+      title: 'Privacy Policy — GhPulse',
+      heading: 'Privacy Policy',
+      description:
+        'Read how GhPulse News Network collects, protects, and manages reader and creator information in line with Ghana’s Data Protection Act.',
+    },
+    '/terms': {
+      title: 'Terms of Service — GhPulse',
+      heading: 'Terms of Service',
+      description:
+        'Terms of Service governing readership, editorial content usage, reader comments, and community polls on GhPulse (ghpulse.space).',
+    },
+    '/editorial-guidelines': {
+      title: 'Editorial Guidelines — GhPulse',
+      heading: 'Editorial Guidelines',
+      description:
+        'Explore GhPulse’s independent verification standards, primary source attribution policy, creator directory verification, and corrections policy.',
+    },
+  }[path];
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: metaMap.title,
+    description: metaMap.description,
+    url: canonicalUrl,
+    publisher: buildPublisherSchema(cleanBase),
+  };
+
+  const bodyHtml = `${renderSiteNavHtml()}
+  <main>
+    <article>
+      <h1>${escapeHtml(metaMap.heading)}</h1>
+      <p>${escapeHtml(metaMap.description)}</p>
+      <p>GhPulse News Network • Accra, Ghana</p>
+    </article>
+  </main>`;
+
+  return {
+    title: metaMap.title,
+    description: metaMap.description,
+    canonicalUrl,
+    ogType: 'website',
+    ogImage: toAbsoluteUrl(DEFAULT_OG_IMAGE_PATH, cleanBase),
+    robots: 'index, follow, max-image-preview:large',
+    jsonLd,
+    bodyHtml,
+    statusCode: 200,
+  };
+}
+
 function buildHomeSeo(baseUrl: string): RouteSeoData {
   const cleanBase = stripTrailingSlash(baseUrl);
   const canonicalUrl = `${cleanBase}/`;
@@ -716,6 +774,10 @@ export function getSeoForPath(pathname: string, baseUrl: string = DEFAULT_SITE_U
     return buildPollsSeo(baseUrl);
   }
 
+  if (normalized === '/privacy' || normalized === '/terms' || normalized === '/editorial-guidelines') {
+    return buildLegalSeo(normalized, baseUrl);
+  }
+
   return buildHomeSeo(baseUrl);
 }
 
@@ -800,6 +862,9 @@ export function buildSitemapXml(baseUrl: string = DEFAULT_SITE_URL): string {
       priority: '0.8',
     })),
     { loc: `${cleanBase}/polls`, lastmod: today, changefreq: 'weekly', priority: '0.6' },
+    { loc: `${cleanBase}/privacy`, lastmod: today, changefreq: 'yearly', priority: '0.4' },
+    { loc: `${cleanBase}/terms`, lastmod: today, changefreq: 'yearly', priority: '0.4' },
+    { loc: `${cleanBase}/editorial-guidelines`, lastmod: today, changefreq: 'yearly', priority: '0.5' },
   ];
 
   const urlNodes = entries
@@ -837,6 +902,9 @@ export function getAllPrerenderPaths(): string[] {
     '/events',
     '/press',
     '/polls',
+    '/privacy',
+    '/terms',
+    '/editorial-guidelines',
     ...CONTENT_CREATORS.map((c) => `/creator/${c.id}`),
     '/creator/tech-in-twi',
     ...NEWS_ARTICLES.map((a) => `/article/${a.id}`),

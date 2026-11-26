@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { NewsArticle, Comment } from '../types';
 import { Clock, Eye, ThumbsUp, Bookmark, Share2, MessageSquare, ArrowLeft, ArrowRight, Check, Send, ExternalLink } from 'lucide-react';
 import { handleSpaLinkClick } from '../utils/navigation';
+import { SafeImage } from './SafeImage';
 
 interface ArticleDetailViewProps {
   article: NewsArticle;
@@ -156,7 +157,7 @@ export const ArticleDetailView: React.FC<ArticleDetailViewProps> = ({
             <span className="text-xs font-semibold text-slate-500">{article.channel}</span>
             {article.isBreaking && (
               <span className="bg-red-100 text-red-800 text-[11px] font-bold px-2 py-0.5 rounded uppercase">
-                Breaking Tech Story
+                Breaking Story
               </span>
             )}
           </div>
@@ -179,9 +180,9 @@ export const ArticleDetailView: React.FC<ArticleDetailViewProps> = ({
         </div>
 
         {/* Featured Image */}
-        <div className="aspect-video rounded overflow-hidden bg-slate-100 border border-slate-200 relative group">
-          <img src={article.imageUrl} alt={article.title} className="w-full h-full object-cover" />
-          <div className="absolute bottom-3 left-3 bg-slate-900/80 text-white text-[11px] font-sans px-3 py-1 rounded backdrop-blur-sm">
+        <div className="aspect-video rounded overflow-hidden bg-slate-950 border border-slate-200 relative group">
+          <SafeImage src={article.imageUrl} alt={article.title} loading="eager" className="w-full h-full object-cover" />
+          <div className="absolute bottom-3 left-3 z-10 bg-slate-900/80 text-white text-[11px] font-sans px-3 py-1 rounded backdrop-blur-sm">
             Photo: {article.featuredCreatorId === 'mr-martei' ? 'Plexlink Smart NFC Card & Link-in-Bio Digital Identity' : `${article.category} Report • ${article.channel}`}
           </div>
         </div>
@@ -190,10 +191,12 @@ export const ArticleDetailView: React.FC<ArticleDetailViewProps> = ({
         {article.featuredCreatorId === 'mr-martei' && (
           <div className="bg-gradient-to-r from-red-50 to-amber-50 border border-red-200 rounded-lg p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 font-sans">
             <div className="flex items-center space-x-4">
-              <img
+              <SafeImage
                 src="https://yt3.googleusercontent.com/iPDGhDeG-UIGsF8WZlGQBBLWcax4l7UKMdpvFYyome9gABUSAe2F4owxEhxD47GkEW1A_cEq=s900-c-k-c0x00ffffff-no-rj"
                 alt="Mr Martei"
-                className="w-14 h-14 rounded-full border-2 border-red-600 object-cover shadow"
+                isAvatar
+                fallbackLabel="Mr Martei"
+                className="w-14 h-14 rounded-full border-2 border-red-600 object-cover shadow shrink-0"
               />
               <div>
                 <div className="flex items-center space-x-2">
@@ -223,7 +226,7 @@ export const ArticleDetailView: React.FC<ArticleDetailViewProps> = ({
               {renderFormattedParagraph(paragraph, idx)}
               {idx === 1 && article.articleBodyImage && (
                 <div className="my-8 rounded-lg overflow-hidden border border-slate-200 bg-slate-50 font-sans shadow-sm">
-                  <img
+                  <SafeImage
                     src={article.articleBodyImage}
                     alt={article.articleBodyCaption || article.title}
                     className="w-full max-h-[480px] object-cover"
@@ -241,7 +244,7 @@ export const ArticleDetailView: React.FC<ArticleDetailViewProps> = ({
           {/* Fallback if article has fewer than 2 paragraphs but has an articleBodyImage */}
           {article.content.split('\n\n').length <= 1 && article.articleBodyImage && (
             <div className="my-8 rounded-lg overflow-hidden border border-slate-200 bg-slate-50 font-sans shadow-sm">
-              <img
+              <SafeImage
                 src={article.articleBodyImage}
                 alt={article.articleBodyCaption || article.title}
                 className="w-full max-h-[480px] object-cover"
@@ -279,7 +282,7 @@ export const ArticleDetailView: React.FC<ArticleDetailViewProps> = ({
           <form onSubmit={handleAddComment} className="flex items-center space-x-2">
             <input
               type="text"
-              placeholder="Add your perspective on this tech launch..."
+              placeholder="Add your perspective on this story..."
               value={newComment}
               onChange={(e) => setNewComment(e.target.value)}
               className="flex-1 bg-slate-50 border border-slate-200 rounded px-4 py-2.5 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-red-700"
@@ -298,7 +301,7 @@ export const ArticleDetailView: React.FC<ArticleDetailViewProps> = ({
               <div key={comment.id} className="bg-slate-50 p-4 rounded border border-slate-200 space-y-2">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-2.5">
-                    <img src={comment.avatar} alt="" className="w-8 h-8 rounded-full object-cover" />
+                    <SafeImage src={comment.avatar} alt={comment.author} isAvatar fallbackLabel={comment.author} className="w-8 h-8 rounded-full object-cover shrink-0" />
                     <span className="font-bold text-xs text-slate-900">{comment.author}</span>
                   </div>
                   <span className="text-[10px] text-slate-400">{comment.timestamp}</span>
@@ -313,7 +316,7 @@ export const ArticleDetailView: React.FC<ArticleDetailViewProps> = ({
       {/* Related Stories */}
       {relatedArticles.length > 0 && (
         <div className="space-y-4 pt-4">
-          <h3 className="font-serif font-bold text-xl text-slate-900">Related Tech Stories</h3>
+          <h3 className="font-serif font-bold text-xl text-slate-900">Related {article.category} Stories</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {relatedArticles.map(rel => (
               <a

@@ -11,6 +11,7 @@ import { ArticleDetailView } from './components/ArticleDetailView';
 import { CreatorDetailView } from './components/CreatorDetailView';
 import { BookmarksDrawer } from './components/BookmarksDrawer';
 import { Footer } from './components/Footer';
+import { LegalPageView, LegalPageType } from './components/LegalPageView';
 import { applyClientSeo, normalizeRoutePath, resolveCreatorBySlug } from './utils/seo';
 import { SPA_NAVIGATE_EVENT, navigateTo, handleSpaLinkClick } from './utils/navigation';
 
@@ -51,7 +52,6 @@ export default function App() {
       }
       setCurrentPath(nextPath);
       setActiveTab(getTabForPath(nextPath));
-      window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
     window.addEventListener('popstate', syncRoute);
@@ -65,8 +65,11 @@ export default function App() {
     };
   }, []);
 
-  // Keep <title>, canonical URL, meta tags, and Schema.org JSON-LD synchronized on every route
+  // Immediately reset scroll position and synchronize SEO tags on every route change
   useEffect(() => {
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
     applyClientSeo(currentPath);
   }, [currentPath]);
 
@@ -116,10 +119,19 @@ export default function App() {
     navigateTo(tab === 'news' ? '/' : `/${tab}`);
   };
 
+  const legalPage: LegalPageType | null =
+    currentPath === '/privacy'
+      ? 'privacy'
+      : currentPath === '/terms'
+        ? 'terms'
+        : currentPath === '/editorial-guidelines'
+          ? 'editorial'
+          : null;
+
   const isCreatorsHubRoute = currentPath === '/creators';
   const isEventsHubRoute = currentPath === '/events' || currentPath === '/press';
   const isPollsRoute = currentPath === '/polls';
-  const isHomeNewsRoute = !isCreatorsHubRoute && !isEventsHubRoute && !isPollsRoute;
+  const isHomeNewsRoute = !isCreatorsHubRoute && !isEventsHubRoute && !isPollsRoute && !legalPage;
 
   return (
     <div className="min-h-screen bg-slate-100 text-slate-900 font-sans flex flex-col selection:bg-red-700 selection:text-white">
@@ -179,6 +191,11 @@ export default function App() {
             onBack={() => handleReturnHome('events')}
             onSelectEvent={handleSelectEvent}
           />
+        ) : legalPage ? (
+          <LegalPageView
+            page={legalPage}
+            onBack={() => handleReturnHome('news')}
+          />
         ) : (
           <>
             {isHomeNewsRoute && (
@@ -194,12 +211,12 @@ export default function App() {
                       Independent Reporting & National Updates
                     </h2>
                     <p className="text-slate-600 text-sm leading-relaxed">
-                      Delivering accurate news coverage across politics, economics, technology, and culture from Ghana's most trusted media houses.
+                      Delivering accurate news coverage across politics, economics, technology, sports, and culture from Ghana's most trusted media houses.
                     </p>
                   </div>
                   <div className="bg-slate-50 border border-slate-200 p-4 rounded-lg text-xs space-y-2 w-full md:w-72">
                     <div className="font-bold text-slate-800 uppercase tracking-wide">Today's Briefing</div>
-                    <p className="text-slate-600 leading-normal">Markets steady in Accra as BoG maintains policy rate at 14.0%. Tech summit opens in Airport Residential Area.</p>
+                    <p className="text-slate-600 leading-normal">Black Challenge touch down at KIA at 1:00 p.m. after winning Ghana's maiden Amputee World Cup; Mahama set to announce national 5G launch before year-end.</p>
                   </div>
                 </div>
 
@@ -207,7 +224,7 @@ export default function App() {
                 <div className="space-y-4">
                   <div className="flex items-center justify-between border-b border-slate-200 pb-3">
                     <h3 className="text-xl font-serif font-bold text-slate-900">Latest Headlines</h3>
-                    <span className="text-xs text-slate-500 font-medium">Updated 5 mins ago</span>
+                    <span className="text-xs text-slate-500 font-medium">Updated Nov 26, 2026</span>
                   </div>
 
                   <NewsFeed

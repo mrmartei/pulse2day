@@ -2,6 +2,7 @@ import React from 'react';
 import { ContentCreator, EventPressItem } from '../types';
 import { ArrowLeft, Award, TrendingUp, ExternalLink, Share2, Check, Calendar, Mic } from 'lucide-react';
 import { handleSpaLinkClick } from '../utils/navigation';
+import { SafeImage } from './SafeImage';
 
 interface CreatorDetailViewProps {
   creator: ContentCreator;
@@ -50,9 +51,10 @@ export const CreatorDetailView: React.FC<CreatorDetailViewProps> = ({ creator, p
       <article className="bg-white rounded-lg border border-slate-200 shadow-sm overflow-hidden">
         {/* Top Hero Banner */}
         <div className="relative h-48 sm:h-64 md:h-72 w-full overflow-hidden bg-slate-900">
-          <img
+          <SafeImage
             src={creator.bannerImage || creator.coverImage}
             alt={`${creator.name} banner`}
+            loading="eager"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-900/30 to-black/20"></div>
@@ -69,9 +71,12 @@ export const CreatorDetailView: React.FC<CreatorDetailViewProps> = ({ creator, p
         <div className="p-6 md:p-10 space-y-8">
           {/* Header Metadata */}
           <div className="flex flex-col md:flex-row md:items-end space-y-4 md:space-y-0 md:space-x-6 -mt-16 md:-mt-20 relative z-10">
-            <img
+            <SafeImage
               src={creator.avatar}
               alt={creator.name}
+              loading="eager"
+              isAvatar
+              fallbackLabel={creator.name}
               className="w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-white object-cover shadow-lg bg-slate-800 shrink-0"
             />
             <div className="space-y-1 pb-1">
@@ -133,7 +138,7 @@ export const CreatorDetailView: React.FC<CreatorDetailViewProps> = ({ creator, p
             {/* Embedded In-Action / Article Body Image */}
             {creator.articleBodyImage && (
               <div className="my-6 rounded-lg overflow-hidden border border-slate-200 bg-slate-50 shadow-sm">
-                <img
+                <SafeImage
                   src={creator.articleBodyImage}
                   alt={`${creator.name} feature photo`}
                   className="w-full max-h-[480px] object-cover"

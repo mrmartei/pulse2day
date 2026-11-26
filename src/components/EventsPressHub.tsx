@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { EventPressItem } from '../types';
 import { Calendar, MapPin, Mic, ArrowRight, Radio, Sparkles } from 'lucide-react';
 import { handleSpaLinkClick } from '../utils/navigation';
+import { SafeImage } from './SafeImage';
 
 interface EventsPressHubProps {
   events: EventPressItem[];
@@ -111,10 +112,9 @@ export const EventsPressHub: React.FC<EventsPressHubProps> = ({
             >
               <div>
                 <div className="relative aspect-video overflow-hidden bg-slate-900">
-                  <img
+                  <SafeImage
                     src={item.imageUrl}
                     alt={item.title}
-                    referrerPolicy="no-referrer"
                     className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-black/20"></div>

@@ -102,11 +102,29 @@ export const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 font-sans">
         <p>© 2026 GhPulse News Network. All rights reserved.</p>
         <div className="flex items-center space-x-4 mt-4 sm:mt-0">
-          <span className="hover:text-slate-400 cursor-pointer">Privacy Policy</span>
+          <a
+            href="/privacy"
+            onClick={(e) => handleSpaLinkClick(e, '/privacy')}
+            className="hover:text-white transition underline-offset-4 hover:underline"
+          >
+            Privacy Policy
+          </a>
           <span>•</span>
-          <span className="hover:text-slate-400 cursor-pointer">Terms of Service</span>
+          <a
+            href="/terms"
+            onClick={(e) => handleSpaLinkClick(e, '/terms')}
+            className="hover:text-white transition underline-offset-4 hover:underline"
+          >
+            Terms of Service
+          </a>
           <span>•</span>
-          <span className="hover:text-slate-400 cursor-pointer">Editorial Guidelines</span>
+          <a
+            href="/editorial-guidelines"
+            onClick={(e) => handleSpaLinkClick(e, '/editorial-guidelines')}
+            className="hover:text-white transition underline-offset-4 hover:underline"
+          >
+            Editorial Guidelines
+          </a>
         </div>
       </div>
     </footer>
