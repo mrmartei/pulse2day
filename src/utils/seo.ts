@@ -7,7 +7,7 @@ const DEFAULT_TITLE = "GhPulse - Ghana's Tech, Creator & Cultural Heartbeat";
 const DEFAULT_DESCRIPTION =
   "Ghana's premier digital news network and content creators directory covering nationwide tech, creators, business, events, and cultural developments.";
 const DEFAULT_OG_IMAGE_PATH = '/ghpulse-social-preview.jpg';
-const LOGO_IMAGE_PATH = '/ghpulse-logo.jpg';
+const LOGO_IMAGE_PATH = '/icon-512x512.png';
 
 export interface RouteSeoData {
   title: string;
@@ -67,6 +67,8 @@ function buildPublisherSchema(baseUrl: string): Record<string, unknown> {
     logo: {
       '@type': 'ImageObject',
       url: toAbsoluteUrl(LOGO_IMAGE_PATH, cleanBase),
+      width: 512,
+      height: 512,
     },
   };
 }
